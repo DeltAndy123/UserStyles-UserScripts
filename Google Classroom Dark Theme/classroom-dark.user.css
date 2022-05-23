@@ -35,13 +35,15 @@ Colors:
     if coloredmissing {
       /* Colored Status */
       --color-missing: #ea4040;
-    } else {
+    }
+    else {
       --color-missing: #dddddd;
     }
     if coloredassigned {
       /* Colored Status */
       --color-assigned: #3fc045;
-    } else {
+    }
+    else {
       --color-assigned: #dddddd;
     }
   }
@@ -51,7 +53,7 @@ Colors:
   }
   .joJglb {
     /* Top Nav Bar */
-    background-color: #222222
+    background-color: #222222;
   }
   .OX4Vcb {
     /* Left Sidebar */
@@ -69,8 +71,9 @@ Colors:
     /* Upcoming Box */
     if borders {
       background-color: #111111;
-      border-color: #222222
-    } else {
+      border-color: #222222;
+    }
+    else {
       background-color: #171717;
       border-color: #171717;
     }
@@ -79,7 +82,8 @@ Colors:
     /* Upcoming text */
     color: #eeeeee;
   }
-  .oBSRLe, .hnID5d {
+  .oBSRLe,
+  .hnID5d {
     /* Due (day of a week) text */
     color: #cccccc;
   }
@@ -91,7 +95,7 @@ Colors:
     /* Classroom box in left sidebar */
     background-color: #323232 !important;
     border-radius: 0px 50px 50px 0px;
-    margin-bottom: 5px
+    margin-bottom: 5px;
   }
   .TMOcX:hover {
     background-color: #434343 !important;
@@ -104,8 +108,9 @@ Colors:
     /* Post/Setting Boxes */
     if borders {
       background-color: #111111;
-      border-color: #222222
-    } else {
+      border-color: #222222;
+    }
+    else {
       background-color: #171717;
       border-color: #171717;
     }
@@ -114,28 +119,31 @@ Colors:
     /* Post Boxes Comment Section */
     if borders {
       background-color: #111111;
-      border-top-color: #222222
-    } else {
+      border-top-color: #222222;
+    }
+    else {
       background-color: #171717;
-      border-top: none
+      border-top: none;
     }
   }
   .oh9CFb.Gh0umc.kpDQ8.CMmBPd {
     /* Post Boxes Comment Section */
     if borders {
       background-color: #111111;
-      border-top-color: #222222
-    } else {
+      border-top-color: #222222;
+    }
+    else {
       background-color: #171717;
-      border-top: none
+      border-top: none;
     }
   }
   .oleV8d {
     /* Class Comment Box */
     if borders {
       background-color: #111111;
-      border-color: #222222
-    } else {
+      border-color: #222222;
+    }
+    else {
       background-color: #1d1d1d;
       border-color: #1d1d1d;
     }
@@ -143,9 +151,10 @@ Colors:
   .DkDwHe:hover {
     /* Assignment Box Hovered */
     if borders {
-      background-color: #171717 !important
-    } else {
-      background-color: #1e1e1e !important
+      background-color: #171717 !important;
+    }
+    else {
+      background-color: #1e1e1e !important;
     }
   }
   .n4xnA {
@@ -168,8 +177,9 @@ Colors:
     /* Attached files box in stream */
     if borders {
       background-color: #111;
-      border-color: #1e1e1e
-    } else {
+      border-color: #1e1e1e;
+    }
+    else {
       background-color: #1e1e1e;
       border-color: #1e1e1e;
     }
@@ -178,8 +188,9 @@ Colors:
     /* Attached files box in assignment/material */
     if borders {
       background-color: #111111;
-      border-color: #1e1e1e
-    } else {
+      border-color: #1e1e1e;
+    }
+    else {
       background-color: #171717;
       border-color: #171717;
     }
@@ -204,403 +215,445 @@ Colors:
     /* Comments in popup box */
     color: #ededed;
   }
-  .TQYOZc, .SZ0kZe, .rZXyy {
+  .TQYOZc,
+  .SZ0kZe,
+  .rZXyy {
     /* Classroom boxes */
     if borders {
       background-color: #111;
       border-color: #1e1e1e;
-    } else {
+    }
+    else {
       background-color: #171717;
-      border-color: #171717
+      border-color: #171717;
     }
     color: #eeeeee;
   }
   .rZXyy:hover {
     /* Classroom boxes (hovered) */
-    box-shadow: 0 1px 2px 0 rgb(23 23 23 / 50%), 0 2px 6px 2px rgb(23 23 23 / 25%)
+    box-shadow: 0 1px 2px 0 rgb(23 23 23 / 50%),
+      0 2px 6px 2px rgb(23 23 23 / 25%);
   }
   .vRMGwf {
     /* Classroom dropdown */
-    color: #ededed
+    color: #ededed;
   }
   .OA0qNb {
     /* Classroom dropdown background */
-    background-color: #111111
+    background-color: #111111;
   }
   .XGSlvc {
     /* Submit/Unsubmit Popup Box */
-    color: #eeeeee
+    color: #eeeeee;
   }
   .sdDCme {
     /* Upcoming */
-    color: #eeeeee
+    color: #eeeeee;
   }
   .j70YMc {
     /* Assignment Description */
-    color: #dddddd
+    color: #dddddd;
   }
-  .QRiHXd, .NMm5M, .snByac, .tLDEHd {
+  .QRiHXd,
+  .NMm5M,
+  .snByac,
+  .tLDEHd {
     /* Class Comments */
-    color: #cccccc
+    color: #cccccc;
   }
   .editable {
     /* Textboxes */
-    color: #cccccc
+    color: #cccccc;
   }
   .WOPwXe {
     /* Due Date */
-    color: #cccccc
+    color: #cccccc;
   }
   .VfPpkd-uusGie-fmcmS {
     /* Classes in To-Do */
-    color: #cccccc !important
+    color: #cccccc !important;
   }
   .VfPpkd-StrnGf-rymPhb-b9t22c {
     /* Text in certain popups */
-    color: #cccccc
+    color: #cccccc;
   }
-  .VfPpkd-xl07Ob-XxIAqe-OWXEXe-FNFY6c, .VfPpkd-rymPhb-fpDzbe-fmcmS, .VfPpkd-rymPhb-ibnC6b-OWXEXe-SfQLQb-Woal0c-RWgCYc {
+  .VfPpkd-xl07Ob-XxIAqe-OWXEXe-FNFY6c,
+  .VfPpkd-rymPhb-fpDzbe-fmcmS,
+  .VfPpkd-rymPhb-ibnC6b-OWXEXe-SfQLQb-Woal0c-RWgCYc {
     /* Classes Dropdown Menu */
-    background-color: #262626 !important
+    background-color: #262626 !important;
   }
-  img[alt=Google] {
+  img[alt="Google"] {
     /* Google Image */
     box-sizing: border-box;
     padding-left: 74px;
-    background: url(https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_light_clr_74x24px.svg) left top no-repeat;
+    background: url(https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_light_clr_74x24px.svg)
+      left top no-repeat;
   }
   .IqJTee {
     /* Classroom Text */
-    color: #dddddd
+    color: #dddddd;
   }
   .K6Ovqd {
     /* "Announce something to your class" */
-    color: #dddddd
+    color: #dddddd;
   }
   .jlVFDe span {
     /* "Not answered" or "Your answer" */
-    color: #eeeeee
+    color: #eeeeee;
   }
-  .Yalane, .tL9Q4c {
+  .Yalane,
+  .tL9Q4c {
     /* Open ended answer textbox */
     background-color: #222222 !important;
-    color: #dddddd
+    color: #dddddd;
   }
-  .rUtoef, .UmiGNb, .zQwDwf, .ZcoGnf {
+  .rUtoef,
+  .UmiGNb,
+  .zQwDwf,
+  .ZcoGnf {
     /* Question in Classmate Answers & Classmate names in Classmate Answers & Dates in Classmate Answers */
-    color: #dddddd
+    color: #dddddd;
   }
   .jZrWoe {
     /* Classmate answers */
-    color: #eeeeee
+    color: #eeeeee;
   }
   .TAjiIf {
     /* Classmates in Classmate Answers */
-    background-color: #252525 !important
+    background-color: #252525 !important;
   }
   .qk0lee:focus {
     /* Announce something to your class */
     background-color: #222222;
-    color: #eeeeee
+    color: #eeeeee;
   }
   .e8E4Gb {
     /* Announce Box */
     if borders {
-      background-color: #111      
-    } else {
-      background-color: #171717
+      background-color: #111;
+    }
+    else {
+      background-color: #171717;
     }
   }
-  .vTcY1d, .CIy9F {
+  .vTcY1d,
+  .CIy9F {
     /* Announce Textbox */
     if borders {
-      background-color: #171717 !important
-    } else {
-      background-color: #1e1e1e !important
+      background-color: #171717 !important;
+    }
+    else {
+      background-color: #1e1e1e !important;
     }
   }
-  .vTcY1d:hover, .CIy9F:hover {
+  .vTcY1d:hover,
+  .CIy9F:hover {
     /* Announce Textbox Hovered */
     if borders {
-      background-color: #1e1e1e !important
-    } else {
-      background-color: #252525 !important
+      background-color: #1e1e1e !important;
+    }
+    else {
+      background-color: #252525 !important;
     }
   }
   .Dy8Cxc span {
     /* "Your Work" */
-    color: #dddddd
+    color: #dddddd;
   }
   .Kma9Mb {
     /* Missing Status */
-    color: var(--color-missing) !important
+    color: var(--color-missing) !important;
   }
   .vzcr8 {
     /* Assigned Status */
-    color: var(--color-assigned) !important
+    color: var(--color-assigned) !important;
   }
   .E7ZeX {
     /* Rubric */
     if borders {
       background-color: #111111;
-      border-color: #171717
-    } else {
+      border-color: #171717;
+    }
+    else {
       background-color: #171717;
-      border-color: #171717
+      border-color: #171717;
     }
   }
   .FMzRdf {
     /* Rubric */
-    color: #cccccc
+    color: #cccccc;
   }
   .OK1tJe {
     /* Rubric Grades */
     if borders {
-      background-color: #171717
-    } else {
+      background-color: #171717;
+    }
+    else {
       background-color: #1e1e1e;
-      border-color: #1e1e1e
+      border-color: #1e1e1e;
     }
   }
-  .R5iLrf.u3bW4e, .R5iLrf.yXgmRe:hover {
+  .R5iLrf.u3bW4e,
+  .R5iLrf.yXgmRe:hover {
     /* Rubric Grades */
     if borders {
-      background-color: #1e1e1e
-    } else {
+      background-color: #1e1e1e;
+    }
+    else {
       background-color: #252525;
-      border-color: #252525
+      border-color: #252525;
     }
   }
   .jlfrG {
     /* Rubric Boxes */
     if borders {
       background-color: #111;
-      border-color: #252525
-    } else {
-      background-color: #1e1e1e;
-      border-color: #1e1e1e
+      border-color: #252525;
     }
-    color: #dddddd
+    else {
+      background-color: #1e1e1e;
+      border-color: #1e1e1e;
+    }
+    color: #dddddd;
   }
-  .jlfrG:before, .jlfrG:after {
+  .jlfrG:before,
+  .jlfrG:after {
     /* Remove Rubric Box Gradient */
-    background: none !important
+    background: none !important;
   }
   .jrhqBd {
     /* Assignment with attachments */
     if borders {
       background-color: #111;
-      border-color: #252525
-    } else {
+      border-color: #252525;
+    }
+    else {
       background-color: #171717;
-      border-color: #171717
+      border-color: #171717;
     }
   }
   .xPAMbf {
     /* Assignment with attachments */
     if borders {
-      border-bottom-color: #252525
-    } else {
-      border-bottom-color: #171717
+      border-bottom-color: #252525;
+    }
+    else {
+      border-bottom-color: #171717;
     }
   }
   .xPAMbf:hover {
     /* Assignment in specific topic hover */
     if borders {
       background-color: #171717 !important;
-    } else {
-      background-color: #252525 !important
+    }
+    else {
+      background-color: #252525 !important;
     }
   }
   .QRiHXd.IMvYId.fXuRkd.UISY8d-Ysl7Fe {
     /* Topic Sidebar */
     background-color: #141414;
     border-radius: 5px;
-    margin: 2px
+    margin: 2px;
   }
   .QRiHXd.IMvYId.fXuRkd.UISY8d-Ysl7Fe:hover {
     /* Topic Sidebar Hover */
-    background-color: #222
+    background-color: #222;
   }
   .WagS8 {
     /* Event Banner (Ex: Teacher Appreciation Week) */
     background-color: #333;
-    border-color: #444
+    border-color: #444;
   }
   .WagS8 p {
     /* Event Banner Text */
-    color: #eee
+    color: #eee;
   }
   .joJglb {
     /* Navigation Bar at Top */
-    border-color: #444
+    border-color: #444;
   }
   .asQXV {
     /* "Meet" in Sidebar/Classes in Class notifications setting */
-    color: #ddd
+    color: #ddd;
   }
   .wZTANe a:hover {
     /* Navigation Bar Page Hover */
-    background-color: #252525 !important
+    background-color: #252525 !important;
   }
-  .ar1wE .eqqrO, .ySjuvd .eqqrO {
+  .ar1wE .eqqrO,
+  .ySjuvd .eqqrO {
     /* Border in Assignment */
     border-top: 0.125rem solid #1e1e1e;
   }
   .AeAAkf {
     /* Unsubmit Button */
-    
+    background-color: #111;
+    border-color: #1e1e1e;
+  }
+  .AeAAkf {
+    /* Unsubmit Button */
   }
   .B7SYid {
     /* Setting Title */
-    color: #eee
+    color: #eee;
   }
   .FLgDTb.pEwOBc.Aopndd h3 {
     /* Profile Headings */
-    color: #ddd
+    color: #ddd;
   }
   .ViCi4 {
     /* Notification Specific Settings */
-    color: #ddd
+    color: #ddd;
   }
   .E5f6Vd {
     /* Notification Setting Borders */
     if borders {
-      border-top-color: #1e1e1e
-    } else {
-      border-top-color: #171717
+      border-top-color: #1e1e1e;
+    }
+    else {
+      border-top-color: #171717;
     }
   }
   .cSyPgb {
     /* Classroom Subtitle */
-    color: #bbb
+    color: #bbb;
   }
 }
 
-
-@-moz-document regexp("^(https?)://ogs.google.*") {
+@-moz-document regexp("^(https?)://ogs.google.*")
+{
   /* Account Switcher */
   .p2Ux4d.eejsDc {
     /* Background */
-    background-color: #222
+    background-color: #222;
   }
   .ksO4Qc.ZWVAt.R37Fhd {
     /* "Manage your Google Account" button */
     color: #eee;
     if borders {
       border-color: #333;
-    } else {
+    }
+    else {
       background-color: #272727;
-      border-color: #272727
+      border-color: #272727;
     }
   }
   .ksO4Qc.ZWVAt.R37Fhd:hover {
     /* "Manage your Google Account" button */
     if borders {
-      background-color: #262626
-    } else {
-      background-color: #2f2f2f
+      background-color: #262626;
+    }
+    else {
+      background-color: #2f2f2f;
     }
   }
   .UTWGce {
     /* Account Name */
-    color: #eee
+    color: #eee;
   }
   .DmBVvf.ZWVAt {
     /* Account Email */
-    color: #bbb
+    color: #bbb;
   }
   .piCvSe {
     /* Account Border */
     if borders {
-      border-top-color: #333
-    } else {
-      border-top: none
+      border-top-color: #333;
+    }
+    else {
+      border-top: none;
     }
   }
   .EeWTFe {
     /* Account Border */
     if borders {
       border-top-color: #333;
-      border-bottom-color: #333
-    } else {
+      border-bottom-color: #333;
+    }
+    else {
       border-top: none;
-      border-bottom: none
+      border-bottom: none;
     }
   }
   .jAcX2 {
     /* Sign Out Button */
-    border-color: #333
+    border-color: #333;
   }
   .R37Fhd {
     /* Buttons */
     if borders {
-      background-color: #222 !important
-    } else {
+      background-color: #222 !important;
+    }
+    else {
       background-color: #272727 !important;
-      border-color: #272727
+      border-color: #272727;
     }
   }
   .R37Fhd:hover {
     /* Bottom Buttons (Sign Out, Privacy Policy, ToS) and Hover */
     if borders {
-      background-color: #262626 !important
-    } else {
-      background-color: #2f2f2f !important
+      background-color: #262626 !important;
+    }
+    else {
+      background-color: #2f2f2f !important;
     }
   }
   .ZWVAt {
     /* Other Account Names */
-    color: #ddd
+    color: #ddd;
   }
   .q7hFkc {
     /* Secondary Colors */
-    color: #bbb
+    color: #bbb;
   }
   .o9PFZd.q7hFkc {
     /* Managed Account Message */
     background-color: managedaccountbgcolor;
-    color: managedaccountcolor
+    color: managedaccountcolor;
   }
   .jh4KE:hover {
     /* Account Buttons */
     if borders {
-      background-color: #262626
-    } else {
-      background-color: #2f2f2f
+      background-color: #262626;
+    }
+    else {
+      background-color: #2f2f2f;
     }
   }
   .NMm5M.hhikbc {
     /* "Add Another Account" Icon */
-    color: #ddd
+    color: #ddd;
   }
   .dq3Ajb {
     /* Footer */
     if not borders {
-      background-color: #272727
+      background-color: #272727;
     }
   }
-  
+
   /* Google Apps */
   .EHzcec.eejsDc {
     /* Background */
-    background-color: #222
+    background-color: #222;
   }
   .Rq5Gcb {
     /* Text */
     color: #eee;
-    background-color: #00000000 !important
+    background-color: #00000000 !important;
   }
   .tX9u1b:hover {
     /* App Buttons */
-    background-color: #333
+    background-color: #333;
   }
   .dGrefb {
     /* Borders */
     if borders {
-      border-bottom-color: #333
-    } else {
-      border-bottom: none
+      border-bottom-color: #333;
+    }
+    else {
+      border-bottom: none;
     }
   }
   .NQV3m {
@@ -608,20 +661,22 @@ Colors:
     if borders {
       background-color: #222;
       border-color: #333;
-    } else {
-      background-color: #272727;
-      border-color: #272727
     }
-    color: #eee
+    else {
+      background-color: #272727;
+      border-color: #272727;
+    }
+    color: #eee;
   }
   .NQV3m:hover {
     /* More Apps Button */
     if borders {
       background-color: #262626;
-      border-color: #333
-    } else {
+      border-color: #333;
+    }
+    else {
       background-color: #2f2f2f;
-      border-color: #2f2f2f
+      border-color: #2f2f2f;
     }
   }
 }
