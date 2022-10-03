@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: npm i
     
-      - name: Update Stlyes and Scripts
+      - name: Update Styles and Scripts
         run: node update.js
           
       - name: Commit changes

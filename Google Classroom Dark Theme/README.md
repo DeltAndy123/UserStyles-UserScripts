@@ -1,0 +1,3 @@
+# Google Classroom Dark Theme
+
+This is a dark theme for Google Classroom and Google Popups (Pages with ogs.google.com). All other dark themes for Google Classroom either are either outdated, don't work, or are incomplete, which is the reason why I created this. It adds dark mode for all of Google Classroom, Google apps popup in the top right corner, and other accounts popup in the top right corner.
