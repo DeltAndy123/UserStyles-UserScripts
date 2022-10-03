@@ -1,0 +1,408 @@
+/*
+Colors:
+
+#111
+#171717
+#1e1e1e
+#252525
+#2c2c2c
+
+*/
+/* Google Classroom */
+:root {
+/* Define Variables */
+/* Colored Status */
+  --color-missing: #ea4040;
+  --color-assigned: #ddd;
+}
+body {
+/* Background */
+  background-color: #111;
+}
+.joJglb {
+/* Top Nav Bar */
+  background-color: #222;
+}
+.OX4Vcb {
+/* Left Sidebar */
+  background-color: #222;
+}
+.YVvGBb {
+/* Classroom Name at Corner */
+  color: #eee;
+}
+.J1raN:hover {
+/* Not Selected Button at Top */
+  color: #eee !important;
+}
+.d4Fe0d {
+/* Upcoming Box */
+  background-color: #111;
+  border-color: #222;
+}
+.sxa9Pc {
+/* Upcoming text */
+  color: #eee;
+}
+.oBSRLe,
+.hnID5d {
+/* Due (day of a week) text */
+  color: #ccc;
+}
+.apFsO {
+/* Work in the Upcoming box text */
+  color: #fff !important;
+}
+.TMOcX {
+/* Classroom box in left sidebar */
+  background-color: #323232 !important;
+  border-radius: 0px 50px 50px 0px;
+  margin-bottom: 5px;
+}
+.TMOcX:hover {
+  background-color: #434343 !important;
+}
+.qs41qe {
+/* Current classroom box in left sidebar */
+  background-color: #666 !important;
+}
+.Aopndd {
+/* Post/Setting Boxes */
+  background-color: #111;
+  border-color: #222;
+}
+.s2g3Xd {
+/* Post Boxes Comment Section */
+  background-color: #111;
+  border-top-color: #222;
+}
+.oh9CFb.Gh0umc.kpDQ8.CMmBPd {
+/* Post Boxes Comment Section */
+  background-color: #111;
+  border-top-color: #222;
+}
+.oleV8d {
+/* Class Comment Box */
+  background-color: #111;
+  border-color: #222;
+}
+.DkDwHe:hover {
+/* Assignment Box Hovered */
+  background-color: #171717 !important;
+}
+.n4xnA {
+/* Post Box Data */
+  color: #eee;
+}
+.VBEdtc-Wvd9Cc {
+/* Assignment Comment Text */
+  color: #eee;
+}
+.bswVrf {
+/* "Add Class Comment" text */
+  color: #555;
+}
+.SFCE1b {
+/* Assignment box in Classwork section */
+  background-color: #111;
+}
+.M4LFnf {
+/* Attached files box in stream */
+  background-color: #111;
+  border-color: #1e1e1e;
+}
+.r0VQac {
+/* Attached files box in assignment/material */
+  background-color: #111;
+  border-color: #1e1e1e;
+}
+.bqKF7d {
+/* Assignment Text */
+  color: #eee;
+}
+.I7OXgf {
+/* Class Comments popup box */
+  background-color: #111;
+}
+.Shk6y {
+/* "Class Comments" in popup box */
+  color: #eee;
+}
+.gJItbc {
+/* User names in popup box */
+  color: #eee;
+}
+.NjE5zd {
+/* Comments in popup box */
+  color: #ededed;
+}
+.TQYOZc,
+.SZ0kZe,
+.rZXyy {
+/* Classroom boxes */
+  background-color: #111;
+  border-color: #1e1e1e;
+  color: #eee;
+}
+.rZXyy:hover {
+/* Classroom boxes (hovered) */
+  box-shadow: 0 1px 2px 0 #171701, 0 2px 6px 2px #171702;
+}
+.vRMGwf {
+/* Classroom dropdown */
+  color: #ededed;
+}
+.OA0qNb {
+/* Classroom dropdown background */
+  background-color: #111;
+}
+.XGSlvc {
+/* Submit/Unsubmit Popup Box */
+  color: #eee;
+}
+.sdDCme {
+/* Upcoming */
+  color: #eee;
+}
+.j70YMc {
+/* Assignment Description */
+  color: #ddd;
+}
+.QRiHXd,
+.NMm5M,
+.snByac,
+.tLDEHd {
+/* Class Comments */
+  color: #ccc;
+}
+.editable {
+/* Textboxes */
+  color: #ccc;
+}
+.WOPwXe {
+/* Due Date */
+  color: #ccc;
+}
+.VfPpkd-uusGie-fmcmS {
+/* Classes in To-Do */
+  color: #ccc !important;
+}
+.VfPpkd-StrnGf-rymPhb-b9t22c {
+/* Text in certain popups */
+  color: #ccc;
+}
+.VfPpkd-xl07Ob-XxIAqe-OWXEXe-FNFY6c,
+.VfPpkd-rymPhb-fpDzbe-fmcmS,
+.VfPpkd-rymPhb-ibnC6b-OWXEXe-SfQLQb-Woal0c-RWgCYc {
+/* Classes Dropdown Menu */
+  background-color: #262626 !important;
+}
+img[alt="Google"] {
+/* Google Image */
+  box-sizing: border-box;
+  padding-left: 74px;
+  background: url("https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_light_clr_74x24px.svg");
+  left: top no-repeat;
+}
+.IqJTee {
+/* Classroom Text */
+  color: #ddd;
+}
+.K6Ovqd {
+/* "Announce something to your class" */
+  color: #ddd;
+}
+.jlVFDe span {
+/* "Not answered" or "Your answer" */
+  color: #eee;
+}
+.Yalane,
+.tL9Q4c {
+/* Open ended answer textbox */
+  background-color: #222 !important;
+  color: #ddd;
+}
+.rUtoef,
+.UmiGNb,
+.zQwDwf,
+.ZcoGnf {
+/* Question in Classmate Answers & Classmate names in Classmate Answers & Dates in Classmate Answers */
+  color: #ddd;
+}
+.jZrWoe {
+/* Classmate answers */
+  color: #eee;
+}
+.TAjiIf {
+/* Classmates in Classmate Answers */
+  background-color: #252525 !important;
+}
+.qk0lee:focus {
+/* Announce something to your class */
+  background-color: #222;
+  color: #eee;
+}
+.e8E4Gb {
+/* Announce Box */
+  background-color: #111;
+}
+.vTcY1d,
+.CIy9F {
+/* Announce Textbox */
+  background-color: #171717 !important;
+}
+.vTcY1d:hover,
+.CIy9F:hover {
+/* Announce Textbox Hovered */
+  background-color: #1e1e1e !important;
+}
+.Dy8Cxc span {
+/* "Your Work" */
+  color: #ddd;
+}
+.Kma9Mb {
+/* Missing Status */
+  color: var(--color-missing) !important;
+}
+.vzcr8 {
+/* Assigned Status */
+  color: var(--color-assigned) !important;
+}
+.E7ZeX {
+/* Rubric */
+  background-color: #111;
+  border-color: #171717;
+}
+.FMzRdf {
+/* Rubric */
+  color: #ccc;
+}
+.OK1tJe {
+/* Rubric Grades */
+  background-color: #171717;
+}
+.R5iLrf.u3bW4e,
+.R5iLrf.yXgmRe:hover {
+/* Rubric Grades */
+  background-color: #1e1e1e;
+}
+.jlfrG {
+/* Rubric Boxes */
+  background-color: #111;
+  border-color: #252525;
+  color: #ddd;
+}
+.jlfrG:before,
+.jlfrG:after {
+/* Remove Rubric Box Gradient */
+  background: none !important;
+}
+.jrhqBd {
+/* Assignment with attachments */
+  background-color: #111;
+  border-color: #252525;
+}
+.xPAMbf {
+/* Assignment with attachments */
+  border-bottom-color: #252525;
+}
+.xPAMbf:hover {
+/* Assignment in specific topic hover */
+  background-color: #171717 !important;
+}
+.QRiHXd.IMvYId.fXuRkd.UISY8d-Ysl7Fe {
+/* Topic Sidebar */
+  background-color: #141414;
+  border-radius: 5px;
+  margin: 2px;
+}
+.QRiHXd.IMvYId.fXuRkd.UISY8d-Ysl7Fe:hover {
+/* Topic Sidebar Hover */
+  background-color: #222;
+}
+.WagS8 {
+/* Event Banner (Ex: Teacher Appreciation Week) */
+  background-color: #333;
+  border-color: #444;
+}
+.WagS8 p {
+/* Event Banner Text */
+  color: #eee;
+}
+.joJglb {
+/* Navigation Bar at Top */
+  border-color: #444;
+}
+.asQXV {
+/* "Meet" in Sidebar/Classes in Class notifications setting */
+  color: #ddd;
+}
+.wZTANe a:hover,
+.wZTANe a:focus {
+/* Navigation Bar Page Hover */
+  background-color: #252525 !important;
+}
+.ar1wE .eqqrO,
+.ySjuvd .eqqrO {
+/* Border in Assignment */
+  border-top: 0.125rem solid #1e1e1e;
+}
+.AeAAkf {
+/* Unsubmit Button */
+  background-color: #111;
+  border-color: #1e1e1e;
+}
+.B7SYid {
+/* Setting Title */
+  color: #eee;
+}
+.FLgDTb.pEwOBc.Aopndd h3 {
+/* Profile Headings */
+  color: #ddd;
+}
+.ViCi4 {
+/* Notification Specific Settings */
+  color: #ddd;
+}
+.E5f6Vd {
+/* Notification Setting Borders */
+  border-top-color: #1e1e1e;
+}
+.cSyPgb {
+/* Classroom Subtitle */
+  color: #bbb;
+}
+.D9l13b {
+/* Originality reports info */
+  color: #bbb;
+}
+.LDr2ne {
+/* Originality reports border */
+  border-top-color: #1e1e1e;
+  border-bottom-color: #1e1e1e;
+}
+.BEAGS {
+/* "Add or create" button */
+  border-color: #1e1e1e;
+}
+.UvHKof.VnOHwf-Tvm9db,
+.UvHKof .VnOHwf-Tvm9db,
+.UvHKof.CNpREd.VnOHwf-Tvm9db,
+.UvHKof.CNpREd .VnOHwf-Tvm9db {
+  color: #dfdedb;
+  fill: #dfdedb;
+}
+.UvHKof .eumXzf:after {
+  border-color: #dfdedb;
+}
+.UvHKof .OGhwGf:hover,
+.UvHKof .OGhwGf:focus {
+  color: #dfdedb;
+}
+.UvHKof .n42Gr:not(:disabled) {
+  color: #dfdedb !important;
+}
+.UvHKof .n42Gr:not(:disabled):hover,
+.UvHKof .n42Gr:not(:disabled):focus {
+  background-color: rgba(223,222,219,0.03);
+}
