@@ -279,11 +279,25 @@ Colors:
     /* Text in certain popups */
     color: #cccccc;
   }
-  .VfPpkd-xl07Ob-XxIAqe-OWXEXe-FNFY6c,
-  .VfPpkd-rymPhb-fpDzbe-fmcmS,
-  .VfPpkd-rymPhb-ibnC6b-OWXEXe-SfQLQb-Woal0c-RWgCYc {
-    /* Classes Dropdown Menu */
-    background-color: #262626 !important;
+  .VfPpkd-xl07Ob-XxIAqe {
+    /* Class Dropdown Menu */
+    background-color: #262626;
+  }
+  .VfPpkd-StrnGf-rymPhb-ibnC6b:hover {
+    /* Class Dropdown Menu Item Hover */
+    background-color: #363636
+  }
+  .JPdR6b {
+    /* Post Dropdown Menu */
+    background: #262626
+  }
+  .z80M1.FwR7Pc {
+    /* Post Dropdown Menu Item Hover */
+    background: #363636
+  }
+  .z80M1 {
+    /* Post Dropdown Menu Text */
+    color: #ccc
   }
   img[alt="Google"] {
     /* Google Image */
