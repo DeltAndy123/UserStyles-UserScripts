@@ -40,6 +40,10 @@ body {
   background-color: #111;
   border-color: #222;
 }
+.WMQb5e .oBSRLe {
+/* Upcoming border */
+  border-top-color: #222;
+}
 .sxa9Pc {
 /* Upcoming text */
   color: #eee;
@@ -55,33 +59,26 @@ body {
 }
 .TMOcX {
 /* Classroom box in left sidebar */
-  background-color: #323232 !important;
   border-radius: 0px 50px 50px 0px;
   margin-bottom: 5px;
 }
-.TMOcX:hover {
-  background-color: #434343 !important;
-}
 .qs41qe {
 /* Current classroom box in left sidebar */
-  background-color: #666 !important;
+  background-color: #222 !important;
 }
 .Aopndd {
 /* Post/Setting Boxes */
   background-color: #111;
   border-color: #222;
 }
-.s2g3Xd {
-/* Post Boxes Comment Section */
+.s2g3Xd,
+.PeGHgb.Q8U8uc .Ono85c+.QGMq0d,
+.PeGHgb.Q8U8uc .ruTJle+.XNP4U {
+/* Post Boxes */
   background-color: #111;
   border-top-color: #222;
 }
-.oh9CFb.Gh0umc.kpDQ8.CMmBPd {
-/* Post Boxes Comment Section */
-  background-color: #111;
-  border-top-color: #222;
-}
-.oleV8d {
+.a5kY4d {
 /* Class Comment Box */
   background-color: #111;
   border-color: #222;
@@ -395,9 +392,15 @@ img[alt="Google"] {
   border-top-color: #1e1e1e;
   border-bottom-color: #1e1e1e;
 }
-.BEAGS {
+.Rj2Mlf:not(:disabled) {
 /* "Add or create" button */
-  border-color: #1e1e1e;
+  border-color: #1e1e1e !important;
+}
+.LlcfK {
+  filter: brightness(16%);
+}
+.Xi8cpb:hover .LlcfK {
+  background-color: #bebebe;
 }
 .UvHKof.VnOHwf-Tvm9db,
 .UvHKof .VnOHwf-Tvm9db,
@@ -419,4 +422,8 @@ img[alt="Google"] {
 .UvHKof .n42Gr:not(:disabled):hover,
 .UvHKof .n42Gr:not(:disabled):focus {
   background-color: rgba(223,222,219,0.03);
+}
+.UvHKof .FL3Khc:not(:disabled) {
+/* "Add or create" button */
+  color: #dfdedb !important;
 }
