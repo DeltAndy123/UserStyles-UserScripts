@@ -1,24 +1,14 @@
-/* ==UserStyle==
-@name         Google Classroom Dark Theme
-@version      20211118.21.09
-@namespace    userstyles.world/user/deltandy
-@description  A dark theme for Google Classroom
-@author       deltandy
-@license      No License
-@preprocessor stylus
+coloredmissing = 1;
+coloredassigned = 0;
+
+borders = 1;
+
+managedaccountbgcolor = #292c32;
+managedaccountcolor = #bbbbbb;
+
+colorfix = 1;
 
 
-@var checkbox coloredmissing        "Colored Missing Status"                                                1
-@var checkbox coloredassigned       "Colored Assigned Status"                                               0
-
-@var checkbox borders               "Borders on elements (Changes element background color when disabled)"  1
-
-@var color    managedaccountbgcolor "Managed Account BG Color"                                              #292c32
-@var color    managedaccountcolor   "Managed Account Text Color"                                            #bbbbbb
-
-@var checkbox colorfix              "Fix invisible text with classrooms with black accent color"            1
-
-==/UserStyle== */
 
 /*
 Colors:
@@ -30,7 +20,7 @@ Colors:
 #2c2c2c
 
 */
-@-moz-document domain("classroom.google.com") {
+
   /* Google Classroom */
   :root {
     /* Define Variables */
@@ -587,101 +577,5 @@ Colors:
     }
   }
   
-}
 
-@-moz-document regexp("^(https?)://ogs.google.*")
-{
-  /* Account Switcher */
-  .N2ncR, .Lvwayc {
-    /* Background */
-    background-color: #222
-  }
-  .pQpjR {
-    /* Managed account text */
-    background-color: managedaccountbgcolor !important;
-    color: managedaccountcolor
-  }
-  .DgDbFe .zpoCob {
-    /* Privacy Policy & ToS */
-    color: #eee
-  }
-  .qLP7kc .jFfZdd:hover, .qLP7kc .jFfZdd:focus, .jFfZdd:hover, .jFfZdd:focus, .Z6NXed:hover, .Z6NXed:focus {
-    /* Buttons */
-    background-color: #333 !important
-  }
-  .slowYd, .Z6NXed {
-    /* Text */
-    color: #eee
-  }
-  .d2yxTb, .y5Iqsb {
-    /* Account area */
-    background-color: #272727
-  }
-  .znj3je {
-    // Name
-    color: #eee
-  }
-  .Wdz6e.ZnExKf, .Wdz6e {
-    // Email
-    color: #ccc
-  }
-  .RroO5d {
-    // "Manage your Google Account"
-    color: #ddd
-  }
-  .T6SHIc {
-    // Border
-    if borders {
-      border-bottom-color: #333
-    } else {
-      border-bottom: none
-    }
-  }
 
-  /* Google Apps */
-  .EHzcec.eejsDc {
-    /* Background */
-    background-color: #222;
-  }
-  .Rq5Gcb {
-    /* Text */
-    color: #eee;
-    background-color: #00000000 !important;
-  }
-  .tX9u1b:hover {
-    /* App Buttons */
-    background-color: #333;
-  }
-  .dGrefb {
-    /* Borders */
-    if borders {
-      border-bottom-color: #333;
-    }
-    else {
-      border-bottom: none;
-    }
-  }
-  .NQV3m {
-    /* More Apps Button */
-    if borders {
-      background-color: #222;
-      border-color: #333;
-    }
-    else {
-      background-color: #272727;
-      border-color: #272727;
-    }
-    color: #eee;
-  }
-  .NQV3m:hover {
-    /* More Apps Button */
-    if borders {
-      background-color: #262626;
-      border-color: #333;
-    }
-    else {
-      background-color: #2f2f2f;
-      border-color: #2f2f2f;
-    }
-  }
-}
