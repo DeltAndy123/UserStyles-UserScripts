@@ -30,4 +30,4 @@ jobs:
           commit_message: Update Styles and Scripts
           commit_options: '--no-verify --signoff'
           repository: .
-          commit_user_name: AltStore Sources
+          commit_user_name: Userstyles & Userscripts
