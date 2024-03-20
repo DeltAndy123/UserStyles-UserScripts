@@ -21,7 +21,8 @@ body {
 .mwJvDe .KEDCCd,
 .Tabkde,
 .Tabkde .OX4Vcb,
-.ETRkCe {
+.ETRkCe,
+.lXuxY .u73Apc {
   background-color: #111;
   border-color: #1f1f1f;
 }
@@ -45,7 +46,9 @@ body {
 .tUJKGd:not(:first-child),
 .d6CWTd,
 .ycbm1d,
-.LDr2ne {
+.LDr2ne,
+.O9YpHb,
+.Iwp0Ue:not(:first-child) {
   border-color: #1f1f1f;
 }
 .xVPuB .mIZh1c,
@@ -162,13 +165,6 @@ body {
 .TJtJXb:hover td,
 .tYQn5c:hover td,
 .DC55n:hover td,
-.tUJKGd:not(.xp2dJ):not(.rZXyy):hover.j6KDAd,
-.tUJKGd:not(.xp2dJ):not(.rZXyy):hover.idtp4e,
-.tUJKGd:not(.xp2dJ):not(.rZXyy):hover .j6KDAd,
-.tUJKGd:not(.xp2dJ):not(.rZXyy):hover .idtp4e,
-.ZoT1D:hover.j6KDAd,
-.ZoT1D:hover .j6KDAd,
-.ZoT1D:hover .idtp4e,
 .Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover.rXdid,
 .Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover.h7Ww0,
 .Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover .rXdid,
@@ -179,8 +175,14 @@ body {
 .xWw7yd:hover .h7Ww0 {
   background-color: #1a1a1a !important;
 }
+.Iwp0Ue:not(.xp2dJ):not(.rZXyy) .h7Ww0 {
+  background-color: #111 !important;
+}
 .z80M1.qs41qe>.aBBjbd {
   background-image: radial-gradient(circle farthest-side, #424242, #424242 80%, rgba(189,189,189,0) 100%);
+}
+.u73Apc:not(.lXuxY .u73Apc) {
+  border-bottom: none;
 }
 .UvHKof .OGhwGf:hover,
 .UvHKof .OGhwGf:focus,
