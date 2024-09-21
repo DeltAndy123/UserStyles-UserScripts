@@ -5,6 +5,15 @@ so I rewrote the entire theme from scratch. This version has more customizations
 
 Since there was no good dark theme for Google Classroom and the Dark Reader extension
 didn't work perfectly, I decided to create my own dark theme for Google Classroom.
+
+2.1.0.0 (2024-9-20):
+- Fix some educator-specific elements
+- Fix comment separator in new assignment box in stream
+- Fix unstyled borders
+- Start commenting code to be easier to modify
+- Remove invisible accent color fix as it is no longer needed
+- Added fix to prevent white background when hovering over 10th anniversary Classroom
+  logo (Experimental, has visual glitches)
 */
 body {
   background-color: #111;
@@ -58,41 +67,10 @@ body {
 }
 .MHxtic:not(:last-child),
 .LKqFXc,
-.Rj2Mlf:not(:disabled):hover {
+.Rj2Mlf:not(:disabled):hover,
+.uO32ac,
+.ypv4re {
   border-color: #3b3b3b;
-}
-.EZrbnd,
-.asQXV,
-.rpo4wf-J3yWx,
-.wZTANe .J1raN,
-.A6dC2c-J3yWx,
-.z3vRcc-J3yWx,
-.z3vRcc,
-.tDxNLe,
-.apFsO.onkcGd,
-.apFsO.onkcGd:visited,
-.WOPwXe,
-.A6dC2c,
-.saYe1e,
-.cfWmIb:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-wGMbrd,
-.Evt7cb,
-.Evt7cb:visited,
-.nk37z,
-.geqPvd .VfPpkd-Rj7Y9b,
-.q6oraf .VfPpkd-StrnGf-rymPhb,
-.z80M1,
-.s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-gk6SMd .VfPpkd-rymPhb-fpDzbe-fmcmS,
-.s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-pXU01b .VfPpkd-rymPhb-fpDzbe-fmcmS,
-.s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-gk6SMd.VfPpkd-rymPhb-ibnC6b-OWXEXe-SfQLQb-M1Soyc-Bz112c .VfPpkd-rymPhb-KkROqb,
-.s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-pXU01b.VfPpkd-rymPhb-ibnC6b-OWXEXe-SfQLQb-M1Soyc-Bz112c .VfPpkd-rymPhb-KkROqb {
-  color: #e8e5e3;
-}
-.wZTANe .J1raN:hover,
-.LjDxcd:hover:not(:disabled),
-.LjDxcd.VfPpkd-ksKsZd-mWPk3d-OWXEXe-AHe6Kc-XpnDCe:not(:disabled),
-.LjDxcd:not(.VfPpkd-ksKsZd-mWPk3d):focus:not(:disabled),
-.LjDxcd:active:not(:disabled) {
-  color: #999897;
 }
 .dDKhVc,
 .WdYux,
@@ -106,8 +84,53 @@ body {
 .lziZub,
 .lziZub:visited,
 .s8kOBc .VfPpkd-rymPhb-fpDzbe-fmcmS,
-.WmnPA:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-wGMbrd {
+.WmnPA:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-wGMbrd,
+.onkcGd,
+.onkcGd:visited,
+.WPhuJf,
+.WPhuJf:visited,
+.OGhwGf,
+.OGhwGf:visited {
   color: #b8b3ad;
+}
+.EZrbnd,
+.asQXV,
+.rpo4wf-J3yWx,
+.wZTANe .J1raN,
+.A6dC2c-J3yWx,
+.z3vRcc-J3yWx,
+.z3vRcc,
+.tDxNLe,
+.WOPwXe,
+.A6dC2c,
+.saYe1e,
+.cfWmIb:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-wGMbrd,
+.Evt7cb,
+.Evt7cb:visited,
+.nk37z,
+.geqPvd .VfPpkd-Rj7Y9b,
+.q6oraf .VfPpkd-StrnGf-rymPhb,
+.z80M1,
+.s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-gk6SMd .VfPpkd-rymPhb-fpDzbe-fmcmS,
+.s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-pXU01b .VfPpkd-rymPhb-fpDzbe-fmcmS,
+.s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-gk6SMd.VfPpkd-rymPhb-ibnC6b-OWXEXe-SfQLQb-M1Soyc-Bz112c .VfPpkd-rymPhb-KkROqb,
+.s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-pXU01b.VfPpkd-rymPhb-ibnC6b-OWXEXe-SfQLQb-M1Soyc-Bz112c .VfPpkd-rymPhb-KkROqb,
+.Vx8Sxd,
+.Vx8Sxd:visited,
+.Vx8Sxd:hover,
+.Vx8Sxd:focus,
+.apFsO.onkcGd,
+.apFsO.onkcGd:visited {
+  color: #e8e5e3;
+}
+.wZTANe .J1raN:hover,
+.LjDxcd:hover:not(:disabled),
+.LjDxcd.VfPpkd-ksKsZd-mWPk3d-OWXEXe-AHe6Kc-XpnDCe:not(:disabled),
+.LjDxcd:not(.VfPpkd-ksKsZd-mWPk3d):focus:not(:disabled),
+.LjDxcd:active:not(:disabled),
+.WmnPA:hover:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc,
+.xlHPle .VfPpkd-fmcmS-yrriRe:hover:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc {
+  color: #999897;
 }
 .K6Ovqd,
 .sdDCme,
@@ -118,11 +141,13 @@ body {
   color: rgba(255,255,255,0.549);
 }
 .hgjBDc,
-.DC55n td {
+.DC55n td,
+.IzVHde {
   background-color: #111;
 }
 .d4Fe0d,
-.Aopndd {
+.Aopndd,
+.ZNE4y {
   background-color: #111;
   border-color: #1f1f1f;
 }
@@ -130,13 +155,15 @@ body {
 .vnnr5e .CIy9F,
 .fWf7qe .Yalane,
 .aSjeL.aSjeL td,
+.xlHPle .VfPpkd-fmcmS-yrriRe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me),
 .V8apv,
 .WufxEd .ynt9Dc .VfPpkd-WLXbod,
 .WufxEd .ynt9Dc,
 .VfPpkd-xl07Ob-XxIAqe,
 .hVNH5c .K0NPx,
 .s8kOBc .VfPpkd-rymPhb-ibnC6b.VfPpkd-rymPhb-ibnC6b-OWXEXe-gk6SMd,
-.WmnPA:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) {
+.WmnPA:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me),
+.lbWVCe {
   background-color: #141414;
 }
 .vnnr5e:not(.RDPZE):hover .I9OJHe,
@@ -153,6 +180,9 @@ body {
 .Mupove .ZoT1D :focus-within.boxOzd,
 .Mupove .ZoT1D :focus-within.idtp4e {
   background-color: #1a1a1a;
+}
+.WmnPA.VfPpkd-fmcmS-yrriRe-OWXEXe-XpnDCe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc {
+  color: #1967d2;
 }
 .ZoT1D:hover.idtp4e,
 .UISY8d-Ysl7Fe:hover,
@@ -181,18 +211,19 @@ body {
 .z80M1.qs41qe>.aBBjbd {
   background-image: radial-gradient(circle farthest-side, #424242, #424242 80%, rgba(189,189,189,0) 100%);
 }
+.GQLaCd:not(:empty),
+.fyExH {
+  background-color: #141414;
+}
 .u73Apc:not(.lXuxY .u73Apc) {
   border-bottom: none;
 }
-.UvHKof .OGhwGf:hover,
-.UvHKof .OGhwGf:focus,
-.UvHKof .VnOHwf-Tvm9db,
-.UvHKof .CNpREd.VnOHwf-Tvm9db,
-.UvHKof .CNpREd .VnOHwf-Tvm9db,
-.UvHKof .n42Gr:not(:disabled),
-.UvHKof .n42Gr:not(:disabled):hover,
-.UvHKof .n42Gr:not(:disabled).VfPpkd-ksKsZd-mWPk3d-OWXEXe-AHe6Kc-XpnDCe,
-.UvHKof .n42Gr:not(:disabled):not(.VfPpkd-ksKsZd-mWPk3d):focus {
-  color: #dfdedb;
-  fill: #dfdedb;
+.VfoFfe {
+  border-top: none;
+}
+.qj5L0 {
+  border-color: #3b3b3b;
+}
+.lbWVCe .h0pqq {
+  background-color: #222;
 }

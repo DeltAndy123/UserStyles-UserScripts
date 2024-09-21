@@ -1,24 +1,23 @@
 /* ==UserStyle==
 @name           Google Classroom Dark Theme
 @namespace      github.com/openstyles/stylus
-@version        2.0.1.0
+@version        2.1.0.0
 @description    Dark theme for Google Classroom
 @author         DeltAndy
 @preprocessor   stylus
 
-@var checkbox   fix-accent     "Fix invisible accent colors in some classrooms" 1
-
-@var color      bg-primary     "Background Primary"   #111111
-@var color      bg-secondary   "Background Secondary" #111111
-@var color      bg-tertiary    "Background Tertiary"  #141414
-@var color      bg-hover       "Background Hover"     #1a1a1a
-@var color      border-primary "Border Primary"       #1f1f1f
-@var color      border-2nd     "Border Secondary"     #3b3b3b
-@var color      navbar         "Navigation Bar"       #111111
-@var color      text-primary   "Text Primary"         #e8e5e3
-@var color      text-hover     "Text Primary Hover"   #999897
-@var color      text-secondary "Text Secondary"       #b8b3ad
-@var color      text-tertiary  "Text Tertiary"        rgba(255,255,255,.549)
+@var color      bg-primary     "Background Primary"      #111111
+@var color      bg-secondary   "Background Secondary"    #111111
+@var color      bg-tertiary    "Background Tertiary"     #141414
+@var color      bg-hover       "Background Hover"        #1a1a1a
+@var color      border-primary "Border Primary"          #1f1f1f
+@var color      border-2nd     "Border Secondary"        #3b3b3b
+@var color      navbar         "Navigation Bar"          #111111
+@var color      text-primary   "Text Primary"            #e8e5e3
+@var color      text-hover     "Text Primary Hover"      #999897
+@var color      text-secondary "Text Secondary"          #b8b3ad
+@var color      text-tertiary  "Text Tertiary"           rgba(255,255,255,.549)
+@var checkbox   tenth-ann-bg   "10th Year BG Fix (BETA)" 0
 
 ==/UserStyle== */
 
@@ -29,6 +28,15 @@ so I rewrote the entire theme from scratch. This version has more customizations
 
 Since there was no good dark theme for Google Classroom and the Dark Reader extension
 didn't work perfectly, I decided to create my own dark theme for Google Classroom.
+
+2.1.0.0 (2024-9-20):
+- Fix some educator-specific elements
+- Fix comment separator in new assignment box in stream
+- Fix unstyled borders
+- Start commenting code to be easier to modify
+- Remove invisible accent color fix as it is no longer needed
+- Added fix to prevent white background when hovering over 10th anniversary Classroom
+  logo (Experimental, has visual glitches)
 */
 
 @-moz-document domain("classroom.google.com") {
@@ -72,7 +80,7 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   .tUJKGd:not(:first-child),
   .d6CWTd, .ycbm1d,
   .LDr2ne,
-  .O9YpHb, .Iwp0Ue:not(:first-child)
+  .O9YpHb, .Iwp0Ue:not(:first-child), // Assignments in Classwork 
   {
     border-color: border-primary;
   }
@@ -82,35 +90,10 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   }
   
   .MHxtic:not(:last-child), .LKqFXc,
-  .Rj2Mlf:not(:disabled):hover
+  .Rj2Mlf:not(:disabled):hover,
+  .uO32ac, .ypv4re // Topic name bottom border
   {
     border-color: border-2nd;
-  }
-  
-  .EZrbnd,
-  .asQXV,
-  .rpo4wf-J3yWx,
-  .wZTANe .J1raN,
-  .A6dC2c-J3yWx, .z3vRcc-J3yWx,
-  .z3vRcc, .tDxNLe
-  .apFsO.onkcGd, .apFsO.onkcGd:visited,
-  .WOPwXe,
-  .A6dC2c, .saYe1e,
-  .cfWmIb:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-wGMbrd,
-  .Evt7cb, .Evt7cb:visited,
-  .nk37z,
-  .geqPvd .VfPpkd-Rj7Y9b,
-  .q6oraf .VfPpkd-StrnGf-rymPhb,
-  .z80M1,
-  .s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-gk6SMd .VfPpkd-rymPhb-fpDzbe-fmcmS, .s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-pXU01b .VfPpkd-rymPhb-fpDzbe-fmcmS, .s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-gk6SMd.VfPpkd-rymPhb-ibnC6b-OWXEXe-SfQLQb-M1Soyc-Bz112c .VfPpkd-rymPhb-KkROqb, .s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-pXU01b.VfPpkd-rymPhb-ibnC6b-OWXEXe-SfQLQb-M1Soyc-Bz112c .VfPpkd-rymPhb-KkROqb
-  {
-    color: text-primary;
-  }
-  
-  .wZTANe .J1raN:hover,
-  .LjDxcd:hover:not(:disabled), .LjDxcd.VfPpkd-ksKsZd-mWPk3d-OWXEXe-AHe6Kc-XpnDCe:not(:disabled), .LjDxcd:not(.VfPpkd-ksKsZd-mWPk3d):focus:not(:disabled), .LjDxcd:active:not(:disabled)
-  {
-    color: text-hover;
   }
   
   .dDKhVc, .WdYux, .tLDEHd, .ViCi4,
@@ -120,31 +103,68 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   .cSyPgb,
   .lziZub, .lziZub:visited,
   .s8kOBc .VfPpkd-rymPhb-fpDzbe-fmcmS,
-  .WmnPA:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-wGMbrd
+  .WmnPA:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-wGMbrd, // Textbox Label
+  .onkcGd, .onkcGd:visited, .WPhuJf, .WPhuJf:visited, .OGhwGf, .OGhwGf:visited, // "# class comments" under assignment in Stream
   {
     color: text-secondary;
+  }
+  
+  .EZrbnd,
+  .asQXV,
+  .rpo4wf-J3yWx,
+  .wZTANe .J1raN,
+  .A6dC2c-J3yWx, .z3vRcc-J3yWx,
+  .z3vRcc, .tDxNLe
+  .WOPwXe,
+  .A6dC2c, .saYe1e,
+  .cfWmIb:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-wGMbrd,
+  .Evt7cb, .Evt7cb:visited,
+  .nk37z,
+  .geqPvd .VfPpkd-Rj7Y9b,
+  .q6oraf .VfPpkd-StrnGf-rymPhb,
+  .z80M1,
+  .s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-gk6SMd .VfPpkd-rymPhb-fpDzbe-fmcmS, .s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-pXU01b .VfPpkd-rymPhb-fpDzbe-fmcmS, .s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-gk6SMd.VfPpkd-rymPhb-ibnC6b-OWXEXe-SfQLQb-M1Soyc-Bz112c .VfPpkd-rymPhb-KkROqb, .s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-pXU01b.VfPpkd-rymPhb-ibnC6b-OWXEXe-SfQLQb-M1Soyc-Bz112c .VfPpkd-rymPhb-KkROqb,
+  .Vx8Sxd, .Vx8Sxd:visited, .Vx8Sxd:hover, .Vx8Sxd:focus,
+  .apFsO.onkcGd, .apFsO.onkcGd:visited, // Assignments under classes in Home
+  {
+    color: text-primary;
+  }
+  
+  .wZTANe .J1raN:hover,
+  .LjDxcd:hover:not(:disabled), .LjDxcd.VfPpkd-ksKsZd-mWPk3d-OWXEXe-AHe6Kc-XpnDCe:not(:disabled), .LjDxcd:not(.VfPpkd-ksKsZd-mWPk3d):focus:not(:disabled), .LjDxcd:active:not(:disabled),
+  .WmnPA:hover:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc, // Textbox Label
+  .xlHPle .VfPpkd-fmcmS-yrriRe:hover:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc, // Textbox Label (Alt)
+  {
+    color: text-hover;
   }
   
   .K6Ovqd, .sdDCme, .oBSRLe, .IMvYId, .IMvYId:visited, .LjDxcd:not(:disabled) {
     color: text-tertiary;
   }
   
-  .hgjBDc, .DC55n td {
+  .hgjBDc, .DC55n td,
+  .IzVHde // Class code under banner
+  {
     background-color: bg-secondary;
   }
   
-  .d4Fe0d, .Aopndd {
+  .d4Fe0d,
+  .Aopndd, // Stream box border
+  .ZNE4y // Stream assignment box separator
+  {
     background-color: bg-secondary;
     border-color: border-primary;
   }
   
   .vnnr5e .I9OJHe, .vnnr5e .CIy9F, .fWf7qe .Yalane, .aSjeL.aSjeL td,
+  .xlHPle .VfPpkd-fmcmS-yrriRe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me), // Textboxes
   .V8apv,
   .WufxEd .ynt9Dc .VfPpkd-WLXbod, .WufxEd .ynt9Dc,
   .VfPpkd-xl07Ob-XxIAqe,
   .hVNH5c .K0NPx,
   .s8kOBc .VfPpkd-rymPhb-ibnC6b.VfPpkd-rymPhb-ibnC6b-OWXEXe-gk6SMd,
-  .WmnPA:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me)
+  .WmnPA:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me),
+  .lbWVCe
   {
     background-color: bg-tertiary;
   }
@@ -156,6 +176,10 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   .Mupove .tUJKGd:not(.xp2dJ):focus-within.boxOzd, .Mupove .tUJKGd:not(.xp2dJ):focus-within.idtp4e, .Mupove .tUJKGd:not(.xp2dJ) :focus-within.boxOzd, .Mupove .tUJKGd:not(.xp2dJ) :focus-within.idtp4e, .Mupove .ZoT1D:focus-within.boxOzd, .Mupove .ZoT1D:focus-within.idtp4e, .Mupove .ZoT1D :focus-within.boxOzd, .Mupove .ZoT1D :focus-within.idtp4e
   {
     background-color: bg-hover;
+  }
+  
+  .WmnPA.VfPpkd-fmcmS-yrriRe-OWXEXe-XpnDCe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc {
+    color: #1967d2;
   }
   
   
@@ -179,23 +203,35 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   }
   
   
+  // Educator-Specific Elements
+  .GQLaCd:not(:empty), // Introducing Generative AI box
+  .fyExH // Not using Classroom at a school with students checkbox
+  {
+    background-color: bg-tertiary;
+  }
+  
   
   // Hardcoded fixes
+  if tenth-ann-bg {
+    .UDKLAf:hover .lQKcaf, .CbuVcc:focus .lQKcaf { // 10th Anniversary Logo Background Fix
+	    background: url("https://deltandy.me/UserStyles-UserScripts/classroom_dark_v2/10th_anniversary_transparent.gif") left top no-repeat;
+	    padding-left: 200px;
+	    background-size: contain;
+    }
+  }
   .u73Apc:not(.lXuxY .u73Apc) {
     border-bottom: none;
   }
-  
-  if fix-accent {
-    .UvHKof {
-      .OGhwGf:hover, .OGhwGf:focus,
-      .VnOHwf-Tvm9db, .VnOHwf-Tvm9db, .CNpREd.VnOHwf-Tvm9db, .CNpREd .VnOHwf-Tvm9db,
-      .n42Gr:not(:disabled),
-      .n42Gr:not(:disabled):hover,
-      .n42Gr:not(:disabled).VfPpkd-ksKsZd-mWPk3d-OWXEXe-AHe6Kc-XpnDCe, .n42Gr:not(:disabled):not(.VfPpkd-ksKsZd-mWPk3d):focus
-      {
-        color: #dfdedb;
-        fill: #dfdedb;
-      }
-    }
+  .VfoFfe // Class code popout box
+  {
+    border-top: none;
+  }
+  .qj5L0 {
+    // Turn in work popup line
+    border-color: border-2nd;
+  }
+  .lbWVCe .h0pqq {
+    // Fix poll colors
+    background-color: #222
   }
 }
