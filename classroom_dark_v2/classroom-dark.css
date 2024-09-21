@@ -6,14 +6,8 @@ so I rewrote the entire theme from scratch. This version has more customizations
 Since there was no good dark theme for Google Classroom and the Dark Reader extension
 didn't work perfectly, I decided to create my own dark theme for Google Classroom.
 
-2.1.0.0 (2024-9-20):
-- Fix some educator-specific elements
-- Fix comment separator in new assignment box in stream
-- Fix unstyled borders
-- Start commenting code to be easier to modify
-- Remove invisible accent color fix as it is no longer needed
-- Added fix to prevent white background when hovering over 10th anniversary Classroom
-  logo (Experimental, has visual glitches)
+2.1.0.1 (2024-9-20):
+- Fix unstyled border in Calendar
 */
 body {
   background-color: #111;
@@ -147,7 +141,8 @@ body {
 }
 .d4Fe0d,
 .Aopndd,
-.ZNE4y {
+.ZNE4y,
+.RIDjNe {
   background-color: #111;
   border-color: #1f1f1f;
 }

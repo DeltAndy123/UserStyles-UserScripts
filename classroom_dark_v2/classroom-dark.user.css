@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Google Classroom Dark Theme
-@namespace      github.com/openstyles/stylus
-@version        2.1.0.0
+@namespace      github.com/DeltAndy123
+@version        2.1.0.1
 @description    Dark theme for Google Classroom
 @author         DeltAndy
 @preprocessor   stylus
@@ -29,14 +29,8 @@ so I rewrote the entire theme from scratch. This version has more customizations
 Since there was no good dark theme for Google Classroom and the Dark Reader extension
 didn't work perfectly, I decided to create my own dark theme for Google Classroom.
 
-2.1.0.0 (2024-9-20):
-- Fix some educator-specific elements
-- Fix comment separator in new assignment box in stream
-- Fix unstyled borders
-- Start commenting code to be easier to modify
-- Remove invisible accent color fix as it is no longer needed
-- Added fix to prevent white background when hovering over 10th anniversary Classroom
-  logo (Experimental, has visual glitches)
+2.1.0.1 (2024-9-20):
+- Fix unstyled border in Calendar
 */
 
 @-moz-document domain("classroom.google.com") {
@@ -148,9 +142,10 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
     background-color: bg-secondary;
   }
   
-  .d4Fe0d,
-  .Aopndd, // Stream box border
-  .ZNE4y // Stream assignment box separator
+  .d4Fe0d, 
+  .Aopndd, // Box border
+  .ZNE4y, // Stream assignment box separator
+  .RIDjNe // Calendar box separator
   {
     background-color: bg-secondary;
     border-color: border-primary;
