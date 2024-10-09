@@ -6,8 +6,11 @@ so I rewrote the entire theme from scratch. This version has more customizations
 Since there was no good dark theme for Google Classroom and the Dark Reader extension
 didn't work perfectly, I decided to create my own dark theme for Google Classroom.
 
-2.1.0.1 (2024-9-20):
-- Fix unstyled border in Calendar
+2.1.1.0 (2024-10-8):
+- Fix unstyled border in sidebar
+- Fix help button in bottom right corner
+- Remove 10th anniversary logo fix (logo no longer exists)
+- Fix contrast for future dates in Calendar
 */
 body {
   background-color: #111;
@@ -56,7 +59,8 @@ body {
 }
 .xVPuB .mIZh1c,
 .vnnr5e .mIZh1c,
-.oQ5Hqe {
+.oQ5Hqe,
+.VfPpkd-rymPhb-clz4Ic {
   background-color: #3b3b3b;
 }
 .MHxtic:not(:last-child),
@@ -114,7 +118,8 @@ body {
 .Vx8Sxd:hover,
 .Vx8Sxd:focus,
 .apFsO.onkcGd,
-.apFsO.onkcGd:visited {
+.apFsO.onkcGd:visited,
+.Eajscb .vT1Gyc.N4XV7d {
   color: #e8e5e3;
 }
 .wZTANe .J1raN:hover,
@@ -221,4 +226,10 @@ body {
 }
 .lbWVCe .h0pqq {
   background-color: #222;
+}
+.N6nSod {
+  background: none;
+}
+.N6nSod:hover {
+  background-color: rgba(255,255,255,0.075);
 }

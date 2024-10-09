@@ -9,7 +9,6 @@ text-primary = #e8e5e3;
 text-hover = #999897;
 text-secondary = #b8b3ad;
 text-tertiary = rgba(255,255,255,.549);
-tenth-ann-bg = 0;
 
 
 
@@ -21,8 +20,11 @@ so I rewrote the entire theme from scratch. This version has more customizations
 Since there was no good dark theme for Google Classroom and the Dark Reader extension
 didn't work perfectly, I decided to create my own dark theme for Google Classroom.
 
-2.1.0.1 (2024-9-20):
-- Fix unstyled border in Calendar
+2.1.1.0 (2024-10-8):
+- Fix unstyled border in sidebar
+- Fix help button in bottom right corner
+- Remove 10th anniversary logo fix (logo no longer exists)
+- Fix contrast for future dates in Calendar
 */
 
 
@@ -71,7 +73,9 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
     border-color: border-primary;
   }
   
-  .xVPuB .mIZh1c, .vnnr5e .mIZh1c, .oQ5Hqe {
+  .xVPuB .mIZh1c, .vnnr5e .mIZh1c, .oQ5Hqe,
+  .VfPpkd-rymPhb-clz4Ic // Sidebar split between Home/Calendar and classes
+  {
     background-color: border-2nd;
   }
   
@@ -112,6 +116,7 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   .s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-gk6SMd .VfPpkd-rymPhb-fpDzbe-fmcmS, .s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-pXU01b .VfPpkd-rymPhb-fpDzbe-fmcmS, .s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-gk6SMd.VfPpkd-rymPhb-ibnC6b-OWXEXe-SfQLQb-M1Soyc-Bz112c .VfPpkd-rymPhb-KkROqb, .s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-pXU01b.VfPpkd-rymPhb-ibnC6b-OWXEXe-SfQLQb-M1Soyc-Bz112c .VfPpkd-rymPhb-KkROqb,
   .Vx8Sxd, .Vx8Sxd:visited, .Vx8Sxd:hover, .Vx8Sxd:focus,
   .apFsO.onkcGd, .apFsO.onkcGd:visited, // Assignments under classes in Home
+  .Eajscb .vT1Gyc.N4XV7d, // Future dates in Calendar
   {
     color: text-primary;
   }
@@ -199,13 +204,6 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   
   
   // Hardcoded fixes
-  if tenth-ann-bg {
-    .UDKLAf:hover .lQKcaf, .CbuVcc:focus .lQKcaf { // 10th Anniversary Logo Background Fix
-	    background: url("https://deltandy.me/UserStyles-UserScripts/classroom_dark_v2/10th_anniversary_transparent.gif") left top no-repeat;
-	    padding-left: 200px;
-	    background-size: contain;
-    }
-  }
   .u73Apc:not(.lXuxY .u73Apc) {
     border-bottom: none;
   }
@@ -220,4 +218,12 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   .lbWVCe .h0pqq {
     // Fix poll colors
     background-color: #222
+  }
+  .N6nSod {
+    // Bottom right help button
+    background: none;
+  }  
+  .N6nSod:hover {
+    // Bottom right help button
+    background-color: rgba(255, 255, 255, 0.075);
   }
