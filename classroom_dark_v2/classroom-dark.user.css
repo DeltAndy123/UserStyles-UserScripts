@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Google Classroom Dark Theme
 @namespace      github.com/DeltAndy123
-@version        2.1.1.1
+@version        2.1.1.2
 @description    Dark theme for Google Classroom
 @author         DeltAndy
 @preprocessor   stylus
@@ -28,8 +28,9 @@ so I rewrote the entire theme from scratch. This version has more customizations
 Since there was no good dark theme for Google Classroom and the Dark Reader extension
 didn't work perfectly, I decided to create my own dark theme for Google Classroom.
 
-2.1.1.1 (2024-10-15):
-- Fix assignment names
+2.1.1.2 (2024-10-29):
+- Fix background for tabs below navigation bar
+- Fix unstyled border in assignment page
 */
 
 @-moz-document domain("classroom.google.com") {
@@ -86,7 +87,8 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   
   .MHxtic:not(:last-child), .LKqFXc,
   .Rj2Mlf:not(:disabled):hover,
-  .uO32ac, .ypv4re // Topic name bottom border
+  .uO32ac, .ypv4re, // Topic name bottom border
+  .nl5VRd // Separator between assignment name and description
   {
     border-color: border-2nd;
   }
@@ -171,7 +173,8 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   .fWf7qe:not(.RDPZE):hover .Yalane,
   .TisIWb .kKn9Nc:before,
   .z80M1.FwR7Pc,
-  .Mupove .tUJKGd:not(.xp2dJ):focus-within.boxOzd, .Mupove .tUJKGd:not(.xp2dJ):focus-within.idtp4e, .Mupove .tUJKGd:not(.xp2dJ) :focus-within.boxOzd, .Mupove .tUJKGd:not(.xp2dJ) :focus-within.idtp4e, .Mupove .ZoT1D:focus-within.boxOzd, .Mupove .ZoT1D:focus-within.idtp4e, .Mupove .ZoT1D :focus-within.boxOzd, .Mupove .ZoT1D :focus-within.idtp4e
+  .Mupove .tUJKGd:not(.xp2dJ):focus-within.boxOzd, .Mupove .tUJKGd:not(.xp2dJ):focus-within.idtp4e, .Mupove .tUJKGd:not(.xp2dJ) :focus-within.boxOzd, .Mupove .tUJKGd:not(.xp2dJ) :focus-within.idtp4e, .Mupove .ZoT1D:focus-within.boxOzd, .Mupove .ZoT1D:focus-within.idtp4e, .Mupove .ZoT1D :focus-within.boxOzd, .Mupove .ZoT1D :focus-within.idtp4e,
+  .hN1OOc.eumXzf:hover, .hN1OOc.eumXzf:focus // Tabs below navbar
   {
     background-color: bg-hover;
   }

@@ -6,8 +6,9 @@ so I rewrote the entire theme from scratch. This version has more customizations
 Since there was no good dark theme for Google Classroom and the Dark Reader extension
 didn't work perfectly, I decided to create my own dark theme for Google Classroom.
 
-2.1.1.1 (2024-10-15):
-- Fix assignment names
+2.1.1.2 (2024-10-29):
+- Fix background for tabs below navigation bar
+- Fix unstyled border in assignment page
 */
 body {
   background-color: #111;
@@ -64,7 +65,8 @@ body {
 .LKqFXc,
 .Rj2Mlf:not(:disabled):hover,
 .uO32ac,
-.ypv4re {
+.ypv4re,
+.nl5VRd {
   border-color: #3b3b3b;
 }
 .dDKhVc,
@@ -176,7 +178,9 @@ body {
 .Mupove .ZoT1D:focus-within.boxOzd,
 .Mupove .ZoT1D:focus-within.idtp4e,
 .Mupove .ZoT1D :focus-within.boxOzd,
-.Mupove .ZoT1D :focus-within.idtp4e {
+.Mupove .ZoT1D :focus-within.idtp4e,
+.hN1OOc.eumXzf:hover,
+.hN1OOc.eumXzf:focus {
   background-color: #1a1a1a;
 }
 .WmnPA.VfPpkd-fmcmS-yrriRe-OWXEXe-XpnDCe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc {
