@@ -2,6 +2,7 @@ bg-primary = #111111;
 bg-secondary = #111111;
 bg-tertiary = #141414;
 bg-hover = #1a1a1a;
+bg-2nd-hover = #161616;
 border-primary = #1f1f1f;
 border-2nd = #3b3b3b;
 navbar = #111111;
@@ -9,6 +10,7 @@ text-primary = #e8e5e3;
 text-hover = #999897;
 text-secondary = #b8b3ad;
 text-tertiary = rgba(255,255,255,.549);
+active-button = #202020;
 
 
 
@@ -20,9 +22,17 @@ so I rewrote the entire theme from scratch. This version has more customizations
 Since there was no good dark theme for Google Classroom and the Dark Reader extension
 didn't work perfectly, I decided to create my own dark theme for Google Classroom.
 
-2.1.1.2 (2024-10-29):
-- Fix background for tabs below navigation bar
-- Fix unstyled border in assignment page
+2.2.0.0 (2024-11-18):
+- Fix low contrast checkboxes
+- Add "BG Secondary Hover" variable (currently only used for announcement textbox)
+- Add "Active Button" variable (currently only used for text formatting buttons)
+- Classwork section:
+  - Fix background when clicking topic
+  - Fix border under topic
+- Stream section:
+  - Fix textbox and formatting buttons in announcement creation
+  - Fix unstyled classes dropdown when posting announcement
+  - Fix "Announce to" popup
 */
 
 
@@ -66,7 +76,7 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   .tUJKGd:not(:first-child),
   .d6CWTd, .ycbm1d,
   .LDr2ne,
-  .O9YpHb, .Iwp0Ue:not(:first-child), // Assignments in Classwork 
+  .O9YpHb, .Iwp0Ue:not(:first-child), // Assignments in Classwork
   {
     border-color: border-primary;
   }
@@ -80,7 +90,8 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   .MHxtic:not(:last-child), .LKqFXc,
   .Rj2Mlf:not(:disabled):hover,
   .uO32ac, .ypv4re, // Topic name bottom border
-  .nl5VRd // Separator between assignment name and description
+  .nl5VRd, // Separator between assignment name and description
+  .VKRoqe
   {
     border-color: border-2nd;
   }
@@ -116,7 +127,8 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   .Vx8Sxd, .Vx8Sxd:visited, .Vx8Sxd:hover, .Vx8Sxd:focus,
   .apFsO.onkcGd, .apFsO.onkcGd:visited, // Assignments under classes in Home
   .Eajscb .vT1Gyc.N4XV7d, // Future dates in Calendar
-  .B7SYid // Assignment names
+  .B7SYid, // Assignment names
+  .zuzKle.xVPuB, .zuzKle.vnnr5e, // Announcement composer textbox
   {
     color: text-primary;
   }
@@ -125,6 +137,8 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   .LjDxcd:hover:not(:disabled), .LjDxcd.VfPpkd-ksKsZd-mWPk3d-OWXEXe-AHe6Kc-XpnDCe:not(:disabled), .LjDxcd:not(.VfPpkd-ksKsZd-mWPk3d):focus:not(:disabled), .LjDxcd:active:not(:disabled),
   .WmnPA:hover:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc, // Textbox Label
   .xlHPle .VfPpkd-fmcmS-yrriRe:hover:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc, // Textbox Label (Alt)
+  .vnnr5e:not(.RDPZE):not(.u3bW4e):hover .I9OJHe.vTcY1d .snByac,
+  .EN2Rfc:not(.RDPZE) .XTO5bf:hover, .EN2Rfc:not(.RDPZE) .XTO5bf.y7OZL, // Announcement composer formatting buttons
   {
     color: text-hover;
   }
@@ -134,7 +148,7 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   }
   
   .hgjBDc, .DC55n td,
-  .IzVHde // Class code under banner
+  .IzVHde, // Class code under banner
   {
     background-color: bg-secondary;
   }
@@ -148,7 +162,8 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
     border-color: border-primary;
   }
   
-  .vnnr5e .I9OJHe, .vnnr5e .CIy9F, .fWf7qe .Yalane, .aSjeL.aSjeL td,
+  .vnnr5e .I9OJHe, .vnnr5e .CIy9F, // Create announcement textbox
+  .fWf7qe .Yalane, .aSjeL.aSjeL td,
   .xlHPle .VfPpkd-fmcmS-yrriRe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me), // Textboxes
   .V8apv,
   .WufxEd .ynt9Dc .VfPpkd-WLXbod, .WufxEd .ynt9Dc,
@@ -156,19 +171,30 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   .hVNH5c .K0NPx,
   .s8kOBc .VfPpkd-rymPhb-ibnC6b.VfPpkd-rymPhb-ibnC6b-OWXEXe-gk6SMd,
   .WmnPA:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me),
-  .lbWVCe
+  .lbWVCe,
+  .cLpBac // Class dropdown for announcements
   {
     background-color: bg-tertiary;
   }
   
-  .vnnr5e:not(.RDPZE):hover .I9OJHe, .vnnr5e:not(.RDPZE):hover .CIy9F,
   .fWf7qe:not(.RDPZE):hover .Yalane,
   .TisIWb .kKn9Nc:before,
   .z80M1.FwR7Pc,
   .Mupove .tUJKGd:not(.xp2dJ):focus-within.boxOzd, .Mupove .tUJKGd:not(.xp2dJ):focus-within.idtp4e, .Mupove .tUJKGd:not(.xp2dJ) :focus-within.boxOzd, .Mupove .tUJKGd:not(.xp2dJ) :focus-within.idtp4e, .Mupove .ZoT1D:focus-within.boxOzd, .Mupove .ZoT1D:focus-within.idtp4e, .Mupove .ZoT1D :focus-within.boxOzd, .Mupove .ZoT1D :focus-within.idtp4e,
-  .hN1OOc.eumXzf:hover, .hN1OOc.eumXzf:focus // Tabs below navbar
+  .hN1OOc.eumXzf:hover, .hN1OOc.eumXzf:focus, // Tabs below navbar
+  .Iwp0Ue:not(.xp2dJ):focus-within.JiTjnd, .Iwp0Ue:not(.xp2dJ):focus-within.h7Ww0, .Iwp0Ue:not(.xp2dJ) :focus-within.JiTjnd, .Iwp0Ue:not(.xp2dJ) :focus-within.h7Ww0, .xWw7yd:focus-within.JiTjnd, .xWw7yd:focus-within.h7Ww0, .xWw7yd :focus-within.JiTjnd, .xWw7yd :focus-within.h7Ww0, // Topics in Classwork section
   {
     background-color: bg-hover;
+  }
+  
+  .vnnr5e:not(.RDPZE):not(.u3bW4e):hover .I9OJHe, .vnnr5e:not(.RDPZE):not(.u3bW4e):hover .CIy9F, // Announcement textbox
+  {
+    background-color: bg-2nd-hover;
+  }
+  
+  .EN2Rfc:not(.RDPZE) .XTO5bf.y7OZL // Formatting buttons in announcement composer
+  {
+    background-color: active-button;
   }
   
   .WmnPA.VfPpkd-fmcmS-yrriRe-OWXEXe-XpnDCe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc {
@@ -198,13 +224,25 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   
   // Educator-Specific Elements
   .GQLaCd:not(:empty), // Introducing Generative AI box
-  .fyExH // Not using Classroom at a school with students checkbox
+  .fyExH, // Not using Classroom at a school with students checkbox
   {
     background-color: bg-tertiary;
+  }
+  .QV10Af { // Bottom part of "Announce to" popup
+    background-color: transparent;
+    border-color: border-2nd;
+  }
+  .asQXV-FGzYL, // Classroom name in dropdown when creating posts
+  {
+    color: text-secondary;
   }
   
   
   // Hardcoded fixes
+  .FAVvUd .nIu6nb {
+      // SVG checkboxes
+      filter: invert(1);
+  }
   .u73Apc:not(.lXuxY .u73Apc) {
     border-bottom: none;
   }

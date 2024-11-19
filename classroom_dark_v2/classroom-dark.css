@@ -6,9 +6,17 @@ so I rewrote the entire theme from scratch. This version has more customizations
 Since there was no good dark theme for Google Classroom and the Dark Reader extension
 didn't work perfectly, I decided to create my own dark theme for Google Classroom.
 
-2.1.1.2 (2024-10-29):
-- Fix background for tabs below navigation bar
-- Fix unstyled border in assignment page
+2.2.0.0 (2024-11-18):
+- Fix low contrast checkboxes
+- Add "BG Secondary Hover" variable (currently only used for announcement textbox)
+- Add "Active Button" variable (currently only used for text formatting buttons)
+- Classwork section:
+  - Fix background when clicking topic
+  - Fix border under topic
+- Stream section:
+  - Fix textbox and formatting buttons in announcement creation
+  - Fix unstyled classes dropdown when posting announcement
+  - Fix "Announce to" popup
 */
 body {
   background-color: #111;
@@ -66,7 +74,8 @@ body {
 .Rj2Mlf:not(:disabled):hover,
 .uO32ac,
 .ypv4re,
-.nl5VRd {
+.nl5VRd,
+.VKRoqe {
   border-color: #3b3b3b;
 }
 .dDKhVc,
@@ -119,7 +128,9 @@ body {
 .apFsO.onkcGd,
 .apFsO.onkcGd:visited,
 .Eajscb .vT1Gyc.N4XV7d,
-.B7SYid {
+.B7SYid,
+.zuzKle.xVPuB,
+.zuzKle.vnnr5e {
   color: #e8e5e3;
 }
 .wZTANe .J1raN:hover,
@@ -128,7 +139,10 @@ body {
 .LjDxcd:not(.VfPpkd-ksKsZd-mWPk3d):focus:not(:disabled),
 .LjDxcd:active:not(:disabled),
 .WmnPA:hover:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc,
-.xlHPle .VfPpkd-fmcmS-yrriRe:hover:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc {
+.xlHPle .VfPpkd-fmcmS-yrriRe:hover:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc,
+.vnnr5e:not(.RDPZE):not(.u3bW4e):hover .I9OJHe.vTcY1d .snByac,
+.EN2Rfc:not(.RDPZE) .XTO5bf:hover,
+.EN2Rfc:not(.RDPZE) .XTO5bf.y7OZL {
   color: #999897;
 }
 .K6Ovqd,
@@ -163,11 +177,10 @@ body {
 .hVNH5c .K0NPx,
 .s8kOBc .VfPpkd-rymPhb-ibnC6b.VfPpkd-rymPhb-ibnC6b-OWXEXe-gk6SMd,
 .WmnPA:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me),
-.lbWVCe {
+.lbWVCe,
+.cLpBac {
   background-color: #141414;
 }
-.vnnr5e:not(.RDPZE):hover .I9OJHe,
-.vnnr5e:not(.RDPZE):hover .CIy9F,
 .fWf7qe:not(.RDPZE):hover .Yalane,
 .TisIWb .kKn9Nc:before,
 .z80M1.FwR7Pc,
@@ -180,8 +193,23 @@ body {
 .Mupove .ZoT1D :focus-within.boxOzd,
 .Mupove .ZoT1D :focus-within.idtp4e,
 .hN1OOc.eumXzf:hover,
-.hN1OOc.eumXzf:focus {
+.hN1OOc.eumXzf:focus,
+.Iwp0Ue:not(.xp2dJ):focus-within.JiTjnd,
+.Iwp0Ue:not(.xp2dJ):focus-within.h7Ww0,
+.Iwp0Ue:not(.xp2dJ) :focus-within.JiTjnd,
+.Iwp0Ue:not(.xp2dJ) :focus-within.h7Ww0,
+.xWw7yd:focus-within.JiTjnd,
+.xWw7yd:focus-within.h7Ww0,
+.xWw7yd :focus-within.JiTjnd,
+.xWw7yd :focus-within.h7Ww0 {
   background-color: #1a1a1a;
+}
+.vnnr5e:not(.RDPZE):not(.u3bW4e):hover .I9OJHe,
+.vnnr5e:not(.RDPZE):not(.u3bW4e):hover .CIy9F {
+  background-color: #161616;
+}
+.EN2Rfc:not(.RDPZE) .XTO5bf.y7OZL {
+  background-color: #202020;
 }
 .WmnPA.VfPpkd-fmcmS-yrriRe-OWXEXe-XpnDCe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc {
   color: #1967d2;
@@ -216,6 +244,16 @@ body {
 .GQLaCd:not(:empty),
 .fyExH {
   background-color: #141414;
+}
+.QV10Af {
+  background-color: transparent;
+  border-color: #3b3b3b;
+}
+.asQXV-FGzYL {
+  color: #b8b3ad;
+}
+.FAVvUd .nIu6nb {
+  filter: invert(1);
 }
 .u73Apc:not(.lXuxY .u73Apc) {
   border-bottom: none;
