@@ -1,6 +1,7 @@
 bg-primary = #111111;
 bg-secondary = #111111;
 bg-tertiary = #141414;
+bg-popup = #222222;
 bg-hover = #1a1a1a;
 bg-2nd-hover = #161616;
 border-primary = #1f1f1f;
@@ -22,17 +23,9 @@ so I rewrote the entire theme from scratch. This version has more customizations
 Since there was no good dark theme for Google Classroom and the Dark Reader extension
 didn't work perfectly, I decided to create my own dark theme for Google Classroom.
 
-2.2.0.0 (2024-11-18):
-- Fix low contrast checkboxes
-- Add "BG Secondary Hover" variable (currently only used for announcement textbox)
-- Add "Active Button" variable (currently only used for text formatting buttons)
-- Classwork section:
-  - Fix background when clicking topic
-  - Fix border under topic
-- Stream section:
-  - Fix textbox and formatting buttons in announcement creation
-  - Fix unstyled classes dropdown when posting announcement
-  - Fix "Announce to" popup
+2.3.0.0 (2025-1-7):
+- Fix white popups
+- Add dark theme for file uploading from Google Drive
 */
 
 
@@ -41,7 +34,9 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
     color: text-primary;
   }
   
-  .VfPpkd-xl07Ob .VfPpkd-StrnGf-rymPhb-IhFlZd, .VfPpkd-xl07Ob .VfPpkd-StrnGf-rymPhb-f7MjDc {
+  .VfPpkd-xl07Ob .VfPpkd-StrnGf-rymPhb-IhFlZd, .VfPpkd-xl07Ob .VfPpkd-StrnGf-rymPhb-f7MjDc,
+  .cC1eCc .VfPpkd-k2Wrsb, // Submit/unsubmit popup title
+  {
     color: text-primary;
   }
   
@@ -105,6 +100,8 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   .s8kOBc .VfPpkd-rymPhb-fpDzbe-fmcmS,
   .WmnPA:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-wGMbrd, // Textbox Label
   .onkcGd, .onkcGd:visited, .WPhuJf, .WPhuJf:visited, .OGhwGf, .OGhwGf:visited, // "# class comments" under assignment in Stream
+  .cC1eCc .VfPpkd-cnG4Wd, // Submit/unsubmit popup description
+  .VfPpkd-I9GLp-yrriRe // Hide classroom popup "Don't show this message again" label
   {
     color: text-secondary;
   }
@@ -172,9 +169,14 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   .s8kOBc .VfPpkd-rymPhb-ibnC6b.VfPpkd-rymPhb-ibnC6b-OWXEXe-gk6SMd,
   .WmnPA:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me),
   .lbWVCe,
-  .cLpBac // Class dropdown for announcements
+  .cLpBac, // Class dropdown for announcements
   {
     background-color: bg-tertiary;
+  }
+  
+  .cC1eCc .VfPpkd-P5QLlc, // Most popups (submit/unsubmit, class code, etc)
+  {
+    background-color: bg-popup;
   }
   
   .fWf7qe:not(.RDPZE):hover .Yalane,
@@ -240,14 +242,15 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   
   // Hardcoded fixes
   .FAVvUd .nIu6nb {
-      // SVG checkboxes
-      filter: invert(1);
+    // SVG checkboxes
+    filter: invert(1);
   }
   .u73Apc:not(.lXuxY .u73Apc) {
     border-bottom: none;
   }
-  .VfoFfe // Class code popout box
+  .VfoFfe
   {
+    // Class code popout box
     border-top: none;
   }
   .qj5L0 {
@@ -266,3 +269,67 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
     // Bottom right help button
     background-color: rgba(255, 255, 255, 0.075);
   }
+  
+  .picker-dialog.XKSfm-Sx9Kwc {
+    // Google Drive file picker (before fully loaded)
+    background-color: bg-popup;
+  }
+
+
+@-moz-document url-prefix("https://drive.google.com/picker") {
+  // Google Drive File Picker
+  .XV0XSd.KkxPLb {
+    --dt-background: bg-popup;
+    --dt-on-background: text-secondary;
+    --dt-surface: bg-popup;
+    --dt-on-surface: text-primary;
+    --dt-on-surface-variant: text-secondary;
+    --dt-inverse-on-surface: border-2nd;
+    --dt-primary-container: mix(bg-popup, #fff, 95%);
+    --dt-on-primary-container: text-secondary;
+  }
+  .jfvobd, // "Insert files using Google Drive" title
+  .XV0XSd .IzuY1c.A5Mhhd .fjSJOb input.Ax4B8 // Search bar input
+  {
+    color: text-primary;
+  }
+  .WbUJNb .VfPpkd-jY41G-V67aGc, // Tabs (Recent, Upload, My Drive, Starred)
+  .gtjro, // "Filter results by" in search filter
+  .bSz6zd, .oZiBUc // Search filters
+  {
+    color: text-secondary;
+  }
+  .WbUJNb:hover .VfPpkd-jY41G-V67aGc, .WbUJNb.VfPpkd-ksKsZd-mWPk3d-OWXEXe-AHe6Kc-XpnDCe .VfPpkd-jY41G-V67aGc, .WbUJNb:not(.VfPpkd-ksKsZd-mWPk3d):focus .VfPpkd-jY41G-V67aGc, .WbUJNb:active .VfPpkd-jY41G-V67aGc // Tabs hover
+  {
+    color: text-hover;
+  }
+  .XV0XSd .IzuY1c .ZWZruf, // Search bar
+  .VOEIyf .jBmls // Search filter dropdown
+  {
+    background-color: mix(bg-tertiary, #fff, 98%);
+  }
+  .oKubKe[aria-selected="true"] // Search filter hover
+  {
+    background-color: mix(bg-tertiary, #fff, 92%);
+  }
+  
+  
+  .WbUJNb .VfPpkd-YVzG2b::before, .WbUJNb .VfPpkd-YVzG2b::after {
+    // Tabs hover BG
+    background-color: #ffffff;
+  }
+  .XV0XSd .eizQhe-ObfsIf-gk6SMd .eizQhe-ObfsIf-mJRMzd-V1ur5d-haAclf, // Grid
+  .ndfHFb-jyrRxf-oKdM2c-gk6SMd // List
+  {
+    // Selected file
+    background-color: mix(active-button, #b4f6ff, 95%);
+  }
+  .pGOlGd .ndfHFb-jyrRxf-haAclf .eizQhe-jyrRxf-V1ur5d-haAclf svg:not(.XV0XSd .eizQhe-ObfsIf-gk6SMd .eizQhe-ObfsIf-mJRMzd-V1ur5d-haAclf, .ndfHFb-jyrRxf-oKdM2c-gk6SMd svg) {
+    // Icons
+    filter: invert(1);
+  }
+  .p9NqC.qoCZef:not(:disabled) {
+    // Clear selection button
+    filter: brightness(0) invert(0.8);
+  }
+}

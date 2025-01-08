@@ -6,24 +6,17 @@ so I rewrote the entire theme from scratch. This version has more customizations
 Since there was no good dark theme for Google Classroom and the Dark Reader extension
 didn't work perfectly, I decided to create my own dark theme for Google Classroom.
 
-2.2.0.0 (2024-11-18):
-- Fix low contrast checkboxes
-- Add "BG Secondary Hover" variable (currently only used for announcement textbox)
-- Add "Active Button" variable (currently only used for text formatting buttons)
-- Classwork section:
-  - Fix background when clicking topic
-  - Fix border under topic
-- Stream section:
-  - Fix textbox and formatting buttons in announcement creation
-  - Fix unstyled classes dropdown when posting announcement
-  - Fix "Announce to" popup
+2.3.0.0 (2025-1-7):
+- Fix white popups
+- Add dark theme for file uploading from Google Drive
 */
 body {
   background-color: #111;
   color: #e8e5e3;
 }
 .VfPpkd-xl07Ob .VfPpkd-StrnGf-rymPhb-IhFlZd,
-.VfPpkd-xl07Ob .VfPpkd-StrnGf-rymPhb-f7MjDc {
+.VfPpkd-xl07Ob .VfPpkd-StrnGf-rymPhb-f7MjDc,
+.cC1eCc .VfPpkd-k2Wrsb {
   color: #e8e5e3;
 }
 .I7OXgf {
@@ -96,7 +89,9 @@ body {
 .WPhuJf,
 .WPhuJf:visited,
 .OGhwGf,
-.OGhwGf:visited {
+.OGhwGf:visited,
+.cC1eCc .VfPpkd-cnG4Wd,
+.VfPpkd-I9GLp-yrriRe {
   color: #b8b3ad;
 }
 .EZrbnd,
@@ -180,6 +175,9 @@ body {
 .lbWVCe,
 .cLpBac {
   background-color: #141414;
+}
+.cC1eCc .VfPpkd-P5QLlc {
+  background-color: #222;
 }
 .fWf7qe:not(.RDPZE):hover .Yalane,
 .TisIWb .kKn9Nc:before,
@@ -272,4 +270,57 @@ body {
 }
 .N6nSod:hover {
   background-color: rgba(255,255,255,0.075);
+}
+.picker-dialog.XKSfm-Sx9Kwc {
+  background-color: #222;
+}
+@-moz-document url-prefix("https://drive.google.com/picker") {
+  .XV0XSd.KkxPLb {
+    --dt-background: #222;
+    --dt-on-background: #b8b3ad;
+    --dt-surface: #222;
+    --dt-on-surface: #e8e5e3;
+    --dt-on-surface-variant: #b8b3ad;
+    --dt-inverse-on-surface: #3b3b3b;
+    --dt-primary-container: #2d2d2d;
+    --dt-on-primary-container: #b8b3ad;
+  }
+  .jfvobd,
+  .XV0XSd .IzuY1c.A5Mhhd .fjSJOb input.Ax4B8 {
+    color: #e8e5e3;
+  }
+  .WbUJNb .VfPpkd-jY41G-V67aGc,
+  .gtjro,
+  .bSz6zd,
+  .oZiBUc {
+    color: #b8b3ad;
+  }
+  .WbUJNb:hover .VfPpkd-jY41G-V67aGc,
+  .WbUJNb.VfPpkd-ksKsZd-mWPk3d-OWXEXe-AHe6Kc-XpnDCe .VfPpkd-jY41G-V67aGc,
+  .WbUJNb:not(.VfPpkd-ksKsZd-mWPk3d):focus .VfPpkd-jY41G-V67aGc,
+  .WbUJNb:active .VfPpkd-jY41G-V67aGc {
+    color: #999897;
+  }
+  .XV0XSd .IzuY1c .ZWZruf,
+  .VOEIyf .jBmls {
+    background-color: #181818;
+  }
+  .oKubKe[aria-selected="true"] {
+    background-color: #262626;
+  }
+  .WbUJNb .VfPpkd-YVzG2b::before,
+  .WbUJNb .VfPpkd-YVzG2b::after {
+    background-color: #fff;
+  }
+  .XV0XSd .eizQhe-ObfsIf-gk6SMd .eizQhe-ObfsIf-mJRMzd-V1ur5d-haAclf,
+  .ndfHFb-jyrRxf-oKdM2c-gk6SMd {
+    background-color: #272a2b;
+  }
+  .pGOlGd .ndfHFb-jyrRxf-haAclf .eizQhe-jyrRxf-V1ur5d-haAclf svg:not(.XV0XSd .eizQhe-ObfsIf-gk6SMd .eizQhe-ObfsIf-mJRMzd-V1ur5d-haAclf,
+  .ndfHFb-jyrRxf-oKdM2c-gk6SMd svg) {
+    filter: invert(1);
+  }
+  .p9NqC.qoCZef:not(:disabled) {
+    filter: brightness(0) invert(0.8);
+  }
 }
