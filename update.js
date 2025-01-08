@@ -37,7 +37,7 @@ axios
     var stylusCss = response.data
       .replaceAll(/(?:\/\* ==UserStyle==[\S\s]*?(?=@var)|==\/UserStyle== \*\/)/gm, '') // Remove the extra unneeded meta
       .replaceAll(/@var\s+\w+\s+([\w-]+)\s+".*?"\s+(.*)/gm, '$1 = $2;') // Replace @var with variable assignment
-      .replaceAll(/@-moz-document domain\("classroom\.google\.com"\) {([\S\s]*)}/gm, '$1') // Remove the @-moz-document block but keep the CSS
+      .replaceAll(/@-moz-document domain\("classroom\.google\.com"\) {((?:[^{}]|{(?:[^{}]|{[^{}]*})*})*)}(?=\s*?(?:@|$))/gm, '$1') // Keep only CSS in classroom.google.com moz-document
 
     fs.writeFileSync('./classroom_dark_v2/classroom-dark.styl', stylusCss)
 
