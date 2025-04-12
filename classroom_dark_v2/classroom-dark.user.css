@@ -1,9 +1,11 @@
 /* ==UserStyle==
 @name           Google Classroom Dark Theme
 @namespace      github.com/DeltAndy123
-@version        2.3.0.0
+@version        2.3.0.1
 @description    Dark theme for Google Classroom
 @author         DeltAndy
+@homepageURL    https://userstyles.world/style/12025
+@supportURL     https://github.com/DeltAndy123/UserStyles-UserScripts
 @preprocessor   stylus
 
 @var color      bg-primary     "Background Primary"      #111111
@@ -31,9 +33,12 @@ so I rewrote the entire theme from scratch. This version has more customizations
 Since there was no good dark theme for Google Classroom and the Dark Reader extension
 didn't work perfectly, I decided to create my own dark theme for Google Classroom.
 
-2.3.0.0 (2025-1-7):
-- Fix white popups
-- Add dark theme for file uploading from Google Drive
+2.3.0.1 (2025-4-11):
+- Fix white sidebar
+- Fix white background in hovered quick link
+- Fix white border between assignment name and description in Classwork page
+- Improve shadows
+- Improve icon contrast in create announcement box
 */
 
 @-moz-document domain("classroom.google.com") {
@@ -52,11 +57,10 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
     background-color: bg-primary;
   }
   
-  .joJglb,
-  .mwJvDe .KEDCCd,
-  .Tabkde, .Tabkde .OX4Vcb,
-  .ETRkCe,
-  .lXuxY .u73Apc
+  .joJglb, // Top bar
+  .mwJvDe .KEDCCd, // Bar under top bar
+  .ETRkCe, // Sidebar in portrait mode
+  .yWU57c.AjWMy, .yWU57c.AjWMy .rknsod, // Sidebar in landscape mode
   {
     background-color: navbar;
     border-color: border-primary;
@@ -79,13 +83,14 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   .tUJKGd:not(:first-child),
   .d6CWTd, .ycbm1d,
   .LDr2ne,
-  .O9YpHb, .Iwp0Ue:not(:first-child), // Assignments in Classwork
+  .O9YpHb, .Iwp0Ue:not(:first-child), // Assignments in Classwork page
+  .lXuxY .u73Apc // Separator between assignment name and description in Classwork page
   {
     border-color: border-primary;
   }
   
   .xVPuB .mIZh1c, .vnnr5e .mIZh1c, .oQ5Hqe,
-  .VfPpkd-rymPhb-clz4Ic // Sidebar split between Home/Calendar and classes
+  .VfPpkd-rymPhb-clz4Ic // Separator between Home/Calendar and classes in sidebar
   {
     background-color: border-2nd;
   }
@@ -93,8 +98,8 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   .MHxtic:not(:last-child), .LKqFXc,
   .Rj2Mlf:not(:disabled):hover,
   .uO32ac, .ypv4re, // Topic name bottom border
-  .nl5VRd, // Separator between assignment name and description
-  .VKRoqe
+  .nl5VRd, // Separator between assignment name and description in assignment page
+  .VKRoqe, // Separator between topic name and assignments in Classwork page
   {
     border-color: border-2nd;
   }
@@ -192,7 +197,8 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   .z80M1.FwR7Pc,
   .Mupove .tUJKGd:not(.xp2dJ):focus-within.boxOzd, .Mupove .tUJKGd:not(.xp2dJ):focus-within.idtp4e, .Mupove .tUJKGd:not(.xp2dJ) :focus-within.boxOzd, .Mupove .tUJKGd:not(.xp2dJ) :focus-within.idtp4e, .Mupove .ZoT1D:focus-within.boxOzd, .Mupove .ZoT1D:focus-within.idtp4e, .Mupove .ZoT1D :focus-within.boxOzd, .Mupove .ZoT1D :focus-within.idtp4e,
   .hN1OOc.eumXzf:hover, .hN1OOc.eumXzf:focus, // Tabs below navbar
-  .Iwp0Ue:not(.xp2dJ):focus-within.JiTjnd, .Iwp0Ue:not(.xp2dJ):focus-within.h7Ww0, .Iwp0Ue:not(.xp2dJ) :focus-within.JiTjnd, .Iwp0Ue:not(.xp2dJ) :focus-within.h7Ww0, .xWw7yd:focus-within.JiTjnd, .xWw7yd:focus-within.h7Ww0, .xWw7yd :focus-within.JiTjnd, .xWw7yd :focus-within.h7Ww0, // Topics in Classwork section
+  .Iwp0Ue:not(.xp2dJ):focus-within.JiTjnd, .Iwp0Ue:not(.xp2dJ):focus-within.h7Ww0, .Iwp0Ue:not(.xp2dJ) :focus-within.JiTjnd, .Iwp0Ue:not(.xp2dJ) :focus-within.h7Ww0, .xWw7yd:focus-within.JiTjnd, .xWw7yd:focus-within.h7Ww0, .xWw7yd :focus-within.JiTjnd, .xWw7yd :focus-within.h7Ww0, // Topics in Classwork page
+  .YLFC3e:hover, .YLFC3e:focus, .YLFC3e:focus-within // Quick links
   {
     background-color: bg-hover;
   }
@@ -249,6 +255,17 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   
   
   // Hardcoded fixes
+  .lXuxY, .pO6AMc, .PqkECe, // Selected assignment box in Classwork page
+  .GWZ7yf // Create announcement box
+  {
+    // Elevated boxes using shadow
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4), 0 2px 6px 2px rgba(0, 0, 0, 0.3);
+    border: 1px solid border-primary !important;
+  }
+  .svNSpd svg {
+    // Add file/link icon in create announcement box
+    fill: text-secondary;
+  }
   .FAVvUd .nIu6nb {
     // SVG checkboxes
     filter: invert(1);

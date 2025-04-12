@@ -6,9 +6,12 @@ so I rewrote the entire theme from scratch. This version has more customizations
 Since there was no good dark theme for Google Classroom and the Dark Reader extension
 didn't work perfectly, I decided to create my own dark theme for Google Classroom.
 
-2.3.0.0 (2025-1-7):
-- Fix white popups
-- Add dark theme for file uploading from Google Drive
+2.3.0.1 (2025-4-11):
+- Fix white sidebar
+- Fix white background in hovered quick link
+- Fix white border between assignment name and description in Classwork page
+- Improve shadows
+- Improve icon contrast in create announcement box
 */
 body {
   background-color: #111;
@@ -24,10 +27,9 @@ body {
 }
 .joJglb,
 .mwJvDe .KEDCCd,
-.Tabkde,
-.Tabkde .OX4Vcb,
 .ETRkCe,
-.lXuxY .u73Apc {
+.yWU57c.AjWMy,
+.yWU57c.AjWMy .rknsod {
   background-color: #111;
   border-color: #1f1f1f;
 }
@@ -53,7 +55,8 @@ body {
 .ycbm1d,
 .LDr2ne,
 .O9YpHb,
-.Iwp0Ue:not(:first-child) {
+.Iwp0Ue:not(:first-child),
+.lXuxY .u73Apc {
   border-color: #1f1f1f;
 }
 .xVPuB .mIZh1c,
@@ -199,7 +202,10 @@ body {
 .xWw7yd:focus-within.JiTjnd,
 .xWw7yd:focus-within.h7Ww0,
 .xWw7yd :focus-within.JiTjnd,
-.xWw7yd :focus-within.h7Ww0 {
+.xWw7yd :focus-within.h7Ww0,
+.YLFC3e:hover,
+.YLFC3e:focus,
+.YLFC3e:focus-within {
   background-color: #1a1a1a;
 }
 .vnnr5e:not(.RDPZE):not(.u3bW4e):hover .I9OJHe,
@@ -249,6 +255,16 @@ body {
 }
 .asQXV-FGzYL {
   color: #b8b3ad;
+}
+.lXuxY,
+.pO6AMc,
+.PqkECe,
+.GWZ7yf {
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.4), 0 2px 6px 2px rgba(0,0,0,0.3);
+  border: 1px solid #1f1f1f !important;
+}
+.svNSpd svg {
+  fill: #b8b3ad;
 }
 .FAVvUd .nIu6nb {
   filter: invert(1);
