@@ -1,22 +1,22 @@
 /* ==UserStyle==
 @name           Google Classroom Dark Theme
 @namespace      github.com/DeltAndy123
-@version        2.3.0.1
+@version        2.4.0.0
 @description    Dark theme for Google Classroom
 @author         DeltAndy
 @homepageURL    https://userstyles.world/style/12025
 @supportURL     https://github.com/DeltAndy123/UserStyles-UserScripts
 @preprocessor   stylus
 
-@var color      bg-primary     "Background Primary"      #111111
-@var color      bg-secondary   "Background Secondary"    #111111
-@var color      bg-tertiary    "Background Tertiary"     #141414
+@var color      bg-primary     "Background Primary"      #1f1f1f
+@var color      bg-secondary   "Background Secondary"    #1f1f1f
+@var color      bg-tertiary    "Background Tertiary"     #191919
 @var color      bg-popup       "Popup Background"        #222222
 @var color      bg-hover       "Background Hover"        #1a1a1a
 @var color      bg-2nd-hover   "BG Secondary Hover"      #161616
-@var color      border-primary "Border Primary"          #1f1f1f
+@var color      border-primary "Border Primary"          #444746
 @var color      border-2nd     "Border Secondary"        #3b3b3b
-@var color      navbar         "Navigation Bar"          #111111
+@var color      navbar         "Navigation Bar"          #202124
 @var color      text-primary   "Text Primary"            #e8e5e3
 @var color      text-hover     "Text Primary Hover"      #999897
 @var color      text-secondary "Text Secondary"          #b8b3ad
@@ -33,12 +33,11 @@ so I rewrote the entire theme from scratch. This version has more customizations
 Since there was no good dark theme for Google Classroom and the Dark Reader extension
 didn't work perfectly, I decided to create my own dark theme for Google Classroom.
 
-2.3.0.1 (2025-4-11):
-- Fix white sidebar
-- Fix white background in hovered quick link
-- Fix white border between assignment name and description in Classwork page
-- Improve shadows
-- Improve icon contrast in create announcement box
+2.4.0.0 (2025-4-13):
+- Recolor theme with new color palette (using Google Help as reference)
+- Improve hovering over classes in home page
+- Fix Google Drive upload popup
+- Fix minor border issues
 */
 
 @-moz-document domain("classroom.google.com") {
@@ -84,7 +83,8 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   .d6CWTd, .ycbm1d,
   .LDr2ne,
   .O9YpHb, .Iwp0Ue:not(:first-child), // Assignments in Classwork page
-  .lXuxY .u73Apc // Separator between assignment name and description in Classwork page
+  .lXuxY .u73Apc, // Separator between assignment name and description in selected assignment in Classwork page
+  .RcHwO // Separator between assignment name and description in Classwork page specific topic
   {
     border-color: border-primary;
   }
@@ -172,6 +172,12 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
     border-color: border-primary;
   }
   
+  .gHz6xd.rZXyy:not(.kKn9Nc):not(.u0dx8e):hover {
+    // Force border even on hover
+    border: .0625rem solid border-primary;
+    margin: 0 1.5rem 1.5rem 0;
+  }
+  
   .vnnr5e .I9OJHe, .vnnr5e .CIy9F, // Create announcement textbox
   .fWf7qe .Yalane, .aSjeL.aSjeL td,
   .xlHPle .VfPpkd-fmcmS-yrriRe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me), // Textboxes
@@ -256,11 +262,21 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   
   // Hardcoded fixes
   .lXuxY, .pO6AMc, .PqkECe, // Selected assignment box in Classwork page
-  .GWZ7yf // Create announcement box
+  .GWZ7yf, // Create announcement box
+  .gHz6xd.rZXyy:not(.kKn9Nc):not(.u0dx8e):hover // Hovered class in Home page
   {
     // Elevated boxes using shadow
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4), 0 2px 6px 2px rgba(0, 0, 0, 0.3);
     border: 1px solid border-primary !important;
+  }
+  .VfPpkd-TkwUic:hover {
+    // Dropdown hovered
+    border: 1px solid border-primary;
+    border-radius: 4px;
+  }
+  .ReCbLb:not(.VfPpkd-O1htCb-OWXEXe-OWB6Me):not(.VfPpkd-O1htCb-OWXEXe-XpnDCe):hover .VfPpkd-t08AT-Bz112c {
+    // Dropdown hovered arrow
+    fill: text-secondary;
   }
   .svNSpd svg {
     // Add file/link icon in create announcement box
@@ -307,8 +323,10 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
     --dt-background: bg-popup;
     --dt-on-background: text-secondary;
     --dt-surface: bg-popup;
+    --dt-surface-container: bg-popup;
     --dt-on-surface: text-primary;
     --dt-on-surface-variant: text-secondary;
+    --dt-inverse-surface: text-secondary;
     --dt-inverse-on-surface: border-2nd;
     --dt-primary-container: mix(bg-popup, #fff, 95%);
     --dt-on-primary-container: text-secondary;
@@ -336,6 +354,11 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   .oKubKe[aria-selected="true"] // Search filter hover
   {
     background-color: mix(bg-tertiary, #fff, 92%);
+  }
+  .XV0XSd .GtrNOb, // Border between tab name and files
+  .TNg8Ce // Border between tabs and tab name
+  {
+    border-color: border-primary;
   }
   
   
