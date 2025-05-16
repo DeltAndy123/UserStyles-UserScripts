@@ -6,11 +6,8 @@ so I rewrote the entire theme from scratch. This version has more customizations
 Since there was no good dark theme for Google Classroom and the Dark Reader extension
 didn't work perfectly, I decided to create my own dark theme for Google Classroom.
 
-2.4.0.0 (2025-4-13):
-- Recolor theme with new color palette (using Google Help as reference)
-- Improve hovering over classes in home page
-- Fix Google Drive upload popup
-- Fix minor border issues
+2.4.0.1 (2025-5-15):
+- Fix poll colors
 */
 body {
   background-color: #1f1f1f;
@@ -260,6 +257,12 @@ body {
 .asQXV-FGzYL {
   color: #b8b3ad;
 }
+.LdMiEd {
+  background-color: #15181c;
+}
+.lbWVCe .h0pqq {
+  background-color: #2f2f2f;
+}
 .lXuxY,
 .pO6AMc,
 .PqkECe,
@@ -289,9 +292,6 @@ body {
 }
 .qj5L0 {
   border-color: #3b3b3b;
-}
-.lbWVCe .h0pqq {
-  background-color: #222;
 }
 .N6nSod {
   background: none;

@@ -23,11 +23,8 @@ so I rewrote the entire theme from scratch. This version has more customizations
 Since there was no good dark theme for Google Classroom and the Dark Reader extension
 didn't work perfectly, I decided to create my own dark theme for Google Classroom.
 
-2.4.0.0 (2025-4-13):
-- Recolor theme with new color palette (using Google Help as reference)
-- Improve hovering over classes in home page
-- Fix Google Drive upload popup
-- Fix minor border issues
+2.4.0.1 (2025-5-15):
+- Fix poll colors
 */
 
 
@@ -177,7 +174,7 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   .hVNH5c .K0NPx,
   .s8kOBc .VfPpkd-rymPhb-ibnC6b.VfPpkd-rymPhb-ibnC6b-OWXEXe-gk6SMd,
   .WmnPA:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me),
-  .lbWVCe,
+  .lbWVCe, // Poll option
   .cLpBac, // Class dropdown for announcements
   {
     background-color: bg-tertiary;
@@ -251,6 +248,14 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   
   
   // Hardcoded fixes
+  .LdMiEd {
+    // Fix background for chosen option in poll
+    background-color: mix(bg-tertiary, hsl(218 92% 10%), 85%)
+  }
+  .lbWVCe .h0pqq {
+    // Fix poll filled color
+    background-color: mix(bg-tertiary, #fff, 90%);
+  }
   .lXuxY, .pO6AMc, .PqkECe, // Selected assignment box in Classwork page
   .GWZ7yf, // Create announcement box
   .gHz6xd.rZXyy:not(.kKn9Nc):not(.u0dx8e):hover // Hovered class in Home page
@@ -287,10 +292,6 @@ didn't work perfectly, I decided to create my own dark theme for Google Classroo
   .qj5L0 {
     // Turn in work popup line
     border-color: border-2nd;
-  }
-  .lbWVCe .h0pqq {
-    // Fix poll colors
-    background-color: #222
   }
   .N6nSod {
     // Bottom right help button
