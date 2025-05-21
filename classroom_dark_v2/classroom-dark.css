@@ -6,8 +6,8 @@ so I rewrote the entire theme from scratch. This version has more customizations
 Since there was no good dark theme for Google Classroom and the Dark Reader extension
 didn't work perfectly, I decided to create my own dark theme for Google Classroom.
 
-2.4.0.1 (2025-5-15):
-- Fix poll colors
+2.4.0.2 (2025-5-20):
+- Fix white border in link box
 */
 body {
   background-color: #1f1f1f;
@@ -53,7 +53,8 @@ body {
 .O9YpHb,
 .Iwp0Ue:not(:first-child),
 .lXuxY .u73Apc,
-.RcHwO {
+.RcHwO,
+.Niache {
   border-color: #444746;
 }
 .xVPuB .mIZh1c,
