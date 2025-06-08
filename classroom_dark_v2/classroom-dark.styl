@@ -17,293 +17,349 @@ active-button = #202020;
 
 /*
 Google Classroom Dark Theme
-The old code had a lot of unneccesary stuff, was old, and broke with a UI update,
-so I rewrote the entire theme from scratch. This version has more customizations.
+Since there was no good dark theme for Google Classroom that updates frequently, and
+the Dark Reader extension didn't work well, I decided to create my own dark theme for
+Google Classroom.
 
-Since there was no good dark theme for Google Classroom and the Dark Reader extension
-didn't work perfectly, I decided to create my own dark theme for Google Classroom.
-
-2.4.0.2 (2025-5-20):
-- Fix white border in link box
+3.0.0.0 (2025-6-7):
+- Complete rewrite for Google Material redesign of Google Classroom
+  - Add backwards compatibility for old design
+- Change :root variables instead of directly styling classes whenever possible to future-proof theme
+- Use new colors to fit new Google Classroom design
+- Fix more educator-specific elements (only tested in old UI)
 */
 
 
+
+  // Built-in variables
+  // Most elements in Google Classroom use these
+  :root {
+    --gm3-sys-color-surface: #2c2c2c // Main background
+    
+    --gm3-sys-color-surface-container-low: #111111 // Navbar and sidebar background
+    --gm3-sys-color-on-surface-variant: #e0e0e0 // Navbar and sidebar text
+    
+    --gm3-sys-color-secondary-container: #414141 // Selected class in sidebar background
+    --gm3-sys-color-on-secondary-container: #ffffff // Selected class in sidebar text
+    
+    --gm3-focus-ring-inward-color: #606060 // Border around clicked class in sidebar
+    
+    --gm3-sys-color-on-surface: #ffffff // Hovered button text
+    
+    --gm3-button-filled-disabled-container-color: #363636 // Disabled post announcement button background
+    --gm3-button-filled-disabled-label-text-color: #1f1f1f // Disabled post announcement button text
+    
+    --gm3-icon-button-standard-disabled-icon-color: #363636 // Disabled post comment button
+    --gm3-button-text-disabled-label-text-color: #474747 // Disabled button text in popup boxes
+    
+    --gm3-menu-container-color: #1f1f1f // Context menu (triple dot or help button)
+    
+    --gm3-card-outlined-outline-color: #4d4d4d // Border around currently signed in box in Join class menu
+    --gm3-card-outlined-hover-outline-color: #4d4d4d // Border around currently signed in box in Join class menu
+    
+    --gm3-text-field-filled-container-color: #303030 // Add link textbox
+    --gm3-text-field-filled-hover-state-layer-color: #141414 // Add link textbox hovered
+  }
+  
+  .O68mGe-xl07Ob {
+    --gm3-list-divider-color: #4d4d4d // Context menu dividers
+  }
+  .S1oK3c {
+    // Hover over triple dot in home page
+    --gm3-icon-button-standard-unselected-focus-icon-color: #ffffff
+    --gm3-icon-button-standard-unselected-hover-icon-color: #ffffff
+    --gm3-icon-button-standard-unselected-icon-icon-color: #ffffff
+    --gm3-icon-button-standard-unselected-pressed-icon-color: #ffffff
+  }
+  .rHGeGc-YPmvEd {
+    // Dropdown menu
+    --gm3-menu-container-color: #1f1f1f // Background
+    --gm3-list-list-item-selected-container-color: #2e2e2e
+  }
+  .qdOxv-fmcmS-yrriRe-OWXEXe-INsAgc:not(.qdOxv-fmcmS-yrriRe-OWXEXe-OWB6Me):not(.qdOxv-fmcmS-yrriRe-OWXEXe-XpnDCe):hover {
+    // Hover over class code text box
+    --gm3-notched-outline-border-color: #888888
+  }
+  
+  
+  // Non-variable elements
   body {
-    background-color: bg-primary;
-    color: text-primary;
+    background-color: #2c2c2c
+    color: #e0e0e0
   }
   
-  .VfPpkd-xl07Ob .VfPpkd-StrnGf-rymPhb-IhFlZd, .VfPpkd-xl07Ob .VfPpkd-StrnGf-rymPhb-f7MjDc,
-  .cC1eCc .VfPpkd-k2Wrsb, // Submit/unsubmit popup title
+  .mwJvDe .KEDCCd { // Button bar in class (Stream, Classwork, People)
+    background-color: #2c2c2c
+    border-color: #4d4d4d
+  }
+  
+  .Aopndd, // Announcement and assignment boxes in stream
+  .d4Fe0d  // Boxes to the left of stream (Upcoming, Quick Links, Meet, etc.)
   {
-    color: text-primary;
+    background-color: #252525
+    border-color: #4d4d4d
   }
   
-  .I7OXgf {
-    background-color: bg-primary;
+  .SZ0kZe, .s2g3Xd,              // Borders separating sections in boxes
+  .nl5VRd,                       // Border between assignment name/date and assignment text
+  .ar1wE .eqqrO, .ySjuvd .eqqrO, // Border between assignment text and class comments
+  .q1Kmyc,                       // Comment textbox border
+  .svNSpd,                       // Add file/link buttons in announcement creation box
+  .Niache,                       // Border between file/link preview and title
+  .VKRoqe,                       // Separator between category ("Teachers"/"Classmates") and people in People list
+  .ycbm1d, .d6CWTd,              // Separator between people in People list
+  .MHxtic:not(:last-child),      // Assignments in To-do
+  .LKqFXc,                       // Border above "View all" in To-do
+  .LDr2ne,                       // Border separating Originality reports and sections around it in "Your work"
+  .qj5L0,                        // Border separating files and "_ attachments will be submitted for __"
+  .Iwp0Ue:not(:first-child),     // Assignments in Classwork section
+  .lXuxY .u73Apc, .O9YpHb,       // Borders for assignments in Classwork section
+/*   .u73Apc */
+  {
+    border-color: #4d4d4d
   }
   
+  .asQXV, // Announcement authors and assignment titles in stream, "Quick Links" and "Meet" in boxes left of stream
+  .EZrbnd, // "Upcoming" in box left of stream
+  .B7SYid, // Assignment titles in assignment page
+  .A6dC2c, .saYe1e, // Link titles
+  .apFsO.onkcGd, .apFsO.onkcGd:visited, // Assignment titles in Upcoming box
+  .z3vRcc, .tDxNLe, // "Your Work" in assignment page
+  .WOPwXe, // Due date ranges in To-do (No due date, This week, Next week, Later)
+  .cC1eCc .VfPpkd-k2Wrsb, // Turn in confirmation popup title
+  .ksaOtd // Received score in To-do Done section
+  {
+    color: #e0e0e0
+  }
+  
+  .Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover.rXdid, .Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover.h7Ww0, .Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover .rXdid, .Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover .h7Ww0, .xWw7yd:hover.rXdid, .xWw7yd:hover.h7Ww0, .xWw7yd:hover .rXdid, .xWw7yd:hover .h7Ww0,
+  .Iwp0Ue:not(.xp2dJ):focus-within.JiTjnd, .Iwp0Ue:not(.xp2dJ):focus-within.h7Ww0, .Iwp0Ue:not(.xp2dJ) :focus-within.JiTjnd, .Iwp0Ue:not(.xp2dJ) :focus-within.h7Ww0, .xWw7yd:focus-within.JiTjnd, .xWw7yd:focus-within.h7Ww0, .xWw7yd :focus-within.JiTjnd, .xWw7yd :focus-within.h7Ww0
+  {
+    // Assignment boxes in stream hovered/focused
+    background-color: #202020
+  }
+  
+  .YLFC3e:hover, .YLFC3e:focus, .YLFC3e:focus-within {
+    // Quick links hovered
+    background-color: #343434
+  }
+  
+  .IzVHde // Class information
+  {
+    background-color: #252525
+  }
+
+  
+  .sdDCme, .oBSRLe,              // Assignment due day in Upcoming box (or "Woohoo, no work due soon!")
+  .zuzKle.xVPuB, .zuzKle.vnnr5e, // Comment textbox
+  .tLDEHd,                       // Comment and assignment text
+  .K6Ovqd,                       // "Announce something to your class" text
+  .cC1eCc .VfPpkd-cnG4Wd,        // Turn in confirmation popup text
+  .Evt7cb, .Evt7cb:visited,      // Turn in confirmation popop file names
+  .asQXV-FGzYL,                  // Max score in To-do, or "Turned in"
+  .i9glDf                        // Bold text
+  {
+    color: #cfcfcf
+  }
+  
+  .cSyPgb, // Assignment author and date
+  .dDKhVc, // "Originality reports available" above assignment uploaded work
+  .udxSmc, // "Done late" or "Not turned in" in To-do Done section
+  .zuV2Cf  // Quick link name
+  {
+    color: #a6a6a6
+  }
+  
+  .TisIWb .kKn9Nc::before, // Background behind class box in home page (only visible when reordering classes)
+  .cC1eCc .VfPpkd-P5QLlc // Turn in confirmation popup 
+  {
+    background-color: #252525
+  }
+  
+
+  
+  
+  // Manual fixes
+  .Hwv4mb > :is(.onkcGd:hover, .onkcGd:focus, .Vx8Sxd:hover, .Vx8Sxd:focus):not(.sXIFDb:last-child) {
+    // Don't double-underline top left "Classroom" text on hover (this issue also exists in normal Google Classroom)
+    text-decoration: none;
+  }
+  
+  .GWZ7yf, // "Announce something to your class" box
+  .rZXyy.YwNp1, .rZXyy:not(.u0dx8e):not(.ILo0B):not(.xp2dJ):hover, .rZXyy:not(.u0dx8e):not(.ILo0B):not(.xp2dJ):focus, // Hovered classes
+  .lXuxY, .pO6AMc, .PqkECe // Selected assignment in Classwork section
+  {
+    // Darken box shadows
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .5),0 2px 6px 2px rgba(0, 0, 0, .25)
+    background-color: #252525
+    border: 1px solid #4d4d4d
+  }
+  .MHxtic:hover {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .5),0 2px 6px 2px rgba(0, 0, 0, .15)
+  }
+  .OlXwxf + .lXuxY, .lXuxY + .OlXwxf, .OlXwxf.OlXwxf:hover, .OlXwxf:hover + .OlXwxf {
+    // Fix border in selected assignment in Classwork section
+    border-top: 1px solid #4d4d4d
+  }
+  
+  
+  .lbWVCe {
+    // Poll option (did not win)
+    background-color: #1f1f1f
+    .h0pqq {
+      // Percentage of voters
+      background-color: #353535
+    }
+  }
+  .LdMiEd {
+    // Poll option (won)
+    background-color: #1c1c24
+  }
+  
+  
+  .qk0lee:focus::after {
+    // Create announcement box clicked
+    background-color: #2c2c2c
+  }
+  .hgjBDc {
+    // Create announcement box opened (contains textbox)
+    background-color: #252525
+  }
+  .vnnr5e:not(.RDPZE):not(.u3bW4e) :is(.I9OJHe, .CIy9F),
+  .vnnr5e .I9OJHe, .vnnr5e .CIy9F {
+    // Create announcement textbox
+    background-color: #1c1c1c
+  }
+  .vnnr5e:not(.RDPZE):not(.u3bW4e):hover :is(.I9OJHe, .CIy9F) {
+    // Create announcement textbox hovered
+    background-color: #202020
+  }
+  .vnnr5e:not(.RDPZE):not(.u3bW4e):hover .I9OJHe.vTcY1d .snByac {
+    // Create announcement textbox placeholder ("Announce something to your class") hovered
+    color: #a6a6a6
+  }
+  
+  
+  :is(.xVPuB, .vnnr5e, .XpxsVb) .Aworge {
+    // Text formatting buttons
+    color: #a6a6a6
+  }
+  .EN2Rfc:not(.RDPZE) .XTO5bf:hover, .EN2Rfc:not(.RDPZE) .XTO5bf.y7OZL {
+    // Text formatting buttons hovered
+    color: #fff
+  }
+  .EN2Rfc:not(.RDPZE) .XTO5bf.y7OZL {
+    // Text formatting buttons enabled
+    background-color: #3e3e3e
+  }
+  
+  
+  .N6nSod {
+    // Help button at bottom right
+    background-color: #2c2c2c9c
+  }
+  
+  .gHz6xd.rZXyy:not(.kKn9Nc):not(.u0dx8e):hover {
+    // Don't shift classes on hover
+    margin: 0 1.5rem 1.5rem 0
+  }
+  
+  
+  .w482V-O1htCb:hover .w482V-CZC2Ab-i5vt6e {
+    // Change border color of hovered dropdown
+    --gm3-sys-color-on-surface: #8d8d8d
+  }
+  
+  
+  
+  
+  // OLD UI FIXES
+  // Since this UI was created for the new UI, it doesn't fully work on the old UI
+  // These are temporary rules to fix the old UI (taken from old style)
   .joJglb, // Top bar
   .mwJvDe .KEDCCd, // Bar under top bar
   .ETRkCe, // Sidebar in portrait mode
   .yWU57c.AjWMy, .yWU57c.AjWMy .rknsod, // Sidebar in landscape mode
   {
-    background-color: navbar;
-    border-color: border-primary;
+    background-color: #202124
+    border-color: #444746
   }
   
-  .WMQb5e .oBSRLe,
-  .s2g3Xd,
-  .q1Kmyc,
-  .SZ0kZe,
-  .gKkZCe,
-  .E5f6Vd,
-  .svNSpd,
-  .Rj2Mlf:not(:disabled),
-  .ar1wE .eqqrO, .ySjuvd .eqqrO,
-  .AeAAkf,
-  .DC55n td,
-  .a4YS1c,
-  .hYt5f.FRDm8d .WkZsyc:not(:last-child), .hYt5f.FRDm8d .Kql9ed:not(:last-child),
-  .geqPvd .VfPpkd-WLXbod, .geqPvd,
-  .tUJKGd:not(:first-child),
-  .d6CWTd, .ycbm1d,
-  .LDr2ne,
-  .O9YpHb, .Iwp0Ue:not(:first-child), // Assignments in Classwork page
-  .lXuxY .u73Apc, // Separator between assignment name and description in selected assignment in Classwork page
-  .RcHwO, // Separator between assignment name and description in Classwork page specific topic
-  .Niache // Border between name and preview in link box
-  {
-    border-color: border-primary;
-  }
-  
-  .xVPuB .mIZh1c, .vnnr5e .mIZh1c, .oQ5Hqe,
-  .VfPpkd-rymPhb-clz4Ic // Separator between Home/Calendar and classes in sidebar
-  {
-    background-color: border-2nd;
-  }
-  
-  .MHxtic:not(:last-child), .LKqFXc,
-  .Rj2Mlf:not(:disabled):hover,
-  .uO32ac, .ypv4re, // Topic name bottom border
-  .nl5VRd, // Separator between assignment name and description in assignment page
-  .VKRoqe, // Separator between topic name and assignments in Classwork page
-  {
-    border-color: border-2nd;
-  }
-  
-  .dDKhVc, .WdYux, .tLDEHd, .ViCi4,
-  .Erb9le:not(.RDPZE) .qmMNRc:hover, .Erb9le:not(.RDPZE) .qmMNRc.y7OZL,
-  .ReCbLb:not(.VfPpkd-O1htCb-OWXEXe-OWB6Me) .VfPpkd-uusGie-fmcmS,
-  .FUvKMe, // wtf is this class name
-  .cSyPgb,
-  .lziZub, .lziZub:visited,
-  .s8kOBc .VfPpkd-rymPhb-fpDzbe-fmcmS,
-  .WmnPA:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-wGMbrd, // Textbox Label
-  .onkcGd, .onkcGd:visited, .WPhuJf, .WPhuJf:visited, .OGhwGf, .OGhwGf:visited, // "# class comments" under assignment in Stream
-  .cC1eCc .VfPpkd-cnG4Wd, // Submit/unsubmit popup description
-  .VfPpkd-I9GLp-yrriRe // Hide classroom popup "Don't show this message again" label
-  {
-    color: text-secondary;
-  }
-  
-  .EZrbnd,
-  .asQXV,
-  .rpo4wf-J3yWx,
-  .wZTANe .J1raN,
-  .A6dC2c-J3yWx, .z3vRcc-J3yWx,
-  .z3vRcc, .tDxNLe
-  .WOPwXe,
-  .A6dC2c, .saYe1e,
-  .cfWmIb:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-wGMbrd,
-  .Evt7cb, .Evt7cb:visited,
-  .nk37z,
-  .geqPvd .VfPpkd-Rj7Y9b,
-  .q6oraf .VfPpkd-StrnGf-rymPhb,
-  .z80M1,
-  .s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-gk6SMd .VfPpkd-rymPhb-fpDzbe-fmcmS, .s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-pXU01b .VfPpkd-rymPhb-fpDzbe-fmcmS, .s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-gk6SMd.VfPpkd-rymPhb-ibnC6b-OWXEXe-SfQLQb-M1Soyc-Bz112c .VfPpkd-rymPhb-KkROqb, .s8kOBc .VfPpkd-rymPhb-ibnC6b-OWXEXe-pXU01b.VfPpkd-rymPhb-ibnC6b-OWXEXe-SfQLQb-M1Soyc-Bz112c .VfPpkd-rymPhb-KkROqb,
-  .Vx8Sxd, .Vx8Sxd:visited, .Vx8Sxd:hover, .Vx8Sxd:focus,
-  .apFsO.onkcGd, .apFsO.onkcGd:visited, // Assignments under classes in Home
-  .Eajscb .vT1Gyc.N4XV7d, // Future dates in Calendar
-  .B7SYid, // Assignment names
-  .zuzKle.xVPuB, .zuzKle.vnnr5e, // Announcement composer textbox
-  {
-    color: text-primary;
-  }
-  
-  .wZTANe .J1raN:hover,
-  .LjDxcd:hover:not(:disabled), .LjDxcd.VfPpkd-ksKsZd-mWPk3d-OWXEXe-AHe6Kc-XpnDCe:not(:disabled), .LjDxcd:not(.VfPpkd-ksKsZd-mWPk3d):focus:not(:disabled), .LjDxcd:active:not(:disabled),
-  .WmnPA:hover:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc, // Textbox Label
-  .xlHPle .VfPpkd-fmcmS-yrriRe:hover:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc, // Textbox Label (Alt)
-  .vnnr5e:not(.RDPZE):not(.u3bW4e):hover .I9OJHe.vTcY1d .snByac,
-  .EN2Rfc:not(.RDPZE) .XTO5bf:hover, .EN2Rfc:not(.RDPZE) .XTO5bf.y7OZL, // Announcement composer formatting buttons
-  {
-    color: text-hover;
-  }
-  
-  .K6Ovqd, .sdDCme, .oBSRLe, .IMvYId, .IMvYId:visited, .LjDxcd:not(:disabled) {
-    color: text-tertiary;
-  }
-  
-  .hgjBDc, .DC55n td,
-  .IzVHde, // Class code under banner
-  {
-    background-color: bg-secondary;
-  }
-  
-  .d4Fe0d, 
-  .Aopndd, // Box border
   .ZNE4y, // Stream assignment box separator
-  .RIDjNe // Calendar box separator
+  .Rj2Mlf:not(:disabled), // Announce to student button
+  .E5f6Vd, // Separator between notification settings and class notifications
+  .vjb26b, // Border under "Class settings" when changing class settings
+  .gpeXDe, .meyvr, .Lp3y7d, .LqHDgc // Borders in class settings
   {
-    background-color: bg-secondary;
-    border-color: border-primary;
+    border-color: #444746
   }
   
-  .gHz6xd.rZXyy:not(.kKn9Nc):not(.u0dx8e):hover {
-    // Force border even on hover
-    border: .0625rem solid border-primary;
-    margin: 0 1.5rem 1.5rem 0;
-  }
   
-  .vnnr5e .I9OJHe, .vnnr5e .CIy9F, // Create announcement textbox
-  .fWf7qe .Yalane, .aSjeL.aSjeL td,
-  .xlHPle .VfPpkd-fmcmS-yrriRe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me), // Textboxes
-  .V8apv,
-  .WufxEd .ynt9Dc .VfPpkd-WLXbod, .WufxEd .ynt9Dc,
-  .VfPpkd-xl07Ob-XxIAqe,
-  .hVNH5c .K0NPx,
-  .s8kOBc .VfPpkd-rymPhb-ibnC6b.VfPpkd-rymPhb-ibnC6b-OWXEXe-gk6SMd,
-  .WmnPA:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me),
-  .lbWVCe, // Poll option
-  .cLpBac, // Class dropdown for announcements
+  .kYtXye.bFjUmb-Ysl7Fe, .kYtXye .bFjUmb-Ysl7Fe, .UvHKof.bFjUmb-Ysl7Fe, .UvHKof .bFjUmb-Ysl7Fe, // Selected class in sidebar
+  :is(.Ag4wUb, .ee1HBc, .AjWMy) .bFjUmb-Ysl7Fe, // Selected class in sidebar
+  .hN1OOc.eumXzf:hover, .hN1OOc.eumXzf:focus, // Button bar in class (Stream, Classwork, People) current tab hover
   {
-    background-color: bg-tertiary;
+    background-color: #1a1a1a
   }
-  
-  .cC1eCc .VfPpkd-P5QLlc, // Most popups (submit/unsubmit, class code, etc)
+  .z80M1.FwR7Pc {
+    background-color: #202020
+  }
+  .z3vRcc-J3yWx, // Sub-page name in navbar
+  .A6dC2c-J3yWx, // Class name in navbar
+  .rpo4wf-J3yWx, // "Classroom" text at top left
+  .wZTANe .J1raN, // Button bar texts in class (Stream, Classwork, People)
+  .WmnPA:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-wGMbrd, // Add link textbox
+  .yPtghd, // "Class settings" at top left when changing class settings
+  .xlHPle .VfPpkd-fmcmS-yrriRe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-wGMbrd, // Class subject textbox
+  .lziZub, .lziZub:visited // "Your answer" textbox
   {
-    background-color: bg-popup;
+    color: #e8e5e3
   }
-  
-  .fWf7qe:not(.RDPZE):hover .Yalane,
-  .TisIWb .kKn9Nc:before,
-  .z80M1.FwR7Pc,
-  .Mupove .tUJKGd:not(.xp2dJ):focus-within.boxOzd, .Mupove .tUJKGd:not(.xp2dJ):focus-within.idtp4e, .Mupove .tUJKGd:not(.xp2dJ) :focus-within.boxOzd, .Mupove .tUJKGd:not(.xp2dJ) :focus-within.idtp4e, .Mupove .ZoT1D:focus-within.boxOzd, .Mupove .ZoT1D:focus-within.idtp4e, .Mupove .ZoT1D :focus-within.boxOzd, .Mupove .ZoT1D :focus-within.idtp4e,
-  .hN1OOc.eumXzf:hover, .hN1OOc.eumXzf:focus, // Tabs below navbar
-  .Iwp0Ue:not(.xp2dJ):focus-within.JiTjnd, .Iwp0Ue:not(.xp2dJ):focus-within.h7Ww0, .Iwp0Ue:not(.xp2dJ) :focus-within.JiTjnd, .Iwp0Ue:not(.xp2dJ) :focus-within.h7Ww0, .xWw7yd:focus-within.JiTjnd, .xWw7yd:focus-within.h7Ww0, .xWw7yd :focus-within.JiTjnd, .xWw7yd :focus-within.h7Ww0, // Topics in Classwork page
-  .YLFC3e:hover, .YLFC3e:focus, .YLFC3e:focus-within // Quick links
+  .wZTANe .J1raN:hover, // Button bar texts in class (Stream, Classwork, People) hovered
+  .xlHPle .VfPpkd-fmcmS-yrriRe:hover:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc // Class subject textbox label hover
   {
-    background-color: bg-hover;
+    color: #999897
   }
-  
-  .vnnr5e:not(.RDPZE):not(.u3bW4e):hover .I9OJHe, .vnnr5e:not(.RDPZE):not(.u3bW4e):hover .CIy9F, // Announcement textbox
+  .Rj2Mlf:not(:disabled):hover { // Announce to student button hover
+    border-color: #3b3b3b
+  }
+  .VfPpkd-rymPhb-clz4Ic, // Separator between Home/Calendar and classes in sidebar
   {
-    background-color: bg-2nd-hover;
+    background-color: #3b3b3b;
   }
-  
-  .EN2Rfc:not(.RDPZE) .XTO5bf.y7OZL // Formatting buttons in announcement composer
-  {
-    background-color: active-button;
-  }
-  
-  .WmnPA.VfPpkd-fmcmS-yrriRe-OWXEXe-XpnDCe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc {
-    color: #1967d2;
-  }
-  
-  
-  .ZoT1D:hover.idtp4e,
-  .UISY8d-Ysl7Fe:hover,
-  .P3W0Dd-Ysl7Fe:focus, .maXJsd:focus .P3W0Dd-Ysl7Fe, .maXJsd:focus .P3W0Dd-Ysl7Fe,
-  .bFjUmb-Ysl7Fe, .bFjUmb-Ysl7Fe, .CNpREd.bFjUmb-Ysl7Fe, .CNpREd .bFjUmb-Ysl7Fe,
-  .qk0lee:focus:after,
-  .TJtJXb:hover td, .tYQn5c:hover td, .DC55n:hover td,
-  .Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover.rXdid, .Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover.h7Ww0, .Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover .rXdid, .Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover .h7Ww0, .xWw7yd:hover.rXdid, .xWw7yd:hover.h7Ww0, .xWw7yd:hover .rXdid, .xWw7yd:hover .h7Ww0
-  {
-    background-color: bg-hover !important;
-  }
-  
-  .Iwp0Ue:not(.xp2dJ):not(.rZXyy) .h7Ww0 {
-    background-color: bg-primary !important;
-  }
-  
-  .z80M1.qs41qe>.aBBjbd {
-    background-image: radial-gradient(circle farthest-side,#424242,#424242 80%,rgba(189,189,189,0) 100%)
-  }
-  
-  
-  // Educator-Specific Elements
-  .GQLaCd:not(:empty), // Introducing Generative AI box
-  .fyExH, // Not using Classroom at a school with students checkbox
-  {
-    background-color: bg-tertiary;
-  }
-  .QV10Af { // Bottom part of "Announce to" popup
-    background-color: transparent;
-    border-color: border-2nd;
-  }
+  .onkcGd, .onkcGd:visited, .WPhuJf, .WPhuJf:visited, // "# class comments" under assignment in Stream
+  .dDKhVc, // Class section in navbar
   .asQXV-FGzYL, // Classroom name in dropdown when creating posts
+  .WmnPA:hover:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc, // Textbox label
+  .ViCi4 // Settings labels
   {
-    color: text-secondary;
+    color: #b8b3ad
+  }
+  
+  .svNSpd svg // Add file/link icons in create announcement box
+  {
+    fill: #b8b3ad
+  }
+  
+  .WmnPA:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me), // Add link textbox
+  .xlHPle .VfPpkd-fmcmS-yrriRe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me), // Class subject textbox
+  .V8apv // "Your answer" textbox in assignment
+  {
+    background-color: #303030
   }
   
   
-  // Hardcoded fixes
-  .LdMiEd {
-    // Fix background for chosen option in poll
-    background-color: mix(bg-tertiary, hsl(218 92% 10%), 85%)
-  }
-  .lbWVCe .h0pqq {
-    // Fix poll filled color
-    background-color: mix(bg-tertiary, #fff, 90%);
-  }
-  .lXuxY, .pO6AMc, .PqkECe, // Selected assignment box in Classwork page
-  .GWZ7yf, // Create announcement box
-  .gHz6xd.rZXyy:not(.kKn9Nc):not(.u0dx8e):hover // Hovered class in Home page
+  .fyExH, // Not using Classroom at a school with students checkbox
+  .cLpBac, // Class dropdown for announcements
+  .JPdR6b
   {
-    // Elevated boxes using shadow
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4), 0 2px 6px 2px rgba(0, 0, 0, 0.3);
-    border: 1px solid border-primary !important;
-  }
-  .VfPpkd-TkwUic:hover {
-    // Dropdown hovered
-    border: 1px solid border-primary;
-    border-radius: 4px;
-  }
-  .ReCbLb:not(.VfPpkd-O1htCb-OWXEXe-OWB6Me):not(.VfPpkd-O1htCb-OWXEXe-XpnDCe):hover .VfPpkd-t08AT-Bz112c {
-    // Dropdown hovered arrow
-    fill: text-secondary;
-  }
-  .svNSpd svg {
-    // Add file/link icon in create announcement box
-    fill: text-secondary;
+    background-color: #191919;
   }
   .FAVvUd .nIu6nb {
     // SVG checkboxes
     filter: invert(1);
   }
-  .u73Apc:not(.lXuxY .u73Apc) {
-    border-bottom: none;
-  }
-  .VfoFfe
-  {
-    // Class code popout box
-    border-top: none;
-  }
-  .qj5L0 {
-    // Turn in work popup line
-    border-color: border-2nd;
-  }
-  .N6nSod {
-    // Bottom right help button
-    background: none;
-  }  
-  .N6nSod:hover {
-    // Bottom right help button
-    background-color: rgba(255, 255, 255, 0.075);
-  }
-  
-  .picker-dialog.XKSfm-Sx9Kwc {
-    // Google Drive file picker (before fully loaded)
-    background-color: bg-popup;
+  .QV10Af { // Bottom part of "Announce to" popup
+    background-color: transparent;
+    border-color: #3b3b3b
   }
