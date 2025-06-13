@@ -1,27 +1,12 @@
 /* ==UserStyle==
 @name           Google Classroom Dark Theme
 @namespace      github.com/DeltAndy123
-@version        3.0.0.0
+@version        3.0.1
 @description    Dark theme for Google Classroom
 @author         DeltAndy
 @homepageURL    https://userstyles.world/style/12025
 @supportURL     https://github.com/DeltAndy123/UserStyles-UserScripts
 @preprocessor   stylus
-
-@var color      bg-primary     "Background Primary"      #1f1f1f
-@var color      bg-secondary   "Background Secondary"    #1f1f1f
-@var color      bg-tertiary    "Background Tertiary"     #191919
-@var color      bg-popup       "Popup Background"        #222222
-@var color      bg-hover       "Background Hover"        #1a1a1a
-@var color      bg-2nd-hover   "BG Secondary Hover"      #161616
-@var color      border-primary "Border Primary"          #444746
-@var color      border-2nd     "Border Secondary"        #3b3b3b
-@var color      navbar         "Navigation Bar"          #202124
-@var color      text-primary   "Text Primary"            #e8e5e3
-@var color      text-hover     "Text Primary Hover"      #999897
-@var color      text-secondary "Text Secondary"          #b8b3ad
-@var color      text-tertiary  "Text Tertiary"           rgba(255,255,255,.549)
-@var color      active-button  "Active Button"           #202020
 
 ==/UserStyle== */
 
@@ -31,12 +16,11 @@ Since there was no good dark theme for Google Classroom that updates frequently,
 the Dark Reader extension didn't work well, I decided to create my own dark theme for
 Google Classroom.
 
-3.0.0.0 (2025-6-7):
-- Complete rewrite for Google Material redesign of Google Classroom
-  - Add backwards compatibility for old design
-- Change :root variables instead of directly styling classes whenever possible to future-proof theme
-- Use new colors to fit new Google Classroom design
-- Fix more educator-specific elements (only tested in old UI)
+3.0.1 (2025-6-12):
+- Hotfix for upcoming assignments text
+- Fix create assignment popup
+- Remove config variables (for now, will add new ones later)
+- Transition to 3 part version numbers instead of 4 part version numbers
 */
 
 
@@ -69,6 +53,12 @@ Google Classroom.
     
     --gm3-text-field-filled-container-color: #303030 // Add link textbox
     --gm3-text-field-filled-hover-state-layer-color: #141414 // Add link textbox hovered
+    
+    --gm3-autocomplete-filled-menu-container-color: #191919 // Autocomplete dropdown in textboxes
+    --gm3-select-filled-text-field-container-color: #1c1c1c // Dropdown
+    
+    --gm3-datepicker-container-color: #303030 // Date picker background
+    --gm3-datepicker-date-unselected-outside-month-label-text-color: #747474 // Date picker other month date
   }
   
   .O68mGe-xl07Ob {
@@ -89,6 +79,10 @@ Google Classroom.
   .qdOxv-fmcmS-yrriRe-OWXEXe-INsAgc:not(.qdOxv-fmcmS-yrriRe-OWXEXe-OWB6Me):not(.qdOxv-fmcmS-yrriRe-OWXEXe-XpnDCe):hover {
     // Hover over class code text box
     --gm3-notched-outline-border-color: #888888
+  }
+  .w482V-O1htCb:hover .w482V-CZC2Ab-i5vt6e {
+    // Change border color of hovered dropdown
+    --gm3-sys-color-on-surface: #8d8d8d
   }
   
   
@@ -112,7 +106,8 @@ Google Classroom.
   
   .SZ0kZe, .s2g3Xd,              // Borders separating sections in boxes
   .nl5VRd,                       // Border between assignment name/date and assignment text
-  .ar1wE .eqqrO, .ySjuvd .eqqrO, // Border between assignment text and class comments
+  .ar1wE .eqqrO, .ySjuvd .eqqrO, // Border between assignment text and class comments in assignment page
+  .SUV7We,                       // Border between assignment name and class comments button in stream
   .q1Kmyc,                       // Comment textbox border
   .svNSpd,                       // Add file/link buttons in announcement creation box
   .Niache,                       // Border between file/link preview and title
@@ -124,7 +119,8 @@ Google Classroom.
   .qj5L0,                        // Border separating files and "_ attachments will be submitted for __"
   .Iwp0Ue:not(:first-child),     // Assignments in Classwork section
   .lXuxY .u73Apc, .O9YpHb,       // Borders for assignments in Classwork section
-/*   .u73Apc */
+  .hja3X,                        // Create assignment right sidebar border
+  .ECK80e                        // Due date & time border
   {
     border-color: #4d4d4d
   }
@@ -133,7 +129,7 @@ Google Classroom.
   .EZrbnd, // "Upcoming" in box left of stream
   .B7SYid, // Assignment titles in assignment page
   .A6dC2c, .saYe1e, // Link titles
-  .apFsO.onkcGd, .apFsO.onkcGd:visited, // Assignment titles in Upcoming box
+  .TgJ2ub .ARTZne.onkcGd, .TgJ2ub .ARTZne.onkcGd:visited, // Assignment titles in Upcoming box
   .z3vRcc, .tDxNLe, // "Your Work" in assignment page
   .WOPwXe, // Due date ranges in To-do (No due date, This week, Next week, Later)
   .cC1eCc .VfPpkd-k2Wrsb, // Turn in confirmation popup title
@@ -153,21 +149,19 @@ Google Classroom.
     // Quick links hovered
     background-color: #343434
   }
-  
-  .IzVHde // Class information
-  {
-    background-color: #252525
-  }
 
   
-  .sdDCme, .oBSRLe,              // Assignment due day in Upcoming box (or "Woohoo, no work due soon!")
+  .TgJ2ub .xo2x2e,               // "Woohoo, no work due soon!"
+  .TgJ2ub .COwiKd,               // Assignment due day in Upcoming box
   .zuzKle.xVPuB, .zuzKle.vnnr5e, // Comment textbox
   .tLDEHd,                       // Comment and assignment text
   .K6Ovqd,                       // "Announce something to your class" text
   .cC1eCc .VfPpkd-cnG4Wd,        // Turn in confirmation popup text
   .Evt7cb, .Evt7cb:visited,      // Turn in confirmation popop file names
   .asQXV-FGzYL,                  // Max score in To-do, or "Turned in"
-  .i9glDf                        // Bold text
+  .i9glDf,                       // Bold text
+  .s7bwNb,                       // "Due date & time" in create assignment popup
+  .iLjzDc                        // Create assignment labels
   {
     color: #cfcfcf
   }
@@ -181,12 +175,20 @@ Google Classroom.
   }
   
   .TisIWb .kKn9Nc::before, // Background behind class box in home page (only visible when reordering classes)
-  .cC1eCc .VfPpkd-P5QLlc // Turn in confirmation popup 
+  .cC1eCc .VfPpkd-P5QLlc, // Turn in confirmation popup
+  .IzVHde, // Class information
   {
     background-color: #252525
   }
   
-
+  .TdC1bb, // Create announcement popup background
+  .y2d25 // Due date/time popup in create assignment popup
+  {
+    background-color: #1b1b1b
+  }
+  
+  
+  
   
   
   // Manual fixes
@@ -235,9 +237,10 @@ Google Classroom.
     // Create announcement box opened (contains textbox)
     background-color: #252525
   }
-  .vnnr5e:not(.RDPZE):not(.u3bW4e) :is(.I9OJHe, .CIy9F),
-  .vnnr5e .I9OJHe, .vnnr5e .CIy9F {
-    // Create announcement textbox
+  .vnnr5e:not(.RDPZE):not(.u3bW4e) :is(.I9OJHe, .CIy9F), // Create announcement textbox
+  .vnnr5e .I9OJHe, .vnnr5e .CIy9F, // Create announcement textbox
+  .ghqpJb .i2Zkcd:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) // Points number box in create assignment popup
+  {
     background-color: #1c1c1c
   }
   .vnnr5e:not(.RDPZE):not(.u3bW4e):hover :is(.I9OJHe, .CIy9F) {
@@ -274,11 +277,7 @@ Google Classroom.
     margin: 0 1.5rem 1.5rem 0
   }
   
-  
-  .w482V-O1htCb:hover .w482V-CZC2Ab-i5vt6e {
-    // Change border color of hovered dropdown
-    --gm3-sys-color-on-surface: #8d8d8d
-  }
+
   
   
   
@@ -321,7 +320,8 @@ Google Classroom.
   .WmnPA:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-wGMbrd, // Add link textbox
   .yPtghd, // "Class settings" at top left when changing class settings
   .xlHPle .VfPpkd-fmcmS-yrriRe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-wGMbrd, // Class subject textbox
-  .lziZub, .lziZub:visited // "Your answer" textbox
+  .lziZub, .lziZub:visited, // "Your answer" textbox
+  .e0prFf // "Assignment" in top left of create assignemnt popup
   {
     color: #e8e5e3
   }

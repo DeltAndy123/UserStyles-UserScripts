@@ -1,15 +1,26 @@
+/* ==UserStyle==
+@name           Google Classroom Dark Theme
+@namespace      github.com/DeltAndy123
+@version        3.0.1
+@description    Dark theme for Google Classroom
+@author         DeltAndy
+@homepageURL    https://userstyles.world/style/12025
+@supportURL     https://github.com/DeltAndy123/UserStyles-UserScripts
+@preprocessor   stylus
+
+
+
 /*
 Google Classroom Dark Theme
 Since there was no good dark theme for Google Classroom that updates frequently, and
 the Dark Reader extension didn't work well, I decided to create my own dark theme for
 Google Classroom.
 
-3.0.0.0 (2025-6-7):
-- Complete rewrite for Google Material redesign of Google Classroom
-  - Add backwards compatibility for old design
-- Change :root variables instead of directly styling classes whenever possible to future-proof theme
-- Use new colors to fit new Google Classroom design
-- Fix more educator-specific elements (only tested in old UI)
+3.0.1 (2025-6-12):
+- Hotfix for upcoming assignments text
+- Fix create assignment popup
+- Remove config variables (for now, will add new ones later)
+- Transition to 3 part version numbers instead of 4 part version numbers
 */
 :root {
   --gm3-sys-color-surface: #2c2c2c;
@@ -28,6 +39,10 @@ Google Classroom.
   --gm3-card-outlined-hover-outline-color: #4d4d4d;
   --gm3-text-field-filled-container-color: #303030;
   --gm3-text-field-filled-hover-state-layer-color: #141414;
+  --gm3-autocomplete-filled-menu-container-color: #191919;
+  --gm3-select-filled-text-field-container-color: #1c1c1c;
+  --gm3-datepicker-container-color: #303030;
+  --gm3-datepicker-date-unselected-outside-month-label-text-color: #747474;
 }
 .O68mGe-xl07Ob {
   --gm3-list-divider-color: #4d4d4d;
@@ -44,6 +59,9 @@ Google Classroom.
 }
 .qdOxv-fmcmS-yrriRe-OWXEXe-INsAgc:not(.qdOxv-fmcmS-yrriRe-OWXEXe-OWB6Me):not(.qdOxv-fmcmS-yrriRe-OWXEXe-XpnDCe):hover {
   --gm3-notched-outline-border-color: #888;
+}
+.w482V-O1htCb:hover .w482V-CZC2Ab-i5vt6e {
+  --gm3-sys-color-on-surface: #8d8d8d;
 }
 body {
   background-color: #2c2c2c;
@@ -63,6 +81,7 @@ body {
 .nl5VRd,
 .ar1wE .eqqrO,
 .ySjuvd .eqqrO,
+.SUV7We,
 .q1Kmyc,
 .svNSpd,
 .Niache,
@@ -75,7 +94,9 @@ body {
 .qj5L0,
 .Iwp0Ue:not(:first-child),
 .lXuxY .u73Apc,
-.O9YpHb {
+.O9YpHb,
+.hja3X,
+.ECK80e {
   border-color: #4d4d4d;
 }
 .asQXV,
@@ -83,8 +104,8 @@ body {
 .B7SYid,
 .A6dC2c,
 .saYe1e,
-.apFsO.onkcGd,
-.apFsO.onkcGd:visited,
+.TgJ2ub .ARTZne.onkcGd,
+.TgJ2ub .ARTZne.onkcGd:visited,
 .z3vRcc,
 .tDxNLe,
 .WOPwXe,
@@ -115,11 +136,8 @@ body {
 .YLFC3e:focus-within {
   background-color: #343434;
 }
-.IzVHde {
-  background-color: #252525;
-}
-.sdDCme,
-.oBSRLe,
+.TgJ2ub .xo2x2e,
+.TgJ2ub .COwiKd,
 .zuzKle.xVPuB,
 .zuzKle.vnnr5e,
 .tLDEHd,
@@ -128,7 +146,9 @@ body {
 .Evt7cb,
 .Evt7cb:visited,
 .asQXV-FGzYL,
-.i9glDf {
+.i9glDf,
+.s7bwNb,
+.iLjzDc {
   color: #cfcfcf;
 }
 .cSyPgb,
@@ -138,8 +158,13 @@ body {
   color: #a6a6a6;
 }
 .TisIWb .kKn9Nc::before,
-.cC1eCc .VfPpkd-P5QLlc {
+.cC1eCc .VfPpkd-P5QLlc,
+.IzVHde {
   background-color: #252525;
+}
+.TdC1bb,
+.y2d25 {
+  background-color: #1b1b1b;
 }
 .Hwv4mb > :is(.onkcGd:hover,
 .onkcGd:focus,
@@ -185,7 +210,8 @@ body {
 .vnnr5e:not(.RDPZE):not(.u3bW4e) :is(.I9OJHe,
 .CIy9F),
 .vnnr5e .I9OJHe,
-.vnnr5e .CIy9F {
+.vnnr5e .CIy9F,
+.ghqpJb .i2Zkcd:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) {
   background-color: #1c1c1c;
 }
 .vnnr5e:not(.RDPZE):not(.u3bW4e):hover :is(.I9OJHe,
@@ -212,9 +238,6 @@ body {
 }
 .gHz6xd.rZXyy:not(.kKn9Nc):not(.u0dx8e):hover {
   margin: 0 1.5rem 1.5rem 0;
-}
-.w482V-O1htCb:hover .w482V-CZC2Ab-i5vt6e {
-  --gm3-sys-color-on-surface: #8d8d8d;
 }
 .joJglb,
 .mwJvDe .KEDCCd,
@@ -256,7 +279,8 @@ body {
 .yPtghd,
 .xlHPle .VfPpkd-fmcmS-yrriRe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-wGMbrd,
 .lziZub,
-.lziZub:visited {
+.lziZub:visited,
+.e0prFf {
   color: #e8e5e3;
 }
 .wZTANe .J1raN:hover,
