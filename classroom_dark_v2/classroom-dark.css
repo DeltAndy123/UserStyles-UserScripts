@@ -1,26 +1,13 @@
-/* ==UserStyle==
-@name           Google Classroom Dark Theme
-@namespace      github.com/DeltAndy123
-@version        3.0.1
-@description    Dark theme for Google Classroom
-@author         DeltAndy
-@homepageURL    https://userstyles.world/style/12025
-@supportURL     https://github.com/DeltAndy123/UserStyles-UserScripts
-@preprocessor   stylus
-
-
-
 /*
 Google Classroom Dark Theme
 Since there was no good dark theme for Google Classroom that updates frequently, and
 the Dark Reader extension didn't work well, I decided to create my own dark theme for
 Google Classroom.
 
-3.0.1 (2025-6-12):
-- Hotfix for upcoming assignments text
-- Fix create assignment popup
-- Remove config variables (for now, will add new ones later)
-- Transition to 3 part version numbers instead of 4 part version numbers
+3.1.1 (2025-9-4):
+- Fix assignment boxes that show description in Stream page
+- Fix quick links
+- Fix border and day number in Calendar
 */
 :root {
   --gm3-sys-color-surface: #2c2c2c;
@@ -43,6 +30,8 @@ Google Classroom.
   --gm3-select-filled-text-field-container-color: #1c1c1c;
   --gm3-datepicker-container-color: #303030;
   --gm3-datepicker-date-unselected-outside-month-label-text-color: #747474;
+  --gm3-sys-color-outline-variant: #4d4d4d;
+  --gm3-sys-color-surface-container-high: #141414;
 }
 .O68mGe-xl07Ob {
   --gm3-list-divider-color: #4d4d4d;
@@ -76,6 +65,9 @@ body {
   background-color: #252525;
   border-color: #4d4d4d;
 }
+.TgJ2ub .IzVHde {
+  background-color: #2c2c2c;
+}
 .SZ0kZe,
 .s2g3Xd,
 .nl5VRd,
@@ -96,10 +88,13 @@ body {
 .lXuxY .u73Apc,
 .O9YpHb,
 .hja3X,
-.ECK80e {
+.ECK80e,
+.RcHwO,
+.RIDjNe {
   border-color: #4d4d4d;
 }
 .asQXV,
+.TgJ2ub .zuV2Cf,
 .EZrbnd,
 .B7SYid,
 .A6dC2c,
@@ -110,26 +105,9 @@ body {
 .tDxNLe,
 .WOPwXe,
 .cC1eCc .VfPpkd-k2Wrsb,
-.ksaOtd {
+.ksaOtd,
+.Eajscb .vT1Gyc.N4XV7d {
   color: #e0e0e0;
-}
-.Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover.rXdid,
-.Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover.h7Ww0,
-.Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover .rXdid,
-.Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover .h7Ww0,
-.xWw7yd:hover.rXdid,
-.xWw7yd:hover.h7Ww0,
-.xWw7yd:hover .rXdid,
-.xWw7yd:hover .h7Ww0,
-.Iwp0Ue:not(.xp2dJ):focus-within.JiTjnd,
-.Iwp0Ue:not(.xp2dJ):focus-within.h7Ww0,
-.Iwp0Ue:not(.xp2dJ) :focus-within.JiTjnd,
-.Iwp0Ue:not(.xp2dJ) :focus-within.h7Ww0,
-.xWw7yd:focus-within.JiTjnd,
-.xWw7yd:focus-within.h7Ww0,
-.xWw7yd :focus-within.JiTjnd,
-.xWw7yd :focus-within.h7Ww0 {
-  background-color: #202020;
 }
 .YLFC3e:hover,
 .YLFC3e:focus,
@@ -165,6 +143,16 @@ body {
 .TdC1bb,
 .y2d25 {
   background-color: #1b1b1b;
+}
+.Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover.rXdid,
+.Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover.h7Ww0,
+.Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover .rXdid,
+.Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover .h7Ww0,
+.xWw7yd:hover.rXdid,
+.xWw7yd:hover.h7Ww0,
+.xWw7yd:hover .rXdid,
+.xWw7yd:hover .h7Ww0 {
+  background-color: #202020;
 }
 .Hwv4mb > :is(.onkcGd:hover,
 .onkcGd:focus,
@@ -234,92 +222,5 @@ body {
   background-color: #3e3e3e;
 }
 .N6nSod {
-  background-color: rgba(44,44,44,0.612);
-}
-.gHz6xd.rZXyy:not(.kKn9Nc):not(.u0dx8e):hover {
-  margin: 0 1.5rem 1.5rem 0;
-}
-.joJglb,
-.mwJvDe .KEDCCd,
-.ETRkCe,
-.yWU57c.AjWMy,
-.yWU57c.AjWMy .rknsod {
-  background-color: #202124;
-  border-color: #444746;
-}
-.ZNE4y,
-.Rj2Mlf:not(:disabled),
-.E5f6Vd,
-.vjb26b,
-.gpeXDe,
-.meyvr,
-.Lp3y7d,
-.LqHDgc {
-  border-color: #444746;
-}
-.kYtXye.bFjUmb-Ysl7Fe,
-.kYtXye .bFjUmb-Ysl7Fe,
-.UvHKof.bFjUmb-Ysl7Fe,
-.UvHKof .bFjUmb-Ysl7Fe,
-:is(.Ag4wUb,
-.ee1HBc,
-.AjWMy) .bFjUmb-Ysl7Fe,
-.hN1OOc.eumXzf:hover,
-.hN1OOc.eumXzf:focus {
-  background-color: #1a1a1a;
-}
-.z80M1.FwR7Pc {
-  background-color: #202020;
-}
-.z3vRcc-J3yWx,
-.A6dC2c-J3yWx,
-.rpo4wf-J3yWx,
-.wZTANe .J1raN,
-.WmnPA:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-wGMbrd,
-.yPtghd,
-.xlHPle .VfPpkd-fmcmS-yrriRe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-wGMbrd,
-.lziZub,
-.lziZub:visited,
-.e0prFf {
-  color: #e8e5e3;
-}
-.wZTANe .J1raN:hover,
-.xlHPle .VfPpkd-fmcmS-yrriRe:hover:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc {
-  color: #999897;
-}
-.Rj2Mlf:not(:disabled):hover {
-  border-color: #3b3b3b;
-}
-.VfPpkd-rymPhb-clz4Ic {
-  background-color: #3b3b3b;
-}
-.onkcGd,
-.onkcGd:visited,
-.WPhuJf,
-.WPhuJf:visited,
-.dDKhVc,
-.asQXV-FGzYL,
-.WmnPA:hover:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc,
-.ViCi4 {
-  color: #b8b3ad;
-}
-.svNSpd svg {
-  fill: #b8b3ad;
-}
-.WmnPA:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me),
-.xlHPle .VfPpkd-fmcmS-yrriRe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me),
-.V8apv {
-  background-color: #303030;
-}
-.fyExH,
-.cLpBac,
-.JPdR6b {
-  background-color: #191919;
-}
-.FAVvUd .nIu6nb {
-  filter: invert(1);
-}
-.QV10Af {
-  background-color: transparent;
-  border-color: #3b3b3b;
+  background-color: #2c2c2c;
 }

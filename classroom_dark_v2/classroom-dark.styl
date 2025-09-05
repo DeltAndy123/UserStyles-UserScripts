@@ -1,12 +1,7 @@
-/* ==UserStyle==
-@name           Google Classroom Dark Theme
-@namespace      github.com/DeltAndy123
-@version        3.0.1
-@description    Dark theme for Google Classroom
-@author         DeltAndy
-@homepageURL    https://userstyles.world/style/12025
-@supportURL     https://github.com/DeltAndy123/UserStyles-UserScripts
-@preprocessor   stylus
+primaryborder = #4d4d4d;
+primarybg = #2c2c2c;
+navbarsidebar = #111111;
+primarytext = #e0e0e0;
 
 
 
@@ -16,11 +11,10 @@ Since there was no good dark theme for Google Classroom that updates frequently,
 the Dark Reader extension didn't work well, I decided to create my own dark theme for
 Google Classroom.
 
-3.0.1 (2025-6-12):
-- Hotfix for upcoming assignments text
-- Fix create assignment popup
-- Remove config variables (for now, will add new ones later)
-- Transition to 3 part version numbers instead of 4 part version numbers
+3.1.1 (2025-9-4):
+- Fix assignment boxes that show description in Stream page
+- Fix quick links
+- Fix border and day number in Calendar
 */
 
 
@@ -28,10 +22,10 @@ Google Classroom.
   // Built-in variables
   // Most elements in Google Classroom use these
   :root {
-    --gm3-sys-color-surface: #2c2c2c // Main background
+    --gm3-sys-color-surface: primarybg // Main background
     
-    --gm3-sys-color-surface-container-low: #111111 // Navbar and sidebar background
-    --gm3-sys-color-on-surface-variant: #e0e0e0 // Navbar and sidebar text
+    --gm3-sys-color-surface-container-low: navbarsidebar // Navbar and sidebar background
+    --gm3-sys-color-on-surface-variant: primarytext // Navbar and sidebar text
     
     --gm3-sys-color-secondary-container: #414141 // Selected class in sidebar background
     --gm3-sys-color-on-secondary-container: #ffffff // Selected class in sidebar text
@@ -48,8 +42,8 @@ Google Classroom.
     
     --gm3-menu-container-color: #1f1f1f // Context menu (triple dot or help button)
     
-    --gm3-card-outlined-outline-color: #4d4d4d // Border around currently signed in box in Join class menu
-    --gm3-card-outlined-hover-outline-color: #4d4d4d // Border around currently signed in box in Join class menu
+    --gm3-card-outlined-outline-color: primaryborder // Border around currently signed in box in Join class menu
+    --gm3-card-outlined-hover-outline-color: primaryborder // Border around currently signed in box in Join class menu
     
     --gm3-text-field-filled-container-color: #303030 // Add link textbox
     --gm3-text-field-filled-hover-state-layer-color: #141414 // Add link textbox hovered
@@ -59,10 +53,14 @@ Google Classroom.
     
     --gm3-datepicker-container-color: #303030 // Date picker background
     --gm3-datepicker-date-unselected-outside-month-label-text-color: #747474 // Date picker other month date
+    
+    --gm3-sys-color-outline-variant: primaryborder // Border
+    
+    --gm3-sys-color-surface-container-high: #141414 // Quick links hovered background
   }
   
   .O68mGe-xl07Ob {
-    --gm3-list-divider-color: #4d4d4d // Context menu dividers
+    --gm3-list-divider-color: primaryborder // Context menu dividers
   }
   .S1oK3c {
     // Hover over triple dot in home page
@@ -88,20 +86,25 @@ Google Classroom.
   
   // Non-variable elements
   body {
-    background-color: #2c2c2c
-    color: #e0e0e0
+    background-color: primarybg
+    color: primarytext
   }
   
   .mwJvDe .KEDCCd { // Button bar in class (Stream, Classwork, People)
-    background-color: #2c2c2c
-    border-color: #4d4d4d
+    background-color: primarybg
+    border-color: primaryborder
   }
   
   .Aopndd, // Announcement and assignment boxes in stream
   .d4Fe0d  // Boxes to the left of stream (Upcoming, Quick Links, Meet, etc.)
   {
     background-color: #252525
-    border-color: #4d4d4d
+    border-color: primaryborder
+  }
+  
+  .TgJ2ub .IzVHde // Class details
+  {
+    background-color: primarybg;
   }
   
   .SZ0kZe, .s2g3Xd,              // Borders separating sections in boxes
@@ -120,12 +123,15 @@ Google Classroom.
   .Iwp0Ue:not(:first-child),     // Assignments in Classwork section
   .lXuxY .u73Apc, .O9YpHb,       // Borders for assignments in Classwork section
   .hja3X,                        // Create assignment right sidebar border
-  .ECK80e                        // Due date & time border
+  .ECK80e,                       // Due date & time border
+  .RcHwO                         // Border between assignment name and description in Stream page
+  .RIDjNe                        // Border between days in Calendar
   {
-    border-color: #4d4d4d
+    border-color: primaryborder
   }
   
-  .asQXV, // Announcement authors and assignment titles in stream, "Quick Links" and "Meet" in boxes left of stream
+  .asQXV, // Announcement authors and assignment titles in stream
+  .TgJ2ub .zuV2Cf,  //"Quick Links" and "Meet" in boxes left of stream
   .EZrbnd, // "Upcoming" in box left of stream
   .B7SYid, // Assignment titles in assignment page
   .A6dC2c, .saYe1e, // Link titles
@@ -133,16 +139,10 @@ Google Classroom.
   .z3vRcc, .tDxNLe, // "Your Work" in assignment page
   .WOPwXe, // Due date ranges in To-do (No due date, This week, Next week, Later)
   .cC1eCc .VfPpkd-k2Wrsb, // Turn in confirmation popup title
-  .ksaOtd // Received score in To-do Done section
+  .ksaOtd, // Received score in To-do Done section
+  .Eajscb .vT1Gyc.N4XV7d // Future dates in Calendar page
   {
-    color: #e0e0e0
-  }
-  
-  .Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover.rXdid, .Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover.h7Ww0, .Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover .rXdid, .Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover .h7Ww0, .xWw7yd:hover.rXdid, .xWw7yd:hover.h7Ww0, .xWw7yd:hover .rXdid, .xWw7yd:hover .h7Ww0,
-  .Iwp0Ue:not(.xp2dJ):focus-within.JiTjnd, .Iwp0Ue:not(.xp2dJ):focus-within.h7Ww0, .Iwp0Ue:not(.xp2dJ) :focus-within.JiTjnd, .Iwp0Ue:not(.xp2dJ) :focus-within.h7Ww0, .xWw7yd:focus-within.JiTjnd, .xWw7yd:focus-within.h7Ww0, .xWw7yd :focus-within.JiTjnd, .xWw7yd :focus-within.h7Ww0
-  {
-    // Assignment boxes in stream hovered/focused
-    background-color: #202020
+    color: primarytext
   }
   
   .YLFC3e:hover, .YLFC3e:focus, .YLFC3e:focus-within {
@@ -167,7 +167,7 @@ Google Classroom.
   }
   
   .cSyPgb, // Assignment author and date
-  .dDKhVc, // "Originality reports available" above assignment uploaded work
+  .dDKhVc, // "Originality reports available" above assignment uploaded work, assignment description in Stream page
   .udxSmc, // "Done late" or "Not turned in" in To-do Done section
   .zuV2Cf  // Quick link name
   {
@@ -175,16 +175,27 @@ Google Classroom.
   }
   
   .TisIWb .kKn9Nc::before, // Background behind class box in home page (only visible when reordering classes)
-  .cC1eCc .VfPpkd-P5QLlc, // Turn in confirmation popup
-  .IzVHde, // Class information
+  .cC1eCc .VfPpkd-P5QLlc,  // Turn in confirmation popup
+  .IzVHde,                 // Class information
   {
     background-color: #252525
   }
   
   .TdC1bb, // Create announcement popup background
-  .y2d25 // Due date/time popup in create assignment popup
+  .y2d25   // Due date/time popup in create assignment popup
   {
     background-color: #1b1b1b
+  }
+  
+  .Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover.rXdid,
+  .Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover.h7Ww0,
+  .Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover .rXdid,
+  .Iwp0Ue:not(.xp2dJ):not(.rZXyy):hover .h7Ww0,
+  .xWw7yd:hover.rXdid, .xWw7yd:hover.h7Ww0,
+  .xWw7yd:hover .rXdid, .xWw7yd:hover .h7Ww0
+  {
+    // Hovered assignments that also show description in Stream page
+    background-color: #202020
   }
   
   
@@ -204,14 +215,14 @@ Google Classroom.
     // Darken box shadows
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .5),0 2px 6px 2px rgba(0, 0, 0, .25)
     background-color: #252525
-    border: 1px solid #4d4d4d
+    border: 1px solid primaryborder
   }
   .MHxtic:hover {
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .5),0 2px 6px 2px rgba(0, 0, 0, .15)
   }
   .OlXwxf + .lXuxY, .lXuxY + .OlXwxf, .OlXwxf.OlXwxf:hover, .OlXwxf:hover + .OlXwxf {
     // Fix border in selected assignment in Classwork section
-    border-top: 1px solid #4d4d4d
+    border-top: 1px solid primaryborder
   }
   
   
@@ -231,7 +242,7 @@ Google Classroom.
   
   .qk0lee:focus::after {
     // Create announcement box clicked
-    background-color: #2c2c2c
+    background-color: primarybg
   }
   .hgjBDc {
     // Create announcement box opened (contains textbox)
@@ -269,107 +280,5 @@ Google Classroom.
   
   .N6nSod {
     // Help button at bottom right
-    background-color: #2c2c2c9c
-  }
-  
-  .gHz6xd.rZXyy:not(.kKn9Nc):not(.u0dx8e):hover {
-    // Don't shift classes on hover
-    margin: 0 1.5rem 1.5rem 0
-  }
-  
-
-  
-  
-  
-  
-  // OLD UI FIXES
-  // Since this UI was created for the new UI, it doesn't fully work on the old UI
-  // These are temporary rules to fix the old UI (taken from old style)
-  .joJglb, // Top bar
-  .mwJvDe .KEDCCd, // Bar under top bar
-  .ETRkCe, // Sidebar in portrait mode
-  .yWU57c.AjWMy, .yWU57c.AjWMy .rknsod, // Sidebar in landscape mode
-  {
-    background-color: #202124
-    border-color: #444746
-  }
-  
-  .ZNE4y, // Stream assignment box separator
-  .Rj2Mlf:not(:disabled), // Announce to student button
-  .E5f6Vd, // Separator between notification settings and class notifications
-  .vjb26b, // Border under "Class settings" when changing class settings
-  .gpeXDe, .meyvr, .Lp3y7d, .LqHDgc // Borders in class settings
-  {
-    border-color: #444746
-  }
-  
-  
-  .kYtXye.bFjUmb-Ysl7Fe, .kYtXye .bFjUmb-Ysl7Fe, .UvHKof.bFjUmb-Ysl7Fe, .UvHKof .bFjUmb-Ysl7Fe, // Selected class in sidebar
-  :is(.Ag4wUb, .ee1HBc, .AjWMy) .bFjUmb-Ysl7Fe, // Selected class in sidebar
-  .hN1OOc.eumXzf:hover, .hN1OOc.eumXzf:focus, // Button bar in class (Stream, Classwork, People) current tab hover
-  {
-    background-color: #1a1a1a
-  }
-  .z80M1.FwR7Pc {
-    background-color: #202020
-  }
-  .z3vRcc-J3yWx, // Sub-page name in navbar
-  .A6dC2c-J3yWx, // Class name in navbar
-  .rpo4wf-J3yWx, // "Classroom" text at top left
-  .wZTANe .J1raN, // Button bar texts in class (Stream, Classwork, People)
-  .WmnPA:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-wGMbrd, // Add link textbox
-  .yPtghd, // "Class settings" at top left when changing class settings
-  .xlHPle .VfPpkd-fmcmS-yrriRe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-wGMbrd, // Class subject textbox
-  .lziZub, .lziZub:visited, // "Your answer" textbox
-  .e0prFf // "Assignment" in top left of create assignemnt popup
-  {
-    color: #e8e5e3
-  }
-  .wZTANe .J1raN:hover, // Button bar texts in class (Stream, Classwork, People) hovered
-  .xlHPle .VfPpkd-fmcmS-yrriRe:hover:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc // Class subject textbox label hover
-  {
-    color: #999897
-  }
-  .Rj2Mlf:not(:disabled):hover { // Announce to student button hover
-    border-color: #3b3b3b
-  }
-  .VfPpkd-rymPhb-clz4Ic, // Separator between Home/Calendar and classes in sidebar
-  {
-    background-color: #3b3b3b;
-  }
-  .onkcGd, .onkcGd:visited, .WPhuJf, .WPhuJf:visited, // "# class comments" under assignment in Stream
-  .dDKhVc, // Class section in navbar
-  .asQXV-FGzYL, // Classroom name in dropdown when creating posts
-  .WmnPA:hover:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc, // Textbox label
-  .ViCi4 // Settings labels
-  {
-    color: #b8b3ad
-  }
-  
-  .svNSpd svg // Add file/link icons in create announcement box
-  {
-    fill: #b8b3ad
-  }
-  
-  .WmnPA:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me), // Add link textbox
-  .xlHPle .VfPpkd-fmcmS-yrriRe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me), // Class subject textbox
-  .V8apv // "Your answer" textbox in assignment
-  {
-    background-color: #303030
-  }
-  
-  
-  .fyExH, // Not using Classroom at a school with students checkbox
-  .cLpBac, // Class dropdown for announcements
-  .JPdR6b
-  {
-    background-color: #191919;
-  }
-  .FAVvUd .nIu6nb {
-    // SVG checkboxes
-    filter: invert(1);
-  }
-  .QV10Af { // Bottom part of "Announce to" popup
-    background-color: transparent;
-    border-color: #3b3b3b
+    background-color: primarybg
   }
