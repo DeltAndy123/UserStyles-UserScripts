@@ -1,6 +1,7 @@
-primaryborder = #4d4d4d;
 primarybg = #2c2c2c;
-navbarsidebar = #111111;
+secondarybg = #252525;
+navbarsidebar = #111112;
+primaryborder = #4d4d4d;
 primarytext = #e0e0e0;
 
 
@@ -11,10 +12,12 @@ Since there was no good dark theme for Google Classroom that updates frequently,
 the Dark Reader extension didn't work well, I decided to create my own dark theme for
 Google Classroom.
 
-3.1.1 (2025-9-4):
-- Fix assignment boxes that show description in Stream page
-- Fix quick links
-- Fix border and day number in Calendar
+3.2.0 (2025-9-7):
+- Fix border in Upcoming box
+- Fix white border and background in Classwork section
+- Remove stray border when hovering over selected assignment in Classwork section
+- Fix white answer box for question assignments
+- Fix classmate answers for question assigments
 */
 
 
@@ -29,7 +32,6 @@ Google Classroom.
     
     --gm3-sys-color-secondary-container: #414141 // Selected class in sidebar background
     --gm3-sys-color-on-secondary-container: #ffffff // Selected class in sidebar text
-    
     --gm3-focus-ring-inward-color: #606060 // Border around clicked class in sidebar
     
     --gm3-sys-color-on-surface: #ffffff // Hovered button text
@@ -85,12 +87,16 @@ Google Classroom.
   
   
   // Non-variable elements
-  body {
+  body,
+  .V8apv // Answer box in question assignments
+  {
     background-color: primarybg
     color: primarytext
   }
   
-  .mwJvDe .KEDCCd { // Button bar in class (Stream, Classwork, People)
+  .mwJvDe .KEDCCd, // Button bar in class (Stream, Classwork, People)
+  .DC55n td        // Classmate names in "Classmate answers" section
+  {
     background-color: primarybg
     border-color: primaryborder
   }
@@ -98,34 +104,46 @@ Google Classroom.
   .Aopndd, // Announcement and assignment boxes in stream
   .d4Fe0d  // Boxes to the left of stream (Upcoming, Quick Links, Meet, etc.)
   {
-    background-color: #252525
+    background-color: secondarybg
     border-color: primaryborder
   }
   
-  .TgJ2ub .IzVHde // Class details
+  .TgJ2ub .IzVHde, // Class details
+  // Start of assignment in Classwork section clicked
+  .Iwp0Ue:not(.xp2dJ):focus-within.JiTjnd,
+  .Iwp0Ue:not(.xp2dJ):focus-within.h7Ww0,
+  .Iwp0Ue:not(.xp2dJ) :focus-within.JiTjnd,
+  .Iwp0Ue:not(.xp2dJ) :focus-within.h7Ww0,
+  .xWw7yd:focus-within.JiTjnd, .xWw7yd:focus-within.h7Ww0,
+  .xWw7yd :focus-within.JiTjnd, .xWw7yd :focus-within.h7Ww0
+  // End of assignment in Classwork section clicked
   {
     background-color: primarybg;
   }
   
-  .SZ0kZe, .s2g3Xd,              // Borders separating sections in boxes
-  .nl5VRd,                       // Border between assignment name/date and assignment text
-  .ar1wE .eqqrO, .ySjuvd .eqqrO, // Border between assignment text and class comments in assignment page
-  .SUV7We,                       // Border between assignment name and class comments button in stream
-  .q1Kmyc,                       // Comment textbox border
-  .svNSpd,                       // Add file/link buttons in announcement creation box
-  .Niache,                       // Border between file/link preview and title
-  .VKRoqe,                       // Separator between category ("Teachers"/"Classmates") and people in People list
-  .ycbm1d, .d6CWTd,              // Separator between people in People list
-  .MHxtic:not(:last-child),      // Assignments in To-do
-  .LKqFXc,                       // Border above "View all" in To-do
-  .LDr2ne,                       // Border separating Originality reports and sections around it in "Your work"
-  .qj5L0,                        // Border separating files and "_ attachments will be submitted for __"
-  .Iwp0Ue:not(:first-child),     // Assignments in Classwork section
-  .lXuxY .u73Apc, .O9YpHb,       // Borders for assignments in Classwork section
-  .hja3X,                        // Create assignment right sidebar border
-  .ECK80e,                       // Due date & time border
-  .RcHwO                         // Border between assignment name and description in Stream page
-  .RIDjNe                        // Border between days in Calendar
+  .SZ0kZe, .s2g3Xd,               // Borders separating sections in boxes
+  .nl5VRd,                        // Border between assignment name/date and assignment text
+  .ar1wE .eqqrO, .ySjuvd .eqqrO,  // Border between assignment text and class comments in assignment page
+  .SUV7We,                        // Border between assignment name and class comments button in stream
+  .q1Kmyc,                        // Comment textbox border
+  .svNSpd,                        // Add file/link buttons in announcement creation box
+  .Niache,                        // Border between file/link preview and title
+  .VKRoqe,                        // Separator between category ("Teachers"/"Classmates") and people in People list
+  .ycbm1d, .d6CWTd,               // Separator between people in People list
+  .MHxtic:not(:last-child),       // Assignments in To-do
+  .LKqFXc,                        // Border above "View all" in To-do
+  .LDr2ne,                        // Border separating Originality reports and sections around it in "Your work"
+  .qj5L0,                         // Border separating files and "_ attachments will be submitted for __"
+  .Iwp0Ue:not(:first-child),      // Assignments in Classwork section
+  .lXuxY .u73Apc, .O9YpHb,        // Borders for assignments in Classwork section
+  .McVlQd::after, .ycJpzc::after, // Rounded border at bottom of assignment when clicked in Classwork section
+  .hja3X,                         // Create assignment right sidebar border
+  .ECK80e,                        // Due date & time border
+  .RcHwO,                         // Border between assignment name and description in Stream page
+  .RIDjNe,                        // Border between days in Calendar
+  .TgJ2ub .iy4mWc .COwiKd,        // Border between assignments in Upcoming box
+  .a4YS1c,                        // Border between classmate list and response in "Classmate answers" section
+  .hYt5f.FRDm8d :is(.WkZsyc, .Kql9ed):not(:last-child) // Border between classmate resposnses in "Classmate answers" section
   {
     border-color: primaryborder
   }
@@ -140,13 +158,16 @@ Google Classroom.
   .WOPwXe, // Due date ranges in To-do (No due date, This week, Next week, Later)
   .cC1eCc .VfPpkd-k2Wrsb, // Turn in confirmation popup title
   .ksaOtd, // Received score in To-do Done section
-  .Eajscb .vT1Gyc.N4XV7d // Future dates in Calendar page
+  .Eajscb .vT1Gyc.N4XV7d, // Future dates in Calendar page
+  .nk37z, .lziZub, .lziZub:visited // Classmate response in "Classmate answers" section
   {
     color: primarytext
   }
   
-  .YLFC3e:hover, .YLFC3e:focus, .YLFC3e:focus-within {
-    // Quick links hovered
+  .YLFC3e:hover, .YLFC3e:focus, .YLFC3e:focus-within,  // Quick links hovered
+  .TJtJXb:hover td, .tYQn5c:hover td, .DC55n:hover td, // Classmate name in "Classmate answers" section hovered
+  .aSjeL.aSjeL td                                      // Classmate name in "Classmate answers" section selected
+  {
     background-color: #343434
   }
 
@@ -166,10 +187,11 @@ Google Classroom.
     color: #cfcfcf
   }
   
-  .cSyPgb, // Assignment author and date
-  .dDKhVc, // "Originality reports available" above assignment uploaded work, assignment description in Stream page
-  .udxSmc, // "Done late" or "Not turned in" in To-do Done section
-  .zuV2Cf  // Quick link name
+  .cSyPgb,                 // Assignment author and date
+  .dDKhVc,                 // "Originality reports available" above assignment uploaded work, assignment description in Stream page
+  .udxSmc,                 // "Done late" or "Not turned in" in To-do Done section
+  .zuV2Cf,                 // Quick link name
+  .IMvYId, .IMvYId:visited // Date in "Classmate answers" section
   {
     color: #a6a6a6
   }
@@ -178,7 +200,7 @@ Google Classroom.
   .cC1eCc .VfPpkd-P5QLlc,  // Turn in confirmation popup
   .IzVHde,                 // Class information
   {
-    background-color: #252525
+    background-color: secondarybg
   }
   
   .TdC1bb, // Create announcement popup background
@@ -214,15 +236,11 @@ Google Classroom.
   {
     // Darken box shadows
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .5),0 2px 6px 2px rgba(0, 0, 0, .25)
-    background-color: #252525
+    background-color: secondarybg
     border: 1px solid primaryborder
   }
   .MHxtic:hover {
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .5),0 2px 6px 2px rgba(0, 0, 0, .15)
-  }
-  .OlXwxf + .lXuxY, .lXuxY + .OlXwxf, .OlXwxf.OlXwxf:hover, .OlXwxf:hover + .OlXwxf {
-    // Fix border in selected assignment in Classwork section
-    border-top: 1px solid primaryborder
   }
   
   
@@ -246,7 +264,7 @@ Google Classroom.
   }
   .hgjBDc {
     // Create announcement box opened (contains textbox)
-    background-color: #252525
+    background-color: secondarybg
   }
   .vnnr5e:not(.RDPZE):not(.u3bW4e) :is(.I9OJHe, .CIy9F), // Create announcement textbox
   .vnnr5e .I9OJHe, .vnnr5e .CIy9F, // Create announcement textbox

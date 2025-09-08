@@ -4,14 +4,16 @@ Since there was no good dark theme for Google Classroom that updates frequently,
 the Dark Reader extension didn't work well, I decided to create my own dark theme for
 Google Classroom.
 
-3.1.1 (2025-9-4):
-- Fix assignment boxes that show description in Stream page
-- Fix quick links
-- Fix border and day number in Calendar
+3.2.0 (2025-9-7):
+- Fix border in Upcoming box
+- Fix white border and background in Classwork section
+- Remove stray border when hovering over selected assignment in Classwork section
+- Fix white answer box for question assignments
+- Fix classmate answers for question assigments
 */
 :root {
   --gm3-sys-color-surface: #2c2c2c;
-  --gm3-sys-color-surface-container-low: #111;
+  --gm3-sys-color-surface-container-low: #111112;
   --gm3-sys-color-on-surface-variant: #e0e0e0;
   --gm3-sys-color-secondary-container: #414141;
   --gm3-sys-color-on-secondary-container: #fff;
@@ -52,11 +54,13 @@ Google Classroom.
 .w482V-O1htCb:hover .w482V-CZC2Ab-i5vt6e {
   --gm3-sys-color-on-surface: #8d8d8d;
 }
-body {
+body,
+.V8apv {
   background-color: #2c2c2c;
   color: #e0e0e0;
 }
-.mwJvDe .KEDCCd {
+.mwJvDe .KEDCCd,
+.DC55n td {
   background-color: #2c2c2c;
   border-color: #4d4d4d;
 }
@@ -65,7 +69,15 @@ body {
   background-color: #252525;
   border-color: #4d4d4d;
 }
-.TgJ2ub .IzVHde {
+.TgJ2ub .IzVHde,
+.Iwp0Ue:not(.xp2dJ):focus-within.JiTjnd,
+.Iwp0Ue:not(.xp2dJ):focus-within.h7Ww0,
+.Iwp0Ue:not(.xp2dJ) :focus-within.JiTjnd,
+.Iwp0Ue:not(.xp2dJ) :focus-within.h7Ww0,
+.xWw7yd:focus-within.JiTjnd,
+.xWw7yd:focus-within.h7Ww0,
+.xWw7yd :focus-within.JiTjnd,
+.xWw7yd :focus-within.h7Ww0 {
   background-color: #2c2c2c;
 }
 .SZ0kZe,
@@ -87,10 +99,16 @@ body {
 .Iwp0Ue:not(:first-child),
 .lXuxY .u73Apc,
 .O9YpHb,
+.McVlQd::after,
+.ycJpzc::after,
 .hja3X,
 .ECK80e,
 .RcHwO,
-.RIDjNe {
+.RIDjNe,
+.TgJ2ub .iy4mWc .COwiKd,
+.a4YS1c,
+.hYt5f.FRDm8d :is(.WkZsyc,
+.Kql9ed):not(:last-child) {
   border-color: #4d4d4d;
 }
 .asQXV,
@@ -106,12 +124,19 @@ body {
 .WOPwXe,
 .cC1eCc .VfPpkd-k2Wrsb,
 .ksaOtd,
-.Eajscb .vT1Gyc.N4XV7d {
+.Eajscb .vT1Gyc.N4XV7d,
+.nk37z,
+.lziZub,
+.lziZub:visited {
   color: #e0e0e0;
 }
 .YLFC3e:hover,
 .YLFC3e:focus,
-.YLFC3e:focus-within {
+.YLFC3e:focus-within,
+.TJtJXb:hover td,
+.tYQn5c:hover td,
+.DC55n:hover td,
+.aSjeL.aSjeL td {
   background-color: #343434;
 }
 .TgJ2ub .xo2x2e,
@@ -132,7 +157,9 @@ body {
 .cSyPgb,
 .dDKhVc,
 .udxSmc,
-.zuV2Cf {
+.zuV2Cf,
+.IMvYId,
+.IMvYId:visited {
   color: #a6a6a6;
 }
 .TisIWb .kKn9Nc::before,
@@ -173,12 +200,6 @@ body {
 }
 .MHxtic:hover {
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.5), 0 2px 6px 2px rgba(0,0,0,0.15);
-}
-.OlXwxf + .lXuxY,
-.lXuxY + .OlXwxf,
-.OlXwxf.OlXwxf:hover,
-.OlXwxf:hover + .OlXwxf {
-  border-top: 1px solid #4d4d4d;
 }
 .lbWVCe {
   background-color: #1f1f1f;
