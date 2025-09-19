@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Google Classroom Dark Theme
 @namespace      github.com/DeltAndy123
-@version        3.2.0
+@version        3.3.0
 @description    Dark theme for Google Classroom
 @author         DeltAndy
 @homepageURL    https://userstyles.world/style/12025
@@ -13,6 +13,9 @@
 @var color navbarsidebar "Navbar/Sidebar"       #111112
 @var color primaryborder "Primary Border"       #4d4d4d
 @var color primarytext   "Primary Text"         #e0e0e0
+@var color secondarytext "Secondary Text"       #cfcfcf
+@var color tertiarytext  "Tertiary Text"        #a6a6a6
+
 
 ==/UserStyle== */
 
@@ -22,12 +25,11 @@ Since there was no good dark theme for Google Classroom that updates frequently,
 the Dark Reader extension didn't work well, I decided to create my own dark theme for
 Google Classroom.
 
-3.2.0 (2025-9-7):
-- Fix border in Upcoming box
-- Fix white border and background in Classwork section
-- Remove stray border when hovering over selected assignment in Classwork section
-- Fix white answer box for question assignments
-- Fix classmate answers for question assigments
+3.3.0 (2025-9-18):
+- Fix black/gray texts in Classwork page
+- Fix text at top of practice sets (styling the practice sets page itself isn't possible due to how it's coded)
+- Add more config options for different types of text
+- Fix selected assignment in Classwork section not having border on top
 */
 
 
@@ -169,7 +171,9 @@ Google Classroom.
   .cC1eCc .VfPpkd-k2Wrsb, // Turn in confirmation popup title
   .ksaOtd, // Received score in To-do Done section
   .Eajscb .vT1Gyc.N4XV7d, // Future dates in Calendar page
-  .nk37z, .lziZub, .lziZub:visited // Classmate response in "Classmate answers" section
+  .nk37z, .lziZub, .lziZub:visited, // Classmate response in "Classmate answers" section
+  .slDfNd, .slDfNd:visited, .U0QIdc, .U0QIdc:visited, // Topic names in Classwork page
+  .yPtghd // Practice set name at top
   {
     color: primarytext
   }
@@ -192,18 +196,21 @@ Google Classroom.
   .asQXV-FGzYL,                  // Max score in To-do, or "Turned in"
   .i9glDf,                       // Bold text
   .s7bwNb,                       // "Due date & time" in create assignment popup
-  .iLjzDc                        // Create assignment labels
+  .iLjzDc,                       // Create assignment labels
+  .TgJ2ub .nZCyt,                // Type of assignment in assignment box in Classwork section
   {
-    color: #cfcfcf
+    color: secondarytext
   }
   
-  .cSyPgb,                 // Assignment author and date
-  .dDKhVc,                 // "Originality reports available" above assignment uploaded work, assignment description in Stream page
-  .udxSmc,                 // "Done late" or "Not turned in" in To-do Done section
-  .zuV2Cf,                 // Quick link name
-  .IMvYId, .IMvYId:visited // Date in "Classmate answers" section
+  .cSyPgb,                  // Assignment author and date
+  .dDKhVc,                  // "Originality reports available" above assignment uploaded work, assignment description in Stream page
+  .udxSmc,                  // "Done late" or "Not turned in" in To-do Done section
+  .zuV2Cf,                  // Quick link name
+  .IMvYId, .IMvYId:visited, // Date in "Classmate answers" section
+  .TgJ2ub .wCDkmf,          // Assignment due date in Classwork section
+  .CxlSNe                   // Last saved date in practice set
   {
-    color: #a6a6a6
+    color: tertiarytext
   }
   
   .TisIWb .kKn9Nc::before, // Background behind class box in home page (only visible when reordering classes)
@@ -252,6 +259,10 @@ Google Classroom.
   .MHxtic:hover {
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .5),0 2px 6px 2px rgba(0, 0, 0, .15)
   }
+  .lXuxY, .pO6AMc, .PqkECe {
+    // Fix selected assignment in Classwork section not having border on top
+    border-top: 1px solid primaryborder !important
+  }
   
   
   .lbWVCe {
@@ -288,7 +299,7 @@ Google Classroom.
   }
   .vnnr5e:not(.RDPZE):not(.u3bW4e):hover .I9OJHe.vTcY1d .snByac {
     // Create announcement textbox placeholder ("Announce something to your class") hovered
-    color: #a6a6a6
+    color: tertiarytext
   }
   
   

@@ -4,12 +4,11 @@ Since there was no good dark theme for Google Classroom that updates frequently,
 the Dark Reader extension didn't work well, I decided to create my own dark theme for
 Google Classroom.
 
-3.2.0 (2025-9-7):
-- Fix border in Upcoming box
-- Fix white border and background in Classwork section
-- Remove stray border when hovering over selected assignment in Classwork section
-- Fix white answer box for question assignments
-- Fix classmate answers for question assigments
+3.3.0 (2025-9-18):
+- Fix black/gray texts in Classwork page
+- Fix text at top of practice sets (styling the practice sets page itself isn't possible due to how it's coded)
+- Add more config options for different types of text
+- Fix selected assignment in Classwork section not having border on top
 */
 :root {
   --gm3-sys-color-surface: #2c2c2c;
@@ -127,7 +126,12 @@ body,
 .Eajscb .vT1Gyc.N4XV7d,
 .nk37z,
 .lziZub,
-.lziZub:visited {
+.lziZub:visited,
+.slDfNd,
+.slDfNd:visited,
+.U0QIdc,
+.U0QIdc:visited,
+.yPtghd {
   color: #e0e0e0;
 }
 .YLFC3e:hover,
@@ -151,7 +155,8 @@ body,
 .asQXV-FGzYL,
 .i9glDf,
 .s7bwNb,
-.iLjzDc {
+.iLjzDc,
+.TgJ2ub .nZCyt {
   color: #cfcfcf;
 }
 .cSyPgb,
@@ -159,7 +164,9 @@ body,
 .udxSmc,
 .zuV2Cf,
 .IMvYId,
-.IMvYId:visited {
+.IMvYId:visited,
+.TgJ2ub .wCDkmf,
+.CxlSNe {
   color: #a6a6a6;
 }
 .TisIWb .kKn9Nc::before,
@@ -200,6 +207,11 @@ body,
 }
 .MHxtic:hover {
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.5), 0 2px 6px 2px rgba(0,0,0,0.15);
+}
+.lXuxY,
+.pO6AMc,
+.PqkECe {
+  border-top: 1px solid #4d4d4d !important;
 }
 .lbWVCe {
   background-color: #1f1f1f;
