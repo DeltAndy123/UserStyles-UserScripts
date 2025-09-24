@@ -15,11 +15,8 @@ Since there was no good dark theme for Google Classroom that updates frequently,
 the Dark Reader extension didn't work well, I decided to create my own dark theme for
 Google Classroom.
 
-3.3.0 (2025-9-18):
-- Fix black/gray texts in Classwork page
-- Fix text at top of practice sets (styling the practice sets page itself isn't possible due to how it's coded)
-- Add more config options for different types of text
-- Fix selected assignment in Classwork section not having border on top
+3.3.1 (2025-9-23):
+- Partially fix rubrics
 */
 
 
@@ -145,7 +142,9 @@ Google Classroom.
   .RIDjNe,                        // Border between days in Calendar
   .TgJ2ub .iy4mWc .COwiKd,        // Border between assignments in Upcoming box
   .a4YS1c,                        // Border between classmate list and response in "Classmate answers" section
-  .hYt5f.FRDm8d :is(.WkZsyc, .Kql9ed):not(:last-child) // Border between classmate resposnses in "Classmate answers" section
+  .hYt5f.FRDm8d :is(.WkZsyc, .Kql9ed):not(:last-child), // Border between classmate resposnses in "Classmate answers" section
+  .ft5Sbf,                        // Border around rubric in assignment
+  .OK63Pb:not(:last-child)        // Border between rubric categories is assignment
   {
     border-color: primaryborder
   }
@@ -198,7 +197,8 @@ Google Classroom.
   .zuV2Cf,                  // Quick link name
   .IMvYId, .IMvYId:visited, // Date in "Classmate answers" section
   .TgJ2ub .wCDkmf,          // Assignment due date in Classwork section
-  .CxlSNe                   // Last saved date in practice set
+  .CxlSNe,                  // Last saved date in practice set
+  .RMrItf                   // Rubric in assignment max points
   {
     color: tertiarytext
   }
@@ -227,7 +227,12 @@ Google Classroom.
     background-color: #202020
   }
   
-  
+  .OK1tJe {
+    background-color: #383838
+  }
+  .R5iLrf.u3bW4e, .R5iLrf.yXgmRe:hover {
+    background-color: #343434
+  }
   
   
   

@@ -4,11 +4,8 @@ Since there was no good dark theme for Google Classroom that updates frequently,
 the Dark Reader extension didn't work well, I decided to create my own dark theme for
 Google Classroom.
 
-3.3.0 (2025-9-18):
-- Fix black/gray texts in Classwork page
-- Fix text at top of practice sets (styling the practice sets page itself isn't possible due to how it's coded)
-- Add more config options for different types of text
-- Fix selected assignment in Classwork section not having border on top
+3.3.1 (2025-9-23):
+- Partially fix rubrics
 */
 :root {
   --gm3-sys-color-surface: #2c2c2c;
@@ -107,7 +104,9 @@ body,
 .TgJ2ub .iy4mWc .COwiKd,
 .a4YS1c,
 .hYt5f.FRDm8d :is(.WkZsyc,
-.Kql9ed):not(:last-child) {
+.Kql9ed):not(:last-child),
+.ft5Sbf,
+.OK63Pb:not(:last-child) {
   border-color: #4d4d4d;
 }
 .asQXV,
@@ -166,7 +165,8 @@ body,
 .IMvYId,
 .IMvYId:visited,
 .TgJ2ub .wCDkmf,
-.CxlSNe {
+.CxlSNe,
+.RMrItf {
   color: #a6a6a6;
 }
 .TisIWb .kKn9Nc::before,
@@ -187,6 +187,13 @@ body,
 .xWw7yd:hover .rXdid,
 .xWw7yd:hover .h7Ww0 {
   background-color: #202020;
+}
+.OK1tJe {
+  background-color: #383838;
+}
+.R5iLrf.u3bW4e,
+.R5iLrf.yXgmRe:hover {
+  background-color: #343434;
 }
 .Hwv4mb > :is(.onkcGd:hover,
 .onkcGd:focus,
