@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Google Classroom Dark Theme
 @namespace      github.com/DeltAndy123
-@version        3.3.1
+@version        3.4.0
 @description    Dark theme for Google Classroom
 @author         DeltAndy
 @homepageURL    https://userstyles.world/style/12025
@@ -25,8 +25,13 @@ Since there was no good dark theme for Google Classroom that updates frequently,
 the Dark Reader extension didn't work well, I decided to create my own dark theme for
 Google Classroom.
 
-3.3.1 (2025-9-23):
-- Partially fix rubrics
+3.4.0 (2025-9-30):
+- Fix notification at top of home page
+- Fix unstyled invite popup
+- Fix white dropdown when creating announcement for multiple classes
+- Fix white border around insert item circles (Google Drive file, YouTube video, file, link)
+- Fix class code display
+- Fix popups for editing or reusing announcements
 */
 
 
@@ -45,10 +50,10 @@ Google Classroom.
     
     --gm3-sys-color-on-surface: #ffffff // Hovered button text
     
-    --gm3-button-filled-disabled-container-color: #363636 // Disabled post announcement button background
-    --gm3-button-filled-disabled-label-text-color: #1f1f1f // Disabled post announcement button text
+    --gm3-button-filled-disabled-container-color: #363636 // Disabled button background
+    --gm3-button-filled-disabled-label-text-color: #797979 // Disabled button text
     
-    --gm3-icon-button-standard-disabled-icon-color: #363636 // Disabled post comment button
+    --gm3-icon-button-standard-disabled-icon-color: #535353 // Disabled icon button (including comment)
     --gm3-button-text-disabled-label-text-color: #474747 // Disabled button text in popup boxes
     
     --gm3-menu-container-color: #1f1f1f // Context menu (triple dot or help button)
@@ -68,6 +73,9 @@ Google Classroom.
     --gm3-sys-color-outline-variant: primaryborder // Border
     
     --gm3-sys-color-surface-container-high: #141414 // Quick links hovered background
+    
+    --gm3-sys-color-primary-container: #404040 // Information notifications at the top of the home page
+    --gm3-sys-color-primary: #407de2 // Links and close button in the information notification
   }
   
   .O68mGe-xl07Ob {
@@ -92,6 +100,9 @@ Google Classroom.
   .w482V-O1htCb:hover .w482V-CZC2Ab-i5vt6e {
     // Change border color of hovered dropdown
     --gm3-sys-color-on-surface: #8d8d8d
+  }
+  .RuSUmb {
+    --pkw-background: secondarybg // List of contacts when inviting students
   }
   
   
@@ -154,7 +165,13 @@ Google Classroom.
   .a4YS1c,                        // Border between classmate list and response in "Classmate answers" section
   .hYt5f.FRDm8d :is(.WkZsyc, .Kql9ed):not(:last-child), // Border between classmate resposnses in "Classmate answers" section
   .ft5Sbf,                        // Border around rubric in assignment
-  .OK63Pb:not(:last-child)        // Border between rubric categories is assignment
+  .OK63Pb:not(:last-child),       // Border between rubric categories is assignment
+  .QV10Af,                        // Border separating student list and bottom bar in choosing students in "Announce to" popup
+  .bNkTzb, .CobWe                 // Borders in "Invite students" popup
+  .TgJ2ub .svNSpd,                // Border around items to add when posting announcement
+  .BQ5ILd,                        // Border between top bar and students that submitted assignment in educator assignment details
+  .pvb7Pc,                        // Border in edit announcement popup
+  .cmTiyd                         // Border in select class popup
   {
     border-color: primaryborder
   }
@@ -172,14 +189,18 @@ Google Classroom.
   .Eajscb .vT1Gyc.N4XV7d, // Future dates in Calendar page
   .nk37z, .lziZub, .lziZub:visited, // Classmate response in "Classmate answers" section
   .slDfNd, .slDfNd:visited, .U0QIdc, .U0QIdc:visited, // Topic names in Classwork page
-  .yPtghd // Practice set name at top
+  .yPtghd, // Practice set name at top
+  .vaUyHb, // Class code in large display
+  .HZ3kWc, // Category dropdown for assignment status (turned in, assigned, graded)
+  .WOPwXe-Wvd9Cc // Select class title in reuse post popup
   {
     color: primarytext
   }
   
   .YLFC3e:hover, .YLFC3e:focus, .YLFC3e:focus-within,  // Quick links hovered
   .TJtJXb:hover td, .tYQn5c:hover td, .DC55n:hover td, // Classmate name in "Classmate answers" section hovered
-  .aSjeL.aSjeL td                                      // Classmate name in "Classmate answers" section selected
+  .aSjeL.aSjeL td,                                     // Classmate name in "Classmate answers" section selected
+  .thP79c:hover                                        // Hovered class in select class popup
   {
     background-color: #343434
   }
@@ -197,6 +218,9 @@ Google Classroom.
   .s7bwNb,                       // "Due date & time" in create assignment popup
   .iLjzDc,                       // Create assignment labels
   .TgJ2ub .nZCyt,                // Type of assignment in assignment box in Classwork section
+  .ViCi4,                        // "Invite link" text when inviting students
+  .YrFhrf,                       // Number of students that turned in/did not turn in assignment
+  .tLDEHd-Wvd9Cc                 // Class name in select class popup
   {
     color: secondarytext
   }
@@ -208,14 +232,16 @@ Google Classroom.
   .IMvYId, .IMvYId:visited, // Date in "Classmate answers" section
   .TgJ2ub .wCDkmf,          // Assignment due date in Classwork section
   .CxlSNe,                  // Last saved date in practice set
-  .RMrItf                   // Rubric in assignment max points
+  .RMrItf,                  // Rubric in assignment max points
+  .cC1eCc .VfPpkd-zMU9ub    // X button at top right when displaying class code
   {
     color: tertiarytext
   }
   
   .TisIWb .kKn9Nc::before, // Background behind class box in home page (only visible when reordering classes)
-  .cC1eCc .VfPpkd-P5QLlc,  // Turn in confirmation popup
+  .cC1eCc .VfPpkd-P5QLlc,  // On-screen popup
   .IzVHde,                 // Class information
+  .QV10Af,                 // Bottom bar in choosing students in "Announce to" popup
   {
     background-color: secondarybg
   }
@@ -245,8 +271,38 @@ Google Classroom.
   }
   
   
+  .cLpBac {
+    // Dropdown box
+    background-color: #1c1c1c
+  }
+  .JPdR6b {
+    // Dropdown itself
+    background-color: #2c2c2c
+  }
+  .z80M1.FwR7Pc {
+    // Dropdown hovered option
+    background-color: #363636
+  }
+  
+  .ncFHed {
+    // Category dropdown for assignment status (turned in, assigned, graded)
+    background-color: secondarybg
+  }
+  .MocG8c.RDPZE {
+    // Category dropdown disabled option
+    color: #828282
+  }
+  
+  
   
   // Manual fixes
+  .TgJ2ub .VfoFfe // Border in class code display
+  {
+    // Hide unnecessary border
+    border-color: transparent
+  }
+  
+  
   .Hwv4mb > :is(.onkcGd:hover, .onkcGd:focus, .Vx8Sxd:hover, .Vx8Sxd:focus):not(.sXIFDb:last-child) {
     // Don't double-underline top left "Classroom" text on hover (this issue also exists in normal Google Classroom)
     text-decoration: none;
