@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Google Classroom Dark Theme
 @namespace      github.com/DeltAndy123
-@version        3.4.0
+@version        3.4.1
 @description    Dark theme for Google Classroom
 @author         DeltAndy
 @homepageURL    https://userstyles.world/style/12025
@@ -25,13 +25,8 @@ Since there was no good dark theme for Google Classroom that updates frequently,
 the Dark Reader extension didn't work well, I decided to create my own dark theme for
 Google Classroom.
 
-3.4.0 (2025-9-30):
-- Fix notification at top of home page
-- Fix unstyled invite popup
-- Fix white dropdown when creating announcement for multiple classes
-- Fix white border around insert item circles (Google Drive file, YouTube video, file, link)
-- Fix class code display
-- Fix popups for editing or reusing announcements
+3.4.1 (2025-10-9):
+- Fix rubrics
 */
 
 
@@ -171,7 +166,8 @@ Google Classroom.
   .TgJ2ub .svNSpd,                // Border around items to add when posting announcement
   .BQ5ILd,                        // Border between top bar and students that submitted assignment in educator assignment details
   .pvb7Pc,                        // Border in edit announcement popup
-  .cmTiyd                         // Border in select class popup
+  .cmTiyd,                        // Border in select class popup
+  .C4yF5e
   {
     border-color: primaryborder
   }
@@ -192,7 +188,8 @@ Google Classroom.
   .yPtghd, // Practice set name at top
   .vaUyHb, // Class code in large display
   .HZ3kWc, // Category dropdown for assignment status (turned in, assigned, graded)
-  .WOPwXe-Wvd9Cc // Select class title in reuse post popup
+  .WOPwXe-Wvd9Cc, // Select class title in reuse post popup
+  .jlfrG // Rubric grade categories
   {
     color: primarytext
   }
@@ -220,7 +217,8 @@ Google Classroom.
   .TgJ2ub .nZCyt,                // Type of assignment in assignment box in Classwork section
   .ViCi4,                        // "Invite link" text when inviting students
   .YrFhrf,                       // Number of students that turned in/did not turn in assignment
-  .tLDEHd-Wvd9Cc                 // Class name in select class popup
+  .tLDEHd-Wvd9Cc,                // Class name in select class popup
+  .FMzRdf                        // Rubric description
   {
     color: secondarytext
   }
@@ -296,6 +294,11 @@ Google Classroom.
   
   
   // Manual fixes
+  .jlfrG::before, .jlfrG::after, .jlfrG::before, .jlfrG::after, .jlfrG.u3bW4e::before, .jlfrG.u3bW4e::after, .jlfrG.yXgmRe:hover::after {
+    // Remove gradient on rubric cards (normally invisible in light mode)
+    background: none
+  }
+  
   .TgJ2ub .VfoFfe // Border in class code display
   {
     // Hide unnecessary border

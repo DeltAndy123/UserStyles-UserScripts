@@ -4,13 +4,8 @@ Since there was no good dark theme for Google Classroom that updates frequently,
 the Dark Reader extension didn't work well, I decided to create my own dark theme for
 Google Classroom.
 
-3.4.0 (2025-9-30):
-- Fix notification at top of home page
-- Fix unstyled invite popup
-- Fix white dropdown when creating announcement for multiple classes
-- Fix white border around insert item circles (Google Drive file, YouTube video, file, link)
-- Fix class code display
-- Fix popups for editing or reusing announcements
+3.4.1 (2025-10-9):
+- Fix rubrics
 */
 :root {
   --gm3-sys-color-surface: #2c2c2c;
@@ -123,7 +118,8 @@ body,
 .TgJ2ub .svNSpd,
 .BQ5ILd,
 .pvb7Pc,
-.cmTiyd {
+.cmTiyd,
+.C4yF5e {
   border-color: #4d4d4d;
 }
 .asQXV,
@@ -150,7 +146,8 @@ body,
 .yPtghd,
 .vaUyHb,
 .HZ3kWc,
-.WOPwXe-Wvd9Cc {
+.WOPwXe-Wvd9Cc,
+.jlfrG {
   color: #e0e0e0;
 }
 .YLFC3e:hover,
@@ -179,7 +176,8 @@ body,
 .TgJ2ub .nZCyt,
 .ViCi4,
 .YrFhrf,
-.tLDEHd-Wvd9Cc {
+.tLDEHd-Wvd9Cc,
+.FMzRdf {
   color: #cfcfcf;
 }
 .cSyPgb,
@@ -235,6 +233,13 @@ body,
 }
 .MocG8c.RDPZE {
   color: #828282;
+}
+.jlfrG::before,
+.jlfrG::after,
+.jlfrG.u3bW4e::before,
+.jlfrG.u3bW4e::after,
+.jlfrG.yXgmRe:hover::after {
+  background: none;
 }
 .TgJ2ub .VfoFfe {
   border-color: transparent;
