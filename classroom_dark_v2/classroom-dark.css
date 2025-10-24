@@ -4,8 +4,12 @@ Since there was no good dark theme for Google Classroom that updates frequently,
 the Dark Reader extension didn't work well, I decided to create my own dark theme for
 Google Classroom.
 
-3.4.1 (2025-10-9):
-- Fix rubrics
+3.5.0 (2025-10-23):
+- Fix another redesign in Google Classroom (at least they use the variables now)
+  - Fix announcements in stream
+  - Fix polls
+  - Fix free response question box background
+- Remove double underline fix as it was fixed by Google
 */
 :root {
   --gm3-sys-color-surface: #2c2c2c;
@@ -32,6 +36,11 @@ Google Classroom.
   --gm3-sys-color-surface-container-high: #141414;
   --gm3-sys-color-primary-container: #404040;
   --gm3-sys-color-primary: #407de2;
+  --gm3-sys-color-surface-container: #1f1f1f;
+  --gm3-sys-color-surface-container-highest: #171717;
+  --gm3-sys-color-on-primary-container: #acbddd;
+  --gm3-sys-color-surface-variant: #171717;
+  --gm3-sys-color-surface-dim: #343434;
 }
 .O68mGe-xl07Ob {
   --gm3-list-divider-color: #4d4d4d;
@@ -54,6 +63,13 @@ Google Classroom.
 }
 .RuSUmb {
   --pkw-background: #252525;
+}
+.YlUIU {
+  --gm3-sys-color-primary-container: #17181c;
+}
+.YlUIU .WF4XOe {
+  background-color: #2d3348;
+  opacity: 1;
 }
 body,
 .V8apv {
@@ -244,12 +260,6 @@ body,
 .TgJ2ub .VfoFfe {
   border-color: transparent;
 }
-.Hwv4mb > :is(.onkcGd:hover,
-.onkcGd:focus,
-.Vx8Sxd:hover,
-.Vx8Sxd:focus):not(.sXIFDb:last-child) {
-  text-decoration: none;
-}
 .GWZ7yf,
 .rZXyy.YwNp1,
 .rZXyy:not(.u0dx8e):not(.ILo0B):not(.xp2dJ):hover,
@@ -268,15 +278,6 @@ body,
 .pO6AMc,
 .PqkECe {
   border-top: 1px solid #4d4d4d !important;
-}
-.lbWVCe {
-  background-color: #1f1f1f;
-}
-.lbWVCe .h0pqq {
-  background-color: #353535;
-}
-.LdMiEd {
-  background-color: #1c1c24;
 }
 .qk0lee:focus::after {
   background-color: #2c2c2c;

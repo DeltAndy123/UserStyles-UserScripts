@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Google Classroom Dark Theme
 @namespace      github.com/DeltAndy123
-@version        3.4.1
+@version        3.5.0
 @description    Dark theme for Google Classroom
 @author         DeltAndy
 @homepageURL    https://userstyles.world/style/12025
@@ -10,6 +10,7 @@
 
 @var color primarybg     "Primary Background"   #2c2c2c
 @var color secondarybg   "Secondary Background" #252525
+@var color boxbg         "Box Background"       #1f1f1f
 @var color navbarsidebar "Navbar/Sidebar"       #111112
 @var color primaryborder "Primary Border"       #4d4d4d
 @var color primarytext   "Primary Text"         #e0e0e0
@@ -25,8 +26,12 @@ Since there was no good dark theme for Google Classroom that updates frequently,
 the Dark Reader extension didn't work well, I decided to create my own dark theme for
 Google Classroom.
 
-3.4.1 (2025-10-9):
-- Fix rubrics
+3.5.0 (2025-10-23):
+- Fix another redesign in Google Classroom (at least they use the variables now)
+  - Fix announcements in stream
+  - Fix polls
+  - Fix free response question box background
+- Remove double underline fix as it was fixed by Google
 */
 
 
@@ -71,6 +76,14 @@ Google Classroom.
     
     --gm3-sys-color-primary-container: #404040 // Information notifications at the top of the home page
     --gm3-sys-color-primary: #407de2 // Links and close button in the information notification
+    
+    --gm3-sys-color-surface-container: boxbg // Announcements and assignments in stream
+    --gm3-sys-color-surface-container-highest: #171717 // Hovered announcements and assignments in stream
+    
+    --gm3-sys-color-on-primary-container: #acbddd // Text on colored background (winning poll option)
+    
+    --gm3-sys-color-surface-variant: #171717 // Poll option (did not win), answer box in free response question assignments
+    --gm3-sys-color-surface-dim: #343434 // Poll option progress (did not win)
   }
   
   .O68mGe-xl07Ob {
@@ -99,11 +112,20 @@ Google Classroom.
   .RuSUmb {
     --pkw-background: secondarybg // List of contacts when inviting students
   }
+  .YlUIU {
+    // Polls
+    --gm3-sys-color-primary-container: #17181c // Winning poll option
+    .WF4XOe {
+      // Winning poll option progress (doesn't use variables for some reason)
+      background-color: #2d3348
+      opacity: 1
+    }
+  }
   
   
   // Non-variable elements
-  body,
-  .V8apv // Answer box in question assignments
+  body
+  .V8apv // Answer box in free response question assignments
   {
     background-color: primarybg
     color: primarytext
@@ -116,7 +138,7 @@ Google Classroom.
     border-color: primaryborder
   }
   
-  .Aopndd, // Announcement and assignment boxes in stream
+  .Aopndd, // LEGACY UI: Announcement and assignment boxes in stream
   .d4Fe0d  // Boxes to the left of stream (Upcoming, Quick Links, Meet, etc.)
   {
     background-color: secondarybg
@@ -207,7 +229,7 @@ Google Classroom.
   .TgJ2ub .COwiKd,               // Assignment due day in Upcoming box
   .zuzKle.xVPuB, .zuzKle.vnnr5e, // Comment textbox
   .tLDEHd,                       // Comment and assignment text
-  .K6Ovqd,                       // "Announce something to your class" text
+  .K6Ovqd,                       // LEGACY UI: "Announce something to your class" text
   .cC1eCc .VfPpkd-cnG4Wd,        // Turn in confirmation popup text
   .Evt7cb, .Evt7cb:visited,      // Turn in confirmation popop file names
   .asQXV-FGzYL,                  // Max score in To-do, or "Turned in"
@@ -306,12 +328,7 @@ Google Classroom.
   }
   
   
-  .Hwv4mb > :is(.onkcGd:hover, .onkcGd:focus, .Vx8Sxd:hover, .Vx8Sxd:focus):not(.sXIFDb:last-child) {
-    // Don't double-underline top left "Classroom" text on hover (this issue also exists in normal Google Classroom)
-    text-decoration: none;
-  }
-  
-  .GWZ7yf, // "Announce something to your class" box
+  .GWZ7yf, // Your answer box in assignment page, LEGACY UI: "Announce something to your class" box
   .rZXyy.YwNp1, .rZXyy:not(.u0dx8e):not(.ILo0B):not(.xp2dJ):hover, .rZXyy:not(.u0dx8e):not(.ILo0B):not(.xp2dJ):focus, // Hovered classes
   .lXuxY, .pO6AMc, .PqkECe // Selected assignment in Classwork section
   {
@@ -329,30 +346,17 @@ Google Classroom.
   }
   
   
-  .lbWVCe {
-    // Poll option (did not win)
-    background-color: #1f1f1f
-    .h0pqq {
-      // Percentage of voters
-      background-color: #353535
-    }
-  }
-  .LdMiEd {
-    // Poll option (won)
-    background-color: #1c1c24
-  }
-  
   
   .qk0lee:focus::after {
-    // Create announcement box clicked
+    // LEGACY UI: Create announcement box clicked
     background-color: primarybg
   }
   .hgjBDc {
-    // Create announcement box opened (contains textbox)
+    // Create announcement popup (contains textbox)
     background-color: secondarybg
   }
-  .vnnr5e:not(.RDPZE):not(.u3bW4e) :is(.I9OJHe, .CIy9F), // Create announcement textbox
-  .vnnr5e .I9OJHe, .vnnr5e .CIy9F, // Create announcement textbox
+  .vnnr5e:not(.RDPZE):not(.u3bW4e) :is(.I9OJHe, .CIy9F), // LEGACY UI: Create announcement textbox
+  .vnnr5e .I9OJHe, .vnnr5e .CIy9F, // Create announcement textbox not hovered
   .ghqpJb .i2Zkcd:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) // Points number box in create assignment popup
   {
     background-color: #1c1c1c
