@@ -4,12 +4,10 @@ Since there was no good dark theme for Google Classroom that updates frequently,
 the Dark Reader extension didn't work well, I decided to create my own dark theme for
 Google Classroom.
 
-3.5.0 (2025-10-23):
-- Fix another redesign in Google Classroom (at least they use the variables now)
-  - Fix announcements in stream
-  - Fix polls
-  - Fix free response question box background
-- Remove double underline fix as it was fixed by Google
+3.5.1 (2025-10-28):
+- Fix incorrect background color in new links/files in "Your work"
+- Fix white borders between link/file name and preview
+- Remove border around selected assignments in Classwork page
 */
 :root {
   --gm3-sys-color-surface: #2c2c2c;
@@ -71,6 +69,9 @@ Google Classroom.
   background-color: #2d3348;
   opacity: 1;
 }
+.GWZ7yf {
+  --gm3-sys-color-surface: #252525;
+}
 body,
 .V8apv {
   background-color: #2c2c2c;
@@ -105,6 +106,7 @@ body,
 .SUV7We,
 .q1Kmyc,
 .svNSpd,
+.OVu6ob .Niache,
 .Niache,
 .VKRoqe,
 .ycbm1d,
@@ -135,7 +137,7 @@ body,
 .BQ5ILd,
 .pvb7Pc,
 .cmTiyd,
-.C4yF5e {
+.E5f6Vd {
   border-color: #4d4d4d;
 }
 .asQXV,
@@ -250,6 +252,10 @@ body,
 .MocG8c.RDPZE {
   color: #828282;
 }
+.LKmtKf:hover,
+.S6Vdac:hover {
+  background-color: rgba(223,222,219,0.04);
+}
 .jlfrG::before,
 .jlfrG::after,
 .jlfrG.u3bW4e::before,
@@ -271,13 +277,13 @@ body,
   background-color: #252525;
   border: 1px solid #4d4d4d;
 }
-.MHxtic:hover {
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.5), 0 2px 6px 2px rgba(0,0,0,0.15);
-}
 .lXuxY,
 .pO6AMc,
 .PqkECe {
-  border-top: 1px solid #4d4d4d !important;
+  border: none;
+}
+.MHxtic:hover {
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.5), 0 2px 6px 2px rgba(0,0,0,0.15);
 }
 .qk0lee:focus::after {
   background-color: #2c2c2c;
